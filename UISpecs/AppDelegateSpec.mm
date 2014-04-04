@@ -19,8 +19,11 @@ describe(@"AppDelegate", ^{
             [subject application:nil didFinishLaunchingWithOptions:nil];
         });
         
-        it(@"should set the rootViewController to our RootViewController", ^{
-            subject.window.rootViewController should be_instance_of([RootViewController class]);
+        it(@"should display the rootViewCotroller in a navigation controller", ^{
+            subject.window.rootViewController should be_instance_of([UINavigationController class]);
+            UINavigationController* rootViewController = (id)subject.window.rootViewController;
+            
+            rootViewController.topViewController should be_instance_of([RootViewController class]);
         });
     });
 });

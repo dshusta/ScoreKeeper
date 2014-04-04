@@ -1,14 +1,8 @@
-//
-//  RootViewController.m
-//  BlogScoreKeeper
-//
-//  Created by pivotal on 4/2/14.
-//  Copyright (c) 2014 PivotalBeach. All rights reserved.
-//
-
 #import "RootViewController.h"
+#import "CreateScoresheetViewController.h"
 
 @interface RootViewController ()
+
 
 @end
 
@@ -18,6 +12,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (IBAction)touchUpCreateNewScoresheet:(id)sender {
+    CreateScoresheetViewController* createScoresheetViewController = [[CreateScoresheetViewController alloc] init];
+    [self.navigationController pushViewController:createScoresheetViewController animated:YES];
 }
 
 @end

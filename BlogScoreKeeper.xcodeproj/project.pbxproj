@@ -23,6 +23,11 @@
 		AEC105A418ECE040000AC266 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105A118ECE040000AC266 /* RootViewController.xib */; };
 		AEC105A518ECE040000AC266 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105A118ECE040000AC266 /* RootViewController.xib */; };
 		AEC105A618ECE061000AC266 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C7EF818EC980F004B11DE /* AppDelegate.m */; };
+		AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */; };
+		AEC105B718EE0E2D000AC266 /* CreateScoreSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B518EE0E2D000AC266 /* CreateScoreSheetViewController.m */; };
+		AEC105B818EE0E2D000AC266 /* CreateScoreSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B518EE0E2D000AC266 /* CreateScoreSheetViewController.m */; };
+		AEC105B918EE0E2D000AC266 /* CreateScoreSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105B618EE0E2D000AC266 /* CreateScoreSheetViewController.xib */; };
+		AEC105BA18EE0E2D000AC266 /* CreateScoreSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105B618EE0E2D000AC266 /* CreateScoreSheetViewController.xib */; };
 		AEC8550218ECB03800F7FB11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEC18EC980F004B11DE /* UIKit.framework */; };
 		AEC8550318ECB03800F7FB11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EE818EC980F004B11DE /* Foundation.framework */; };
 		AEC8550418ECB03800F7FB11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */; };
@@ -137,6 +142,10 @@
 		AEC1059F18ECE040000AC266 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AEC105A018ECE040000AC266 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AEC105A118ECE040000AC266 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewControllerSpec.mm; sourceTree = "<group>"; };
+		AEC105B418EE0E2D000AC266 /* CreateScoreSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateScoreSheetViewController.h; sourceTree = "<group>"; };
+		AEC105B518EE0E2D000AC266 /* CreateScoreSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateScoreSheetViewController.m; sourceTree = "<group>"; };
+		AEC105B618EE0E2D000AC266 /* CreateScoreSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateScoreSheetViewController.xib; sourceTree = "<group>"; };
 		AEC8550118ECB03800F7FB11 /* UISpecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC8550718ECB03800F7FB11 /* UISpecs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UISpecs-Info.plist"; sourceTree = "<group>"; };
 		AEC8550918ECB03800F7FB11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -218,11 +227,14 @@
 			children = (
 				AE4C7EF718EC980F004B11DE /* AppDelegate.h */,
 				AE4C7EF818EC980F004B11DE /* AppDelegate.m */,
+				AEC105B418EE0E2D000AC266 /* CreateScoreSheetViewController.h */,
+				AEC105B518EE0E2D000AC266 /* CreateScoreSheetViewController.m */,
+				AEC105B618EE0E2D000AC266 /* CreateScoreSheetViewController.xib */,
 				AE4C7EFA18EC980F004B11DE /* Images.xcassets */,
-				AE4C7EEF18EC980F004B11DE /* Supporting Files */,
 				AEC1059F18ECE040000AC266 /* RootViewController.h */,
 				AEC105A018ECE040000AC266 /* RootViewController.m */,
 				AEC105A118ECE040000AC266 /* RootViewController.xib */,
+				AE4C7EEF18EC980F004B11DE /* Supporting Files */,
 			);
 			path = BlogScoreKeeper;
 			sourceTree = "<group>";
@@ -244,6 +256,7 @@
 				AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */,
 				AEC8551118ECB03900F7FB11 /* ExampleSpec.mm */,
 				AEC8550618ECB03800F7FB11 /* Supporting Files */,
+				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
 			);
 			path = UISpecs;
 			sourceTree = "<group>";
@@ -460,6 +473,7 @@
 				AE4C7EF318EC980F004B11DE /* InfoPlist.strings in Resources */,
 				AE4C7EFB18EC980F004B11DE /* Images.xcassets in Resources */,
 				AEC105A418ECE040000AC266 /* RootViewController.xib in Resources */,
+				AEC105B918EE0E2D000AC266 /* CreateScoreSheetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +490,7 @@
 			files = (
 				AEC105A518ECE040000AC266 /* RootViewController.xib in Resources */,
 				AEC8550A18ECB03800F7FB11 /* InfoPlist.strings in Resources */,
+				AEC105BA18EE0E2D000AC266 /* CreateScoreSheetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +503,7 @@
 			files = (
 				AE4C7EF918EC980F004B11DE /* AppDelegate.m in Sources */,
 				AE4C7EF518EC980F004B11DE /* main.m in Sources */,
+				AEC105B718EE0E2D000AC266 /* CreateScoreSheetViewController.m in Sources */,
 				AEC105A218ECE040000AC266 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,7 +519,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC105B818EE0E2D000AC266 /* CreateScoreSheetViewController.m in Sources */,
 				AEC8550C18ECB03800F7FB11 /* main.m in Sources */,
+				AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */,
 				AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */,
 				AEC105A318ECE040000AC266 /* RootViewController.m in Sources */,
 				AEC8551218ECB03900F7FB11 /* ExampleSpec.mm in Sources */,
