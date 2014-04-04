@@ -4,4 +4,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *createNewScoresheetButton;
 
+@property (weak, nonatomic) IBOutlet UITableView *scoresheetTableView;
+
 @end

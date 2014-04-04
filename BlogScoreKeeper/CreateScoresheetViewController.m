@@ -7,32 +7,24 @@
 //
 
 #import "CreateScoresheetViewController.h"
+#import "ScoresheetCollection.h"
 
 @interface CreateScoresheetViewController ()
-
+@property (weak, nonatomic) ScoresheetCollection *scoresheetCollection;
 @end
 
 @implementation CreateScoresheetViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
+- (id)initWithScoresheetCollection:(ScoresheetCollection*) scoresheetCollection {
+    self = [super init];
+    self.scoresheetCollection = scoresheetCollection;
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.scoresheetCollection addObject:[[NSDate alloc] init]];
 }
 
 @end

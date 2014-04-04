@@ -8,22 +8,37 @@ SPEC_BEGIN(RootViewControllerSpec)
 
 describe(@"RootViewController", ^{
     __block UINavigationController *navController;
-    __block RootViewController *subject;
+    __block RootViewController *rootViewController;
 
     beforeEach(^{
-        subject = [[RootViewController alloc] init];
-        subject.view should_not be_nil;
-        navController = [[UINavigationController alloc] initWithRootViewController:subject];
+        rootViewController = [[RootViewController alloc] init];
+        rootViewController.view should_not be_nil;
+        navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     });
     
     describe(@"after Create New Scoresheet is tapped", ^{
         beforeEach(^{
-            [subject.createNewScoresheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [rootViewController.createNewScoresheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [navController.topViewController view] should_not be_nil;
         });
         
         it(@"should display the create new scoresheet controller", ^{
             navController.topViewController should be_instance_of([CreateScoresheetViewController class]);
         });
+        
+        describe(@"after swiping back to RootView", ^{
+            beforeEach(^{
+                [navController popViewControllerAnimated:NO];
+
+                [rootViewController viewWillAppear:YES];
+                [rootViewController viewDidAppear:YES];
+            });
+            
+            it(@"should display the new item", ^{
+                [rootViewController.scoresheetTableView.visibleCells count] should equal(1);
+            });
+        });
+        
     });
 });
 

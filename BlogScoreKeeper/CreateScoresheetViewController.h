@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScoresheetCollection.h"
 
 @interface CreateScoresheetViewController : UIViewController
+- (id)initWithScoresheetCollection:(ScoresheetCollection*) scoresheetCollection;
 
 @end

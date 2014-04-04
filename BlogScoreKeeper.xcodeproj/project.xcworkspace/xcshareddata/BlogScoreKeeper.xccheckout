@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>65D1B0FE-4A71-4A46-BEB5-4F1DD63E6FD8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BlogScoreKeeper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5466CBCE-3DCF-4D11-8097-F9E083D45C3F</key>
+		<string>https://github.com/utricularian/ScoreKeeper.git</string>
+		<key>E9662E0D-9B7B-4CAF-A467-98A431EE5DCE</key>
+		<string>https://github.com/pivotal/cedar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BlogScoreKeeper.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5466CBCE-3DCF-4D11-8097-F9E083D45C3F</key>
+		<string>../..</string>
+		<key>E9662E0D-9B7B-4CAF-A467-98A431EE5DCE</key>
+		<string>../../Externals/cedar</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/utricularian/ScoreKeeper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5466CBCE-3DCF-4D11-8097-F9E083D45C3F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5466CBCE-3DCF-4D11-8097-F9E083D45C3F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BlogScoreKeeper</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E9662E0D-9B7B-4CAF-A467-98A431EE5DCE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cedar</string>
+		</dict>
+	</array>
+</dict>
+</plist>
