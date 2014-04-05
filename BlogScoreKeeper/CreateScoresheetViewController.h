@@ -1,15 +1,12 @@
-//
-//  CreateScoreSheetViewController.h
-//  BlogScoreKeeper
-//
-//  Created by pivotal on 4/3/14.
-//  Copyright (c) 2014 PivotalBeach. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import "ScoresheetCollection.h"
 
 @interface CreateScoresheetViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+
 - (id)initWithScoresheetCollection:(ScoresheetCollection*) scoresheetCollection;
 
 @end

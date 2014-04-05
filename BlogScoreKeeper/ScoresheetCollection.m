@@ -41,10 +41,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    NSString *dateString = [NSDateFormatter localizedStringFromDate:[self.data objectAtIndex:indexPath.row]
-                                                          dateStyle:NSDateFormatterShortStyle
-                                                          timeStyle:NSDateFormatterFullStyle];
-    [cell.textLabel setText:dateString];
+    NSString *scoresheetName = [[self.data objectAtIndex:indexPath.row] name];
+    [cell.textLabel setText:scoresheetName];
 
     return cell;
 }

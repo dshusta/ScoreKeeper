@@ -8,23 +8,25 @@
 
 #import "CreateScoresheetViewController.h"
 #import "ScoresheetCollection.h"
+#import "Scoresheet.h"
 
 @interface CreateScoresheetViewController ()
-@property (weak, nonatomic) ScoresheetCollection *scoresheetCollection;
+@property (strong, nonatomic) ScoresheetCollection *scoresheetCollection;
 @end
 
 @implementation CreateScoresheetViewController
 
 - (id)initWithScoresheetCollection:(ScoresheetCollection*) scoresheetCollection {
-    self = [super init];
+    self = [self initWithNibName:@"CreateScoreSheetViewController" bundle:nil];
     self.scoresheetCollection = scoresheetCollection;
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self.scoresheetCollection addObject:[[NSDate alloc] init]];
+- (IBAction)touchUpSaveButton:(id)sender {
+    NSString *name = self.nameTextField.text;
+    Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:name];
+    
+    [self.scoresheetCollection addObject:scoresheet];
 }
 
 @end
