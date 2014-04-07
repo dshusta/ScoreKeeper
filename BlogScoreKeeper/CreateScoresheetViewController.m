@@ -17,8 +17,10 @@
 @implementation CreateScoresheetViewController
 
 - (id)initWithScoresheetCollection:(ScoresheetCollection*) scoresheetCollection {
-    self = [self initWithNibName:@"CreateScoreSheetViewController" bundle:nil];
-    self.scoresheetCollection = scoresheetCollection;
+    self = [super init];
+    if (self) {
+        self.scoresheetCollection = scoresheetCollection;
+    }
     return self;
 }
 
@@ -27,6 +29,7 @@
     Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:name];
     
     [self.scoresheetCollection addObject:scoresheet];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

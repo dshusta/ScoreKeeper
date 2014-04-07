@@ -7,7 +7,7 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(CreateScoreSheetViewControllerSpec)
 
 describe(@"CreateScoreSheetViewController", ^{
-    __block CreateScoreSheetViewController *controller;
+    __block CreateScoresheetViewController *controller;
     __block ScoresheetCollection *collection;
 
     beforeEach(^{

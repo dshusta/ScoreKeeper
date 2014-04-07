@@ -10,9 +10,11 @@
 
 @implementation RootViewController
 
-- (RootViewController*)init {
+- (RootViewController *)init {
     self = [super init];
-    self.scoresheetCollection = [[ScoresheetCollection alloc] init];
+    if (self) {
+        self.scoresheetCollection = [[ScoresheetCollection alloc] init];
+    }
     return self;
 }
 
@@ -25,6 +27,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self.scoresheetTableView reloadData];
 }
 

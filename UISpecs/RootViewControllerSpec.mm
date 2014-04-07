@@ -13,7 +13,11 @@ describe(@"RootViewController", ^{
     beforeEach(^{
         rootViewController = [[RootViewController alloc] init];
         rootViewController.view should_not be_nil;
+
         navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+        
+        [rootViewController viewWillAppear:NO];
+        [rootViewController viewDidAppear:NO];
     });
     
     describe(@"after Create New Scoresheet is tapped", ^{
@@ -26,16 +30,22 @@ describe(@"RootViewController", ^{
             navController.topViewController should be_instance_of([CreateScoresheetViewController class]);
         });
         
-        describe(@"after swiping back to RootView", ^{
+        describe(@"tapping the save button", ^{
             beforeEach(^{
-                [navController popViewControllerAnimated:NO];
+                CreateScoresheetViewController *createScoresheetViewController = (id)navController.topViewController;
+                [createScoresheetViewController.saveButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+                
 
-                [rootViewController viewWillAppear:YES];
-                [rootViewController viewDidAppear:YES];
+                [rootViewController viewWillAppear:NO];
+                [rootViewController viewDidAppear:NO];
+            });
+            
+            it(@"should go back to the root view controller", ^{
+                navController.topViewController should be_same_instance_as(rootViewController);
             });
             
             it(@"should display the new item", ^{
-                [rootViewController.scoresheetTableView.visibleCells count] should equal(1);
+                [rootViewController.scoresheetTableView numberOfRowsInSection:0] should equal(1);
             });
         });
         
