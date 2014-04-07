@@ -67,18 +67,20 @@
 
 - (void)readFromUserDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray *scoresheetNames = [defaults objectForKey:@"scoresheets"];
+    NSArray *scoresheets = [defaults objectForKey:@"scoresheets"];
 
-    for (NSString *name in scoresheetNames) {
-        Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:name];
+    for (NSDictionary *serializedScoresheet in scoresheets) {
+        Scoresheet *scoresheet = [Scoresheet deserialize:serializedScoresheet];
         [self.data addObject:scoresheet];
     }
 }
 
 - (void)saveToUserDefaults {
     NSMutableArray *scoresheetNames = [NSMutableArray array];
+
     for (Scoresheet *scoresheet in self.data) {
-        [scoresheetNames addObject:scoresheet.name];
+        NSDictionary *serializedScoresheet = [scoresheet serialize];
+        [scoresheetNames addObject:serializedScoresheet];
     }
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

@@ -18,8 +18,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.scoresheetTableView.delegate = self.scoresheetCollection;
