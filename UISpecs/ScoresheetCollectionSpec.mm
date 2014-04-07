@@ -24,6 +24,13 @@ describe(@"ScoresheetCollection", ^{
             [newCollection count] should equal(1);
             [[newCollection.scoresheets lastObject] name] should equal(@"My Special Scoresheet");
         });
+
+        it(@"should persist deletion of scoresheet", ^{
+            NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+            [subject tableView:nil commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:path];
+            ScoresheetCollection *newCollection = [[ScoresheetCollection alloc] init];
+            [newCollection count] should equal(0);
+        });
     });
 });
 

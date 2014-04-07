@@ -55,6 +55,16 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.data removeObjectAtIndex:indexPath.row];
+    [tableView reloadData];
+    [self saveToUserDefaults];
+}
+
 - (void)readFromUserDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *scoresheetNames = [defaults objectForKey:@"scoresheets"];
