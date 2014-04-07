@@ -16,7 +16,7 @@
 
 @implementation CreateScoresheetViewController
 
-- (id)initWithScoresheetCollection:(ScoresheetCollection*) scoresheetCollection {
+- (id)initWithScoresheetCollection:(ScoresheetCollection *)scoresheetCollection {
     self = [super init];
     if (self) {
         self.scoresheetCollection = scoresheetCollection;
@@ -28,7 +28,7 @@
     NSString *name = self.nameTextField.text;
     Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:name];
     
-    [self.scoresheetCollection addObject:scoresheet];
+    [self.scoresheetCollection addScoresheet:scoresheet];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

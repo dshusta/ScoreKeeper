@@ -10,6 +10,8 @@
 		AE3CBD5718EF796900BFA8F5 /* Scoresheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */; };
 		AE3CBD5818EF796900BFA8F5 /* Scoresheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */; };
 		AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */; };
+		AE3CBD5C18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */; };
+		AE3CBD6318F3241F00BFA8F5 /* UserDefaultsCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */; };
 		AE4C7EE918EC980F004B11DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EE818EC980F004B11DE /* Foundation.framework */; };
 		AE4C7EEB18EC980F004B11DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */; };
 		AE4C7EED18EC980F004B11DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEC18EC980F004B11DE /* UIKit.framework */; };
@@ -38,7 +40,6 @@
 		AEC8550418ECB03800F7FB11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */; };
 		AEC8550A18ECB03800F7FB11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEC8550818ECB03800F7FB11 /* InfoPlist.strings */; };
 		AEC8550C18ECB03800F7FB11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC8550B18ECB03800F7FB11 /* main.m */; };
-		AEC8551218ECB03900F7FB11 /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC8551118ECB03900F7FB11 /* ExampleSpec.mm */; };
 		AEC8553E18ECC78C00F7FB11 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC8552C18ECB20F00F7FB11 /* libCedar-StaticLib.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,9 @@
 		AE3CBD5518EF796900BFA8F5 /* Scoresheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scoresheet.h; sourceTree = "<group>"; };
 		AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scoresheet.m; sourceTree = "<group>"; };
 		AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateScoresheetViewControllerSpec.mm; sourceTree = "<group>"; };
+		AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScoresheetCollectionSpec.mm; sourceTree = "<group>"; };
+		AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsCleaner.h; sourceTree = "<group>"; };
+		AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsCleaner.m; sourceTree = "<group>"; };
 		AE4C7EE518EC980F004B11DE /* BlogScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4C7EE818EC980F004B11DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,7 +165,6 @@
 		AEC8550918ECB03800F7FB11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AEC8550B18ECB03800F7FB11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEC8550D18ECB03800F7FB11 /* UISpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISpecs-Prefix.pch"; sourceTree = "<group>"; };
-		AEC8551118ECB03900F7FB11 /* ExampleSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ExampleSpec.mm; sourceTree = "<group>"; };
 		AEC8551718ECB20E00F7FB11 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Externals/cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,9 +272,11 @@
 			children = (
 				AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */,
 				AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */,
-				AEC8551118ECB03900F7FB11 /* ExampleSpec.mm */,
 				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
+				AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */,
 				AEC8550618ECB03800F7FB11 /* Supporting Files */,
+				AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */,
+				AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */,
 			);
 			path = UISpecs;
 			sourceTree = "<group>";
@@ -540,11 +545,12 @@
 				AEC8550C18ECB03800F7FB11 /* main.m in Sources */,
 				AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */,
 				AEC105BE18EF233B000AC266 /* ScoresheetCollection.m in Sources */,
+				AE3CBD6318F3241F00BFA8F5 /* UserDefaultsCleaner.m in Sources */,
 				AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */,
 				AE3CBD5818EF796900BFA8F5 /* Scoresheet.m in Sources */,
 				AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */,
+				AE3CBD5C18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm in Sources */,
 				AEC105A318ECE040000AC266 /* RootViewController.m in Sources */,
-				AEC8551218ECB03900F7FB11 /* ExampleSpec.mm in Sources */,
 				AEC105A618ECE061000AC266 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

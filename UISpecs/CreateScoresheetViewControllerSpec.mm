@@ -30,7 +30,7 @@ describe(@"CreateScoresheetViewController", ^{
         });
         
         it(@"should save a scoresheet with the given name", ^{
-            [collection.scoresheets[0] name] should equal(@"My Special Name");
+            [[collection.scoresheets lastObject] name] should equal(@"My Special Name");
         });
 
         it(@"should pop itself off the navigation stack", ^{

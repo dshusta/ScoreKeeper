@@ -7,6 +7,7 @@
 //
 
 #import "ScoresheetCollection.h"
+#import "Scoresheet.h"
 
 @interface ScoresheetCollection ()
 @property (strong, nonatomic) NSMutableArray *data;
@@ -16,13 +17,17 @@
 
 - (id)init {
     self = [super init];
-    self.data = [[NSMutableArray alloc] init];
-    
+    if (self) {
+        self.data = [[NSMutableArray alloc] init];
+
+        [self readFromUserDefaults];
+    }
     return self;
 }
 
-- (void)addObject:(NSObject *)anObject {
-    [self.data addObject:anObject];
+- (void)addScoresheet:(Scoresheet *)scoresheet {
+    [self.data addObject:scoresheet];
+    [self saveToUserDefaults];
 }
 
 - (NSArray *)scoresheets {
@@ -48,6 +53,27 @@
     [cell.textLabel setText:scoresheetName];
 
     return cell;
+}
+
+- (void)readFromUserDefaults {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *scoresheetNames = [defaults objectForKey:@"scoresheets"];
+
+    for (NSString *name in scoresheetNames) {
+        Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:name];
+        [self.data addObject:scoresheet];
+    }
+}
+
+- (void)saveToUserDefaults {
+    NSMutableArray *scoresheetNames = [NSMutableArray array];
+    for (Scoresheet *scoresheet in self.data) {
+        [scoresheetNames addObject:scoresheet.name];
+    }
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:scoresheetNames forKey:@"scoresheets"];
+    [defaults synchronize];
 }
 
 @end
