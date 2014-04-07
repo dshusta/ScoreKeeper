@@ -21,9 +21,12 @@
     return self;
 }
 
-- (id)addObject:(NSObject *)anObject {
+- (void)addObject:(NSObject *)anObject {
     [self.data addObject:anObject];
-    return self;
+}
+
+- (NSArray *)scoresheets {
+    return self.data;
 }
 
 - (NSInteger)count {

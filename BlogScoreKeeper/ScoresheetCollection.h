@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ScoresheetCollection : NSObject <UITableViewDataSource, UITableViewDelegate>
-- (id)addObject:(NSObject *)anObject;
+@property(readonly, nonatomic) NSArray* scoresheets;
+- (void)addObject:(NSObject *)anObject;
 - (NSInteger)count;
 @end

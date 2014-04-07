@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE3CBD5718EF796900BFA8F5 /* Scoresheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */; };
 		AE3CBD5818EF796900BFA8F5 /* Scoresheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */; };
-		AE3CBD5A18EF79F400BFA8F5 /* CreateScoreSheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5918EF79F400BFA8F5 /* CreateScoreSheetViewControllerSpec.mm */; };
+		AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */; };
 		AE4C7EE918EC980F004B11DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EE818EC980F004B11DE /* Foundation.framework */; };
 		AE4C7EEB18EC980F004B11DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */; };
 		AE4C7EED18EC980F004B11DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEC18EC980F004B11DE /* UIKit.framework */; };
@@ -132,7 +132,7 @@
 /* Begin PBXFileReference section */
 		AE3CBD5518EF796900BFA8F5 /* Scoresheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scoresheet.h; sourceTree = "<group>"; };
 		AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scoresheet.m; sourceTree = "<group>"; };
-		AE3CBD5918EF79F400BFA8F5 /* CreateScoreSheetViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateScoreSheetViewControllerSpec.mm; sourceTree = "<group>"; };
+		AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateScoresheetViewControllerSpec.mm; sourceTree = "<group>"; };
 		AE4C7EE518EC980F004B11DE /* BlogScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4C7EE818EC980F004B11DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -268,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */,
-				AE3CBD5918EF79F400BFA8F5 /* CreateScoreSheetViewControllerSpec.mm */,
+				AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */,
 				AEC8551118ECB03900F7FB11 /* ExampleSpec.mm */,
 				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
 				AEC8550618ECB03800F7FB11 /* Supporting Files */,
@@ -538,7 +538,7 @@
 			files = (
 				AEC105B818EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */,
 				AEC8550C18ECB03800F7FB11 /* main.m in Sources */,
-				AE3CBD5A18EF79F400BFA8F5 /* CreateScoreSheetViewControllerSpec.mm in Sources */,
+				AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */,
 				AEC105BE18EF233B000AC266 /* ScoresheetCollection.m in Sources */,
 				AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */,
 				AE3CBD5818EF796900BFA8F5 /* Scoresheet.m in Sources */,
