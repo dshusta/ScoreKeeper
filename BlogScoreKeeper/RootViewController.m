@@ -1,12 +1,14 @@
 #import "RootViewController.h"
 #import "CreateScoresheetViewController.h"
 #import "ScoresheetCollection.h"
+#import "ScoresheetViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController () <ScoresheetCollectionDelegate>
 
 @property (strong, nonatomic) ScoresheetCollection *scoresheetCollection;
 
 @end
+
 
 @implementation RootViewController
 
@@ -14,8 +16,14 @@
     self = [super init];
     if (self) {
         self.scoresheetCollection = [[ScoresheetCollection alloc] init];
+        self.scoresheetCollection.delegate = self;
     }
     return self;
+}
+
+- (void)didTapOnScoresheet:(Scoresheet *)scoresheet {
+    ScoresheetViewController *scoresheetViewController = [[ScoresheetViewController alloc] initWithScoresheet:scoresheet];
+    [self.navigationController pushViewController:scoresheetViewController animated:YES];
 }
 
 - (void)viewDidLoad {

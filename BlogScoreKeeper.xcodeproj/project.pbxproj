@@ -12,6 +12,11 @@
 		AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */; };
 		AE3CBD5C18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */; };
 		AE3CBD6318F3241F00BFA8F5 /* UserDefaultsCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */; };
+		AE3CBD6718F3615400BFA8F5 /* ScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */; };
+		AE3CBD6818F3615400BFA8F5 /* ScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */; };
+		AE3CBD6918F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */; };
+		AE3CBD6A18F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */; };
+		AE3CBD6C18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */; };
 		AE4C7EE918EC980F004B11DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EE818EC980F004B11DE /* Foundation.framework */; };
 		AE4C7EEB18EC980F004B11DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */; };
 		AE4C7EED18EC980F004B11DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEC18EC980F004B11DE /* UIKit.framework */; };
@@ -137,6 +142,10 @@
 		AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScoresheetCollectionSpec.mm; sourceTree = "<group>"; };
 		AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsCleaner.h; sourceTree = "<group>"; };
 		AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsCleaner.m; sourceTree = "<group>"; };
+		AE3CBD6418F3615400BFA8F5 /* ScoresheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresheetViewController.h; sourceTree = "<group>"; };
+		AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresheetViewController.m; sourceTree = "<group>"; };
+		AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoresheetViewController.xib; sourceTree = "<group>"; };
+		AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScoresheetViewControllerSpec.mm; sourceTree = "<group>"; };
 		AE4C7EE518EC980F004B11DE /* BlogScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4C7EE818EC980F004B11DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -251,6 +260,9 @@
 				AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */,
 				AEC105BB18EF233B000AC266 /* ScoresheetCollection.h */,
 				AEC105BC18EF233B000AC266 /* ScoresheetCollection.m */,
+				AE3CBD6418F3615400BFA8F5 /* ScoresheetViewController.h */,
+				AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */,
+				AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */,
 				AE4C7EEF18EC980F004B11DE /* Supporting Files */,
 			);
 			path = BlogScoreKeeper;
@@ -277,6 +289,7 @@
 				AEC8550618ECB03800F7FB11 /* Supporting Files */,
 				AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */,
 				AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */,
+				AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */,
 			);
 			path = UISpecs;
 			sourceTree = "<group>";
@@ -492,6 +505,7 @@
 			files = (
 				AE4C7EF318EC980F004B11DE /* InfoPlist.strings in Resources */,
 				AE4C7EFB18EC980F004B11DE /* Images.xcassets in Resources */,
+				AE3CBD6918F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */,
 				AEC105A418ECE040000AC266 /* RootViewController.xib in Resources */,
 				AEC105B918EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */,
 			);
@@ -509,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEC105A518ECE040000AC266 /* RootViewController.xib in Resources */,
+				AE3CBD6A18F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */,
 				AEC8550A18ECB03800F7FB11 /* InfoPlist.strings in Resources */,
 				AEC105BA18EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */,
 			);
@@ -522,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4C7EF918EC980F004B11DE /* AppDelegate.m in Sources */,
+				AE3CBD6718F3615400BFA8F5 /* ScoresheetViewController.m in Sources */,
 				AE4C7EF518EC980F004B11DE /* main.m in Sources */,
 				AEC105B718EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */,
 				AEC105A218ECE040000AC266 /* RootViewController.m in Sources */,
@@ -546,8 +562,10 @@
 				AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */,
 				AEC105BE18EF233B000AC266 /* ScoresheetCollection.m in Sources */,
 				AE3CBD6318F3241F00BFA8F5 /* UserDefaultsCleaner.m in Sources */,
+				AE3CBD6818F3615400BFA8F5 /* ScoresheetViewController.m in Sources */,
 				AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */,
 				AE3CBD5818EF796900BFA8F5 /* Scoresheet.m in Sources */,
+				AE3CBD6C18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm in Sources */,
 				AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */,
 				AE3CBD5C18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm in Sources */,
 				AEC105A318ECE040000AC266 /* RootViewController.m in Sources */,

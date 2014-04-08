@@ -55,6 +55,11 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Scoresheet *scoresheet = self.data[indexPath.row];
+    [self.delegate didTapOnScoresheet:scoresheet];
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }

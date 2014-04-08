@@ -1,5 +1,6 @@
 #import "RootViewController.h"
 #import "CreateScoresheetViewController.h"
+#import "ScoresheetViewController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -33,8 +34,9 @@ describe(@"RootViewController", ^{
         describe(@"tapping the save button", ^{
             beforeEach(^{
                 CreateScoresheetViewController *createScoresheetViewController = (id)navController.topViewController;
+
+                createScoresheetViewController.nameTextField.text = @"My Special Scoresheet";
                 [createScoresheetViewController.saveButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-                
 
                 [rootViewController viewWillAppear:NO];
                 [rootViewController viewDidAppear:NO];
@@ -48,9 +50,26 @@ describe(@"RootViewController", ^{
                 [rootViewController.scoresheetTableView numberOfRowsInSection:0] should equal(1);
             });
 
+            describe(@"tapping on a scoresheet", ^{
+                beforeEach(^{
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                    [rootViewController.scoresheetTableView.delegate tableView:rootViewController.scoresheetTableView
+                                                       didSelectRowAtIndexPath:indexPath];
+                });
+
+                it(@"should display a scoresheet view controller", ^{
+                    navController.topViewController should be_instance_of([ScoresheetViewController class]);
+                });
+
+                it(@"should configure the scoresheet view controller correctly", ^{
+                    ScoresheetViewController *scoresheetViewController = (id)navController.topViewController;
+                    scoresheetViewController.view should_not be_nil;
+                    scoresheetViewController.nameLabel.text should equal(@"My Special Scoresheet");
+                });
+            });
+
             describe(@"when sliding row, and tapping delete", ^{
                 beforeEach(^{
-
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 
                     [rootViewController.scoresheetTableView.dataSource tableView:rootViewController.scoresheetTableView
@@ -61,14 +80,9 @@ describe(@"RootViewController", ^{
                 it(@"should delete the scoresheet", ^{
                     [rootViewController.scoresheetTableView numberOfRowsInSection:0] should equal(0);
                 });
-
-                
             });
         });
-        
     });
-
-
 });
 
 SPEC_END
