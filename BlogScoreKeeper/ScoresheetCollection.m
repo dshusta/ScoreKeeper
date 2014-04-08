@@ -48,6 +48,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     NSString *scoresheetName = [[self.data objectAtIndex:indexPath.row] name];
     [cell.textLabel setText:scoresheetName];
