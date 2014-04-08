@@ -4,7 +4,6 @@
 
 @interface ScoresheetViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *player1Label;
 @property (weak, nonatomic) IBOutlet UILabel *player2Label;
 @property (weak, nonatomic) IBOutlet UILabel *player3Label;

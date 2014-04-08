@@ -64,7 +64,7 @@ describe(@"RootViewController", ^{
                 it(@"should configure the scoresheet view controller correctly", ^{
                     ScoresheetViewController *scoresheetViewController = (id)navController.topViewController;
                     scoresheetViewController.view should_not be_nil;
-                    scoresheetViewController.nameLabel.text should equal(@"My Special Scoresheet");
+                    scoresheetViewController.title should equal(@"My Special Scoresheet");
                 });
             });
 

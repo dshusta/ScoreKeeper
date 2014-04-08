@@ -22,7 +22,7 @@ describe(@"ScoresheetViewController", ^{
     });
 
     it(@"should display the proper fields of the scoresheet", ^{
-        subject.nameLabel.text should equal(@"Special Scoresheet");
+        subject.title should equal(@"Special Scoresheet");
         subject.player1Label.text should equal(@"Michael Jordan");
         subject.player2Label.text should equal(@"Scottie Pippen");
         subject.player3Label.text should equal(@"Hakeem Olajuwon");

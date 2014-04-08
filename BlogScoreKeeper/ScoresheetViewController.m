@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
 
-    self.nameLabel.text = self.scoresheet.name;
+    self.title = self.scoresheet.name;
     self.player1Label.text = self.scoresheet.player1;
     self.player2Label.text = self.scoresheet.player2;
     self.player3Label.text = self.scoresheet.player3;
