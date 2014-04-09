@@ -1,5 +1,7 @@
 #import "ScoresheetViewController.h"
 #import "Scoresheet.h"
+#import "Player.h"
+#import "PlayerCell.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -10,24 +12,45 @@ describe(@"ScoresheetViewController", ^{
     __block ScoresheetViewController *subject;
 
     beforeEach(^{
-        Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:@"Special Scoresheet"];
-        scoresheet.player1 = @"Michael Jordan";
-        scoresheet.player2 = @"Scottie Pippen";
-        scoresheet.player3 = @"Hakeem Olajuwon";
-        scoresheet.player4 = @"Shaquille O'Neal";
-        scoresheet.player5 = @"Kobe Bryant";
+        NSMutableArray *players = [[NSMutableArray alloc]init];
+        [players addObject:[[Player alloc] initWithName:@"Michael Jordan"]];
+        [players addObject:[[Player alloc] initWithName:@"Scottie Pippen"]];
+        [players addObject:[[Player alloc] initWithName:@"Hakeem Olajuwon"]];
+        [players addObject:[[Player alloc] initWithName:@"Shaquille O'Neal"]];
+        [players addObject:[[Player alloc] initWithName:@"Kobe Bryant"]];
+        [players addObject:[[Player alloc] initWithName:@"LeBron James"]];
 
+        Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:@"Special Scoresheet" players:players];
         subject = [[ScoresheetViewController alloc] initWithScoresheet:scoresheet];
         subject.view should_not be_nil;
     });
 
-    it(@"should display the proper fields of the scoresheet", ^{
+    it(@"should display the scoresheet name", ^{
         subject.title should equal(@"Special Scoresheet");
-        subject.player1Label.text should equal(@"Michael Jordan");
-        subject.player2Label.text should equal(@"Scottie Pippen");
-        subject.player3Label.text should equal(@"Hakeem Olajuwon");
-        subject.player4Label.text should equal(@"Shaquille O'Neal");
-        subject.player5Label.text should equal(@"Kobe Bryant");
+    });
+
+    it(@"should display a row for each player", ^{
+        [subject.tableView numberOfRowsInSection:0] should equal(6);
+
+        PlayerCell *cell;
+
+        cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        cell.playerNameLabel.text should equal(@"Michael Jordan");
+
+        cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+        cell.playerNameLabel.text should equal(@"Scottie Pippen");
+
+        cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+        cell.playerNameLabel.text  should equal(@"Hakeem Olajuwon");
+
+        cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+        cell.playerNameLabel.text should equal(@"Shaquille O'Neal");
+
+        cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
+        cell.playerNameLabel.text should equal(@"Kobe Bryant");
+
+        cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
+        cell.playerNameLabel.text should equal(@"LeBron James");
     });
 });
 

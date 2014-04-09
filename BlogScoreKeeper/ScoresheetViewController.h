@@ -2,14 +2,12 @@
 
 @class Scoresheet;
 
-@interface ScoresheetViewController : UIViewController
+@interface ScoresheetViewController : UIViewController <UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UILabel *player1Label;
-@property (weak, nonatomic) IBOutlet UILabel *player2Label;
-@property (weak, nonatomic) IBOutlet UILabel *player3Label;
-@property (weak, nonatomic) IBOutlet UILabel *player4Label;
-@property (weak, nonatomic) IBOutlet UILabel *player5Label;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
--(ScoresheetViewController *)initWithScoresheet:(Scoresheet *)scoresheet;
+- (ScoresheetViewController *)initWithScoresheet:(Scoresheet *)scoresheet;
+
+
 
 @end

@@ -1,9 +1,11 @@
 #import "Scoresheet.h"
+#import "Player.h"
 
 
 @interface Scoresheet ()
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSArray *players;
 
 @end
 
@@ -12,31 +14,36 @@
 @implementation Scoresheet
 
 + (Scoresheet *)deserialize:(NSDictionary *)dictionary {
-    Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:dictionary[@"name"]];
-    scoresheet.player1 = dictionary[@"player1"];
-    scoresheet.player5 = dictionary[@"player5"];
-    scoresheet.player3 = dictionary[@"player3"];
-    scoresheet.player4 = dictionary[@"player4"];
-    scoresheet.player2 = dictionary[@"player2"];
+
+    NSArray *playerArray = dictionary[@"players"];
+    NSMutableArray *players = [[NSMutableArray alloc] init];
+    for (NSDictionary *player in playerArray) {
+        Player *p = [Player deserialize:player];
+        [players addObject:p];
+    }
+
+    Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:dictionary[@"name"] players:players] ;
     return scoresheet;
 }
 
-- (Scoresheet *)initWithName:(NSString *)name {
+- (Scoresheet *)initWithName:(NSString *)name players:(NSMutableArray *)players {
     self = [self init];
     if (self) {
         self.name = name;
+        self.players = players;
     }
     return self;
 }
 
 - (NSDictionary *)serialize {
+    NSMutableArray *playerArray = [[NSMutableArray alloc] init];
+    for (Player *player in self.players) {
+        [playerArray addObject:[player serialize]];
+    }
+
     return  @{
               @"name": self.name,
-              @"player1": self.player1,
-              @"player3": self.player3,
-              @"player2": self.player2,
-              @"player5": self.player5,
-              @"player4": self.player4
+              @"players": playerArray
               };
 }
 

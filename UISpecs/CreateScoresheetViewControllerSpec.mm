@@ -1,7 +1,7 @@
 #import "CreateScoresheetViewController.h"
 #import "ScoresheetCollection.h"
 #import "Scoresheet.h"
-
+#import "Player.h"
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
@@ -39,12 +39,13 @@ describe(@"CreateScoresheetViewController", ^{
         it(@"should save a scoresheet with the given name", ^{
             Scoresheet *scoresheet = [collection.scoresheets lastObject];
             scoresheet.name should equal(@"My Special Name");
-            scoresheet.player1 should equal(@"Scooby Doo");
-            scoresheet.player2 should equal(@"Shaggy");
-            scoresheet.player3 should equal(@"Daphne");
-            scoresheet.player4 should equal(@"Velma");
-            scoresheet.player5 should equal(@"Fred");
+            [scoresheet.players[0] name] should equal(@"Scooby Doo");
+            [scoresheet.players[1] name] should equal(@"Shaggy");
+            [scoresheet.players[2] name] should equal(@"Daphne");
+            [scoresheet.players[3] name] should equal(@"Velma");
+            [scoresheet.players[4] name] should equal(@"Fred");
         });
+
 
 
         it(@"should pop itself off the navigation stack", ^{

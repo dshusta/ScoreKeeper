@@ -17,6 +17,12 @@
 		AE3CBD6918F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */; };
 		AE3CBD6A18F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */; };
 		AE3CBD6C18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */; };
+		AE3CBD6F18F4749800BFA8F5 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6E18F4749800BFA8F5 /* Player.m */; };
+		AE3CBD7018F4749800BFA8F5 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6E18F4749800BFA8F5 /* Player.m */; };
+		AE3CBD7E18F4A16D00BFA8F5 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD7D18F4A16D00BFA8F5 /* PlayerCell.m */; };
+		AE3CBD7F18F4A16D00BFA8F5 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD7D18F4A16D00BFA8F5 /* PlayerCell.m */; };
+		AE3CBD8118F4A18800BFA8F5 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */; };
+		AE3CBD8218F4A18800BFA8F5 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */; };
 		AE4C7EE918EC980F004B11DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EE818EC980F004B11DE /* Foundation.framework */; };
 		AE4C7EEB18EC980F004B11DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */; };
 		AE4C7EED18EC980F004B11DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEC18EC980F004B11DE /* UIKit.framework */; };
@@ -146,6 +152,11 @@
 		AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresheetViewController.m; sourceTree = "<group>"; };
 		AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoresheetViewController.xib; sourceTree = "<group>"; };
 		AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScoresheetViewControllerSpec.mm; sourceTree = "<group>"; };
+		AE3CBD6D18F4749800BFA8F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		AE3CBD6E18F4749800BFA8F5 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		AE3CBD7C18F4A16D00BFA8F5 /* PlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
+		AE3CBD7D18F4A16D00BFA8F5 /* PlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCell.m; sourceTree = "<group>"; };
+		AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
 		AE4C7EE518EC980F004B11DE /* BlogScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4C7EE818EC980F004B11DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -253,6 +264,11 @@
 				AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */,
 				AEC105B618EE0E2D000AC266 /* CreateScoresheetViewController.xib */,
 				AE4C7EFA18EC980F004B11DE /* Images.xcassets */,
+				AE3CBD6D18F4749800BFA8F5 /* Player.h */,
+				AE3CBD6E18F4749800BFA8F5 /* Player.m */,
+				AE3CBD7C18F4A16D00BFA8F5 /* PlayerCell.h */,
+				AE3CBD7D18F4A16D00BFA8F5 /* PlayerCell.m */,
+				AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */,
 				AEC1059F18ECE040000AC266 /* RootViewController.h */,
 				AEC105A018ECE040000AC266 /* RootViewController.m */,
 				AEC105A118ECE040000AC266 /* RootViewController.xib */,
@@ -286,10 +302,10 @@
 				AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */,
 				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
 				AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */,
+				AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */,
 				AEC8550618ECB03800F7FB11 /* Supporting Files */,
 				AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */,
 				AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */,
-				AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */,
 			);
 			path = UISpecs;
 			sourceTree = "<group>";
@@ -503,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3CBD8118F4A18800BFA8F5 /* PlayerCell.xib in Resources */,
 				AE4C7EF318EC980F004B11DE /* InfoPlist.strings in Resources */,
 				AE4C7EFB18EC980F004B11DE /* Images.xcassets in Resources */,
 				AE3CBD6918F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */,
@@ -525,6 +542,7 @@
 				AEC105A518ECE040000AC266 /* RootViewController.xib in Resources */,
 				AE3CBD6A18F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */,
 				AEC8550A18ECB03800F7FB11 /* InfoPlist.strings in Resources */,
+				AE3CBD8218F4A18800BFA8F5 /* PlayerCell.xib in Resources */,
 				AEC105BA18EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +554,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3CBD6F18F4749800BFA8F5 /* Player.m in Sources */,
+				AE3CBD7E18F4A16D00BFA8F5 /* PlayerCell.m in Sources */,
 				AE4C7EF918EC980F004B11DE /* AppDelegate.m in Sources */,
 				AE3CBD6718F3615400BFA8F5 /* ScoresheetViewController.m in Sources */,
 				AE4C7EF518EC980F004B11DE /* main.m in Sources */,
@@ -569,6 +589,8 @@
 				AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */,
 				AE3CBD5C18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm in Sources */,
 				AEC105A318ECE040000AC266 /* RootViewController.m in Sources */,
+				AE3CBD7018F4749800BFA8F5 /* Player.m in Sources */,
+				AE3CBD7F18F4A16D00BFA8F5 /* PlayerCell.m in Sources */,
 				AEC105A618ECE061000AC266 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +657,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -668,6 +691,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

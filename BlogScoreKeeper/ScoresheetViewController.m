@@ -1,5 +1,7 @@
 #import "ScoresheetViewController.h"
 #import "Scoresheet.h"
+#import "Player.h"
+#import "PlayerCell.h"
 
 @interface ScoresheetViewController ()
 
@@ -23,11 +25,22 @@
     [super viewDidLoad];
 
     self.title = self.scoresheet.name;
-    self.player1Label.text = self.scoresheet.player1;
-    self.player2Label.text = self.scoresheet.player2;
-    self.player3Label.text = self.scoresheet.player3;
-    self.player4Label.text = self.scoresheet.player4;
-    self.player5Label.text = self.scoresheet.player5;
+
+    UINib *playerCellNib = [UINib nibWithNibName:@"PlayerCell" bundle:nil];
+    [self.tableView registerNib:playerCellNib forCellReuseIdentifier:@"PlayerCell"];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.scoresheet.players count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"];
+
+    Player *player = self.scoresheet.players[indexPath.row];
+    cell.playerNameLabel.text = player.name;
+
+    return cell;
 }
 
 @end

@@ -1,5 +1,6 @@
 #import "ScoresheetCollection.h"
 #import "Scoresheet.h"
+#import "Player.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -15,13 +16,16 @@ describe(@"ScoresheetCollection", ^{
 
     describe(@"persisting scoresheets", ^{
         beforeEach(^{
-            Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:@"My Special Scoresheet"];
-            scoresheet.player1 = @"Scooby Dooby DOO";
-            scoresheet.player2 = @"Daphne";
-            scoresheet.player3 = @"Velma";
-            scoresheet.player4 = @"Fred";
-            scoresheet.player5 = @"Shaggy";
 
+            NSMutableArray *players = [[NSMutableArray alloc] init];
+            [players addObject:[[Player alloc] initWithName:@"Scooby Dooby DOO"]];
+            [players addObject:[[Player alloc] initWithName:@"Daphne"]];
+            [players addObject:[[Player alloc] initWithName:@"Velma"]];
+            [players addObject:[[Player alloc] initWithName:@"Fred"]];
+            [players addObject:[[Player alloc] initWithName:@"Shaggy"]];
+
+
+            Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:@"My Special Scoresheet" players:players];
             [subject addScoresheet:scoresheet];
         });
 
@@ -40,11 +44,13 @@ describe(@"ScoresheetCollection", ^{
 
         it(@"should persist players", ^{
             ScoresheetCollection *newCollection = [[ScoresheetCollection alloc] init];
-            [[newCollection.scoresheets lastObject] player1] should equal(@"Scooby Dooby DOO");
-            [[newCollection.scoresheets lastObject] player2] should equal(@"Daphne");
-            [[newCollection.scoresheets lastObject] player3] should equal(@"Velma");
-            [[newCollection.scoresheets lastObject] player5] should equal(@"Shaggy");
-            [[newCollection.scoresheets lastObject] player4] should equal(@"Fred");
+            Scoresheet *scoresheet = [newCollection.scoresheets lastObject];
+
+            [scoresheet.players[0] name] should equal(@"Scooby Dooby DOO");
+            [scoresheet.players[1] name] should equal(@"Daphne");
+            [scoresheet.players[2] name] should equal(@"Velma");
+            [scoresheet.players[3] name] should equal(@"Fred");
+            [scoresheet.players[4] name] should equal(@"Shaggy");
         });
     });
 });
