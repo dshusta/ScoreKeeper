@@ -3,6 +3,7 @@
 #import "ScoresheetViewController.h"
 #import "Scoresheet.h"
 #import "Player.h"
+#import "UIKit+PivotalSpecHelper.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -25,7 +26,7 @@ describe(@"RootViewController", ^{
 
     describe(@"after Create New Scoresheet is tapped", ^{
         beforeEach(^{
-            [rootViewController.createNewScoresheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [rootViewController.navigationItem.rightBarButtonItem tap];
             [navController.topViewController view] should_not be_nil;
         });
 
@@ -38,7 +39,7 @@ describe(@"RootViewController", ^{
                 CreateScoresheetViewController *createScoresheetViewController = (id)navController.topViewController;
 
                 createScoresheetViewController.nameTextField.text = @"My Special Scoresheet";
-                [createScoresheetViewController.saveButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+                [createScoresheetViewController.saveButton tap];
 
                 [rootViewController viewWillAppear:NO];
                 [rootViewController viewDidAppear:NO];
@@ -55,8 +56,8 @@ describe(@"RootViewController", ^{
             describe(@"tapping on a scoresheet", ^{
                 beforeEach(^{
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-                    [rootViewController.scoresheetTableView.delegate tableView:rootViewController.scoresheetTableView
-                                                       didSelectRowAtIndexPath:indexPath];
+                    UITableViewCell *cell = [rootViewController.scoresheetTableView cellForRowAtIndexPath:indexPath];
+                    [cell tap];
                 });
 
                 it(@"should display a scoresheet view controller", ^{
@@ -75,11 +76,10 @@ describe(@"RootViewController", ^{
                     [scoresheetViewController.tableView layoutIfNeeded];
 
                     NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
-
-                    PlayerCell *cell = (PlayerCell*)[scoresheetViewController.tableView cellForRowAtIndexPath:index];
+                    PlayerCell *cell = (PlayerCell *)[scoresheetViewController.tableView cellForRowAtIndexPath:index];
                     cell.scoreTextField.text = @"2";
 
-                    [cell.plusButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+                    [cell.plusButton tap];
 
                     ScoresheetCollection *otherCollection = [[ScoresheetCollection alloc]init];
                     Scoresheet *scoresheet = otherCollection.scoresheets[0];

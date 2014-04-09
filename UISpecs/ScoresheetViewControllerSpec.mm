@@ -3,6 +3,7 @@
 #import "Player.h"
 #import "PlayerCell.h"
 #import "ScoresheetCollection.h"
+#import "UIKit+PivotalSpecHelper.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -94,7 +95,7 @@ describe(@"ScoresheetViewController", ^{
             PlayerCell *cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
 
             cell.scoreTextField.text = @"3";
-            [cell.plusButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [cell.plusButton tap];
         });
 
         it(@"should update the cell", ^{
@@ -114,7 +115,7 @@ describe(@"ScoresheetViewController", ^{
             PlayerCell *cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
 
             cell.scoreTextField.text = @"3";
-            [cell.minusButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [cell.minusButton tap];
         });
 
         it(@"should update total score label", ^{

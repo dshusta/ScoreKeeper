@@ -2,6 +2,8 @@
 #import "ScoresheetCollection.h"
 #import "Scoresheet.h"
 #import "Player.h"
+#import "UIKit+PivotalSpecHelper.h"
+
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
@@ -33,7 +35,7 @@ describe(@"CreateScoresheetViewController", ^{
             controller.player4TextField.text = @"Velma";
             controller.player5TextField.text = @"Fred";
 
-            [controller.saveButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [controller.saveButton tap];
         });
         
         it(@"should save a scoresheet with the given name", ^{

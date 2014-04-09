@@ -1,11 +1,3 @@
-//
-//  CreateScoreSheetViewController.m
-//  BlogScoreKeeper
-//
-//  Created by pivotal on 4/3/14.
-//  Copyright (c) 2014 PivotalBeach. All rights reserved.
-//
-
 #import "CreateScoresheetViewController.h"
 #import "ScoresheetCollection.h"
 #import "Scoresheet.h"
@@ -23,6 +15,11 @@
         self.scoresheetCollection = scoresheetCollection;
     }
     return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"New Scoresheet";
 }
 
 - (IBAction)touchUpSaveButton:(id)sender {

@@ -28,7 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    self.title = @"All Scoresheets";
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                           target:self
+                                                                                           action:@selector(touchUpCreateNewScoresheet:)];
+
     self.scoresheetTableView.delegate = self.scoresheetCollection;
     self.scoresheetTableView.dataSource = self.scoresheetCollection;
 }
@@ -38,7 +44,7 @@
     [self.scoresheetTableView reloadData];
 }
 
-- (IBAction)touchUpCreateNewScoresheet:(id)sender {
+- (void)touchUpCreateNewScoresheet:(id)sender {
     CreateScoresheetViewController* createScoresheetViewController = [[CreateScoresheetViewController alloc] initWithScoresheetCollection:self.scoresheetCollection];
     [self.navigationController pushViewController:createScoresheetViewController animated:YES];
 }
