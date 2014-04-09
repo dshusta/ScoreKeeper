@@ -1,7 +1,6 @@
 #import "ScoresheetViewController.h"
 #import "Scoresheet.h"
 #import "Player.h"
-#import "PlayerCell.h"
 
 @interface ScoresheetViewController ()
 
@@ -39,8 +38,30 @@
 
     Player *player = self.scoresheet.players[indexPath.row];
     cell.playerNameLabel.text = player.name;
+    cell.totalScoreLabel.text = [NSString stringWithFormat:@"%ld", (long)player.score];
+
+    cell.delegate = self;
+    cell.index = indexPath.row;
 
     return cell;
+}
+
+- (void)playerCellDidTapPlusButton:(PlayerCell *)playerCell {
+    NSInteger diff = [playerCell.scoreTextField.text integerValue];
+
+    Player *player = self.scoresheet.players[playerCell.index];
+    player.score += diff;
+
+    [self.tableView reloadData];
+}
+
+- (void)playerCellDidTapMinusButton:(PlayerCell *)playerCell {
+    NSInteger diff = [playerCell.scoreTextField.text integerValue];
+
+    Player *player = self.scoresheet.players[playerCell.index];
+    player.score -= diff;
+
+    [self.tableView reloadData];
 }
 
 @end

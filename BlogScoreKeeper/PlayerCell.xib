@@ -21,16 +21,16 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CSN-ts-eQi">
-                        <rect key="frame" x="20" y="48" width="20" height="21"/>
+                        <rect key="frame" x="20" y="48" width="134" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="02" borderStyle="roundedRect" minimumFontSize="17" id="BLh-ZR-8Hz">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" minimumFontSize="17" id="BLh-ZR-8Hz">
                         <rect key="frame" x="162" y="44" width="41" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GMg-iz-HsQ">
                         <rect key="frame" x="216" y="43" width="30" height="30"/>
@@ -38,6 +38,9 @@
                         <state key="normal" title="+">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="plusButtonTapped:" destination="wP6-HR-E5Y" eventType="touchUpInside" id="YbI-RO-sQU"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pHX-Fi-iqV">
                         <rect key="frame" x="270" y="43" width="30" height="30"/>
@@ -45,6 +48,9 @@
                         <state key="normal" title="-">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="minusButtonTapped:" destination="wP6-HR-E5Y" eventType="touchUpInside" id="nPI-2t-oJG"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
