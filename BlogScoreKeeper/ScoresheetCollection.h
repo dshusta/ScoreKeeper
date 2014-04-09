@@ -18,6 +18,8 @@
 
 - (void)addScoresheet:(Scoresheet *)scoresheet;
 
+- (void)saveToUserDefaults;
+
 - (NSInteger)count;
 
 @end

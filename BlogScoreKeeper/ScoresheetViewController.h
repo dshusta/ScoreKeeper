@@ -2,11 +2,13 @@
 #import "PlayerCell.h"
 
 @class Scoresheet;
+@class ScoresheetCollection;
 
 @interface ScoresheetViewController : UIViewController <UITableViewDataSource, PlayerCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-- (ScoresheetViewController *)initWithScoresheet:(Scoresheet *)scoresheet;
+- (instancetype)initWithScoreSheetCollection:(ScoresheetCollection *)scoresheetCollection
+                                  scoresheet:(Scoresheet *)scoresheet;
 
 @end

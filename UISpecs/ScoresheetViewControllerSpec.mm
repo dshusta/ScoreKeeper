@@ -2,6 +2,7 @@
 #import "Scoresheet.h"
 #import "Player.h"
 #import "PlayerCell.h"
+#import "ScoresheetCollection.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -10,6 +11,7 @@ SPEC_BEGIN(ScoresheetViewControllerSpec)
 
 describe(@"ScoresheetViewController", ^{
     __block ScoresheetViewController *subject;
+    __block ScoresheetCollection *scoresheetCollection;
 
     beforeEach(^{
         NSMutableArray *players = [[NSMutableArray alloc]init];
@@ -25,8 +27,11 @@ describe(@"ScoresheetViewController", ^{
         [players[3] setScore:12];
         [players[4] setScore:-5];
 
+        scoresheetCollection = nice_fake_for([ScoresheetCollection class]);
+
         Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:@"Special Scoresheet" players:players];
-        subject = [[ScoresheetViewController alloc] initWithScoresheet:scoresheet];
+        subject = [[ScoresheetViewController alloc] initWithScoreSheetCollection:scoresheetCollection
+                                                                      scoresheet:scoresheet];
         subject.view should_not be_nil;
     });
 
@@ -82,28 +87,44 @@ describe(@"ScoresheetViewController", ^{
         cell.totalScoreLabel.text should equal(@"0");
     });
 
-    it(@"should add points to a player", ^{
-        [subject.tableView layoutIfNeeded];
+    describe(@"adding points to a player", ^{
+        beforeEach(^{
+            [subject.tableView layoutIfNeeded];
 
-        PlayerCell *cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+            PlayerCell *cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
 
-        cell.scoreTextField.text = @"3";
-        [cell.plusButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            cell.scoreTextField.text = @"3";
+            [cell.plusButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+        });
 
-        cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
-        cell.totalScoreLabel.text should equal(@"7");
+        it(@"should update the cell", ^{
+            PlayerCell *cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+            cell.totalScoreLabel.text should equal(@"7");
+        });
+
+        it(@"should save the scoresheet", ^{
+            scoresheetCollection should have_received(@selector(saveToUserDefaults));
+        });
     });
 
-    it(@"should subtract points from a player", ^{
-        [subject.tableView layoutIfNeeded];
+    describe(@"subtracting points from player", ^{
+        beforeEach(^{
+            [subject.tableView layoutIfNeeded];
 
-        PlayerCell *cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+            PlayerCell *cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
 
-        cell.scoreTextField.text = @"3";
-        [cell.minusButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            cell.scoreTextField.text = @"3";
+            [cell.minusButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+        });
 
-        cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
-        cell.totalScoreLabel.text should equal(@"1");
+        it(@"should update total score label", ^{
+            PlayerCell *cell = (id)[subject.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+            cell.totalScoreLabel.text should equal(@"1");
+        });
+
+        it(@"should save the scoresheet", ^{
+            scoresheetCollection should have_received(@selector(saveToUserDefaults));
+        });
     });
 });
 

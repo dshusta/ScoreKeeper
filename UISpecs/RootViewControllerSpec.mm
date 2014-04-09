@@ -1,6 +1,8 @@
 #import "RootViewController.h"
 #import "CreateScoresheetViewController.h"
 #import "ScoresheetViewController.h"
+#import "Scoresheet.h"
+#import "Player.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -16,21 +18,21 @@ describe(@"RootViewController", ^{
         rootViewController.view should_not be_nil;
 
         navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-        
+
         [rootViewController viewWillAppear:NO];
         [rootViewController viewDidAppear:NO];
     });
-    
+
     describe(@"after Create New Scoresheet is tapped", ^{
         beforeEach(^{
             [rootViewController.createNewScoresheetButton sendActionsForControlEvents:UIControlEventTouchUpInside];
             [navController.topViewController view] should_not be_nil;
         });
-        
+
         it(@"should display the create new scoresheet controller", ^{
             navController.topViewController should be_instance_of([CreateScoresheetViewController class]);
         });
-        
+
         describe(@"tapping the save button", ^{
             beforeEach(^{
                 CreateScoresheetViewController *createScoresheetViewController = (id)navController.topViewController;
@@ -41,11 +43,11 @@ describe(@"RootViewController", ^{
                 [rootViewController viewWillAppear:NO];
                 [rootViewController viewDidAppear:NO];
             });
-            
+
             it(@"should go back to the root view controller", ^{
                 navController.topViewController should be_same_instance_as(rootViewController);
             });
-            
+
             it(@"should display the new item", ^{
                 [rootViewController.scoresheetTableView numberOfRowsInSection:0] should equal(1);
             });
@@ -65,6 +67,24 @@ describe(@"RootViewController", ^{
                     ScoresheetViewController *scoresheetViewController = (id)navController.topViewController;
                     scoresheetViewController.view should_not be_nil;
                     scoresheetViewController.title should equal(@"My Special Scoresheet");
+                });
+
+                it(@"should persist total score data", ^{
+                    ScoresheetViewController *scoresheetViewController = (id)navController.topViewController;
+                    scoresheetViewController.view should_not be_nil;
+                    [scoresheetViewController.tableView layoutIfNeeded];
+
+                    NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
+
+                    PlayerCell *cell = (PlayerCell*)[scoresheetViewController.tableView cellForRowAtIndexPath:index];
+                    cell.scoreTextField.text = @"2";
+
+                    [cell.plusButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+                    ScoresheetCollection *otherCollection = [[ScoresheetCollection alloc]init];
+                    Scoresheet *scoresheet = otherCollection.scoresheets[0];
+                    Player *player = scoresheet.players[0];
+                    player.score should equal(2);
                 });
             });
 

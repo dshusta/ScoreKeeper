@@ -22,7 +22,7 @@
 }
 
 - (void)didTapOnScoresheet:(Scoresheet *)scoresheet {
-    ScoresheetViewController *scoresheetViewController = [[ScoresheetViewController alloc] initWithScoresheet:scoresheet];
+    ScoresheetViewController *scoresheetViewController = [[ScoresheetViewController alloc] initWithScoreSheetCollection:self.scoresheetCollection scoresheet:scoresheet];
     [self.navigationController pushViewController:scoresheetViewController animated:YES];
 }
 

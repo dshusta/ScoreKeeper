@@ -1,20 +1,23 @@
 #import "ScoresheetViewController.h"
 #import "Scoresheet.h"
 #import "Player.h"
+#import "ScoresheetCollection.h"
 
 @interface ScoresheetViewController ()
 
 @property (nonatomic) Scoresheet *scoresheet;
+@property (nonatomic) ScoresheetCollection *scoresheetCollection;
 
 @end
 
 
 @implementation ScoresheetViewController
 
-- (id)initWithScoresheet:(Scoresheet *)scoresheet {
+- (instancetype)initWithScoreSheetCollection:(ScoresheetCollection *)scoresheetCollection scoresheet:(Scoresheet *)scoresheet {
     self = [super init];
     if (self) {
         self.scoresheet = scoresheet;
+        self.scoresheetCollection = scoresheetCollection;
     }
     return self;
 }
@@ -51,7 +54,7 @@
 
     Player *player = self.scoresheet.players[playerCell.index];
     player.score += diff;
-
+    [self.scoresheetCollection saveToUserDefaults];
     [self.tableView reloadData];
 }
 
@@ -60,7 +63,7 @@
 
     Player *player = self.scoresheet.players[playerCell.index];
     player.score -= diff;
-
+    [self.scoresheetCollection saveToUserDefaults];
     [self.tableView reloadData];
 }
 
