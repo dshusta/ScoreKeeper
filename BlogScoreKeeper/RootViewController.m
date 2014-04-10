@@ -2,6 +2,7 @@
 #import "CreateScoresheetViewController.h"
 #import "ScoresheetCollection.h"
 #import "ScoresheetViewController.h"
+#import "PersonsAverageViewController.h"
 
 @interface RootViewController () <ScoresheetCollectionDelegate>
 
@@ -37,8 +38,8 @@
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"glyphicons_041_charts"]
                                                                              style:UIBarButtonItemStylePlain
-                                                                            target:nil
-                                                                            action:nil];
+                                                                            target:self
+                                                                            action:@selector(touchUpPersonsAverage:)];
 
     self.tableView.delegate = self.scoresheetCollection;
     self.tableView.dataSource = self.scoresheetCollection;
@@ -47,6 +48,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+}
+
+- (void)touchUpPersonsAverage:(id)sender {
+    PersonsAverageViewController* personsAverageViewController = [[PersonsAverageViewController alloc] initWithScoresheetCollection:nil];
+    [self.navigationController pushViewController:personsAverageViewController animated:YES];
 }
 
 - (void)touchUpCreateNewScoresheet:(id)sender {
