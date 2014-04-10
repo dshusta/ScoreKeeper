@@ -35,13 +35,18 @@
                                                                                            target:self
                                                                                            action:@selector(touchUpCreateNewScoresheet:)];
 
-    self.scoresheetTableView.delegate = self.scoresheetCollection;
-    self.scoresheetTableView.dataSource = self.scoresheetCollection;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"glyphicons_041_charts"]
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
+
+    self.tableView.delegate = self.scoresheetCollection;
+    self.tableView.dataSource = self.scoresheetCollection;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.scoresheetTableView reloadData];
+    [self.tableView reloadData];
 }
 
 - (void)touchUpCreateNewScoresheet:(id)sender {

@@ -4,9 +4,7 @@
 @class Scoresheet;
 @class ScoresheetCollection;
 
-@interface ScoresheetViewController : UIViewController <UITableViewDataSource, PlayerCellDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface ScoresheetViewController : UITableViewController <PlayerCellDelegate>
 
 - (instancetype)initWithScoreSheetCollection:(ScoresheetCollection *)scoresheetCollection
                                   scoresheet:(Scoresheet *)scoresheet;

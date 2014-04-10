@@ -50,13 +50,13 @@ describe(@"RootViewController", ^{
             });
 
             it(@"should display the new item", ^{
-                [rootViewController.scoresheetTableView numberOfRowsInSection:0] should equal(1);
+                [rootViewController.tableView numberOfRowsInSection:0] should equal(1);
             });
 
             describe(@"tapping on a scoresheet", ^{
                 beforeEach(^{
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-                    UITableViewCell *cell = [rootViewController.scoresheetTableView cellForRowAtIndexPath:indexPath];
+                    UITableViewCell *cell = [rootViewController.tableView cellForRowAtIndexPath:indexPath];
                     [cell tap];
                 });
 
@@ -92,13 +92,13 @@ describe(@"RootViewController", ^{
                 beforeEach(^{
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 
-                    [rootViewController.scoresheetTableView.dataSource tableView:rootViewController.scoresheetTableView
-                                                              commitEditingStyle:UITableViewCellEditingStyleDelete
-                                                               forRowAtIndexPath:indexPath];
+                    [rootViewController.tableView.dataSource tableView:rootViewController.tableView
+                                                    commitEditingStyle:UITableViewCellEditingStyleDelete
+                                                     forRowAtIndexPath:indexPath];
                 });
 
                 it(@"should delete the scoresheet", ^{
-                    [rootViewController.scoresheetTableView numberOfRowsInSection:0] should equal(0);
+                    [rootViewController.tableView numberOfRowsInSection:0] should equal(0);
                 });
             });
         });

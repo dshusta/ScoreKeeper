@@ -14,8 +14,6 @@
 		AE3CBD6318F3241F00BFA8F5 /* UserDefaultsCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */; };
 		AE3CBD6718F3615400BFA8F5 /* ScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */; };
 		AE3CBD6818F3615400BFA8F5 /* ScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */; };
-		AE3CBD6918F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */; };
-		AE3CBD6A18F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */; };
 		AE3CBD6C18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */; };
 		AE3CBD6F18F4749800BFA8F5 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6E18F4749800BFA8F5 /* Player.m */; };
 		AE3CBD7018F4749800BFA8F5 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6E18F4749800BFA8F5 /* Player.m */; };
@@ -33,11 +31,13 @@
 		AE79ECD318F602FD00604269 /* libUIKit+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79ECC418F602E300604269 /* libUIKit+PivotalCore-StaticLib.a */; };
 		AE79ECD418F602FD00604269 /* libUIKit+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79ECC618F602E300604269 /* libUIKit+PivotalSpecHelper-StaticLib.a */; };
 		AE79ECD518F602FD00604269 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79ECC818F602E300604269 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */; };
+		AE79ECD718F6184600604269 /* glyphicons_041_charts.png in Resources */ = {isa = PBXBuildFile; fileRef = AE79ECD618F6184600604269 /* glyphicons_041_charts.png */; };
+		AE79ECD818F6184600604269 /* glyphicons_041_charts.png in Resources */ = {isa = PBXBuildFile; fileRef = AE79ECD618F6184600604269 /* glyphicons_041_charts.png */; };
+		AE79ECDB18F61A1400604269 /* PersonsAverageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */; };
+		AE79ECDC18F61A1400604269 /* PersonsAverageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */; };
 		AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */; };
 		AEC105A218ECE040000AC266 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105A018ECE040000AC266 /* RootViewController.m */; };
 		AEC105A318ECE040000AC266 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105A018ECE040000AC266 /* RootViewController.m */; };
-		AEC105A418ECE040000AC266 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105A118ECE040000AC266 /* RootViewController.xib */; };
-		AEC105A518ECE040000AC266 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105A118ECE040000AC266 /* RootViewController.xib */; };
 		AEC105A618ECE061000AC266 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C7EF818EC980F004B11DE /* AppDelegate.m */; };
 		AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */; };
 		AEC105B718EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */; };
@@ -199,7 +199,6 @@
 		AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsCleaner.m; sourceTree = "<group>"; };
 		AE3CBD6418F3615400BFA8F5 /* ScoresheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresheetViewController.h; sourceTree = "<group>"; };
 		AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresheetViewController.m; sourceTree = "<group>"; };
-		AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoresheetViewController.xib; sourceTree = "<group>"; };
 		AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScoresheetViewControllerSpec.mm; sourceTree = "<group>"; };
 		AE3CBD6D18F4749800BFA8F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		AE3CBD6E18F4749800BFA8F5 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
@@ -219,10 +218,12 @@
 		AE4C7EFA18EC980F004B11DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AE4C7F0118EC980F004B11DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AE79ECB818F602E300604269 /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = Externals/PivotalCoreKit/UIKit/UIKit.xcodeproj; sourceTree = "<group>"; };
+		AE79ECD618F6184600604269 /* glyphicons_041_charts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_041_charts.png; sourceTree = "<group>"; };
+		AE79ECD918F61A1400604269 /* PersonsAverageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsAverageViewController.h; sourceTree = "<group>"; };
+		AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsAverageViewController.m; sourceTree = "<group>"; };
 		AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateSpec.mm; sourceTree = "<group>"; };
 		AEC1059F18ECE040000AC266 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AEC105A018ECE040000AC266 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		AEC105A118ECE040000AC266 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewControllerSpec.mm; sourceTree = "<group>"; };
 		AEC105B418EE0E2D000AC266 /* CreateScoresheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateScoresheetViewController.h; sourceTree = "<group>"; };
 		AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateScoresheetViewController.m; sourceTree = "<group>"; };
@@ -304,7 +305,10 @@
 				AEC105B418EE0E2D000AC266 /* CreateScoresheetViewController.h */,
 				AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */,
 				AEC105B618EE0E2D000AC266 /* CreateScoresheetViewController.xib */,
+				AE79ECD618F6184600604269 /* glyphicons_041_charts.png */,
 				AE4C7EFA18EC980F004B11DE /* Images.xcassets */,
+				AE79ECD918F61A1400604269 /* PersonsAverageViewController.h */,
+				AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */,
 				AE3CBD6D18F4749800BFA8F5 /* Player.h */,
 				AE3CBD6E18F4749800BFA8F5 /* Player.m */,
 				AE3CBD7C18F4A16D00BFA8F5 /* PlayerCell.h */,
@@ -312,14 +316,12 @@
 				AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */,
 				AEC1059F18ECE040000AC266 /* RootViewController.h */,
 				AEC105A018ECE040000AC266 /* RootViewController.m */,
-				AEC105A118ECE040000AC266 /* RootViewController.xib */,
 				AE3CBD5518EF796900BFA8F5 /* Scoresheet.h */,
 				AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */,
 				AEC105BB18EF233B000AC266 /* ScoresheetCollection.h */,
 				AEC105BC18EF233B000AC266 /* ScoresheetCollection.m */,
 				AE3CBD6418F3615400BFA8F5 /* ScoresheetViewController.h */,
 				AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */,
-				AE3CBD6618F3615400BFA8F5 /* ScoresheetViewController.xib */,
 				AE4C7EEF18EC980F004B11DE /* Supporting Files */,
 			);
 			path = BlogScoreKeeper;
@@ -594,9 +596,8 @@
 				AE3CBD8118F4A18800BFA8F5 /* PlayerCell.xib in Resources */,
 				AE4C7EF318EC980F004B11DE /* InfoPlist.strings in Resources */,
 				AE4C7EFB18EC980F004B11DE /* Images.xcassets in Resources */,
-				AE3CBD6918F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */,
-				AEC105A418ECE040000AC266 /* RootViewController.xib in Resources */,
 				AEC105B918EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */,
+				AE79ECD718F6184600604269 /* glyphicons_041_charts.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,10 +605,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEC105A518ECE040000AC266 /* RootViewController.xib in Resources */,
-				AE3CBD6A18F3615400BFA8F5 /* ScoresheetViewController.xib in Resources */,
 				AEC8550A18ECB03800F7FB11 /* InfoPlist.strings in Resources */,
 				AE3CBD8218F4A18800BFA8F5 /* PlayerCell.xib in Resources */,
+				AE79ECD818F6184600604269 /* glyphicons_041_charts.png in Resources */,
 				AEC105BA18EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +624,7 @@
 				AE4C7EF918EC980F004B11DE /* AppDelegate.m in Sources */,
 				AE3CBD6718F3615400BFA8F5 /* ScoresheetViewController.m in Sources */,
 				AE4C7EF518EC980F004B11DE /* main.m in Sources */,
+				AE79ECDB18F61A1400604269 /* PersonsAverageViewController.m in Sources */,
 				AEC105B718EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */,
 				AEC105A218ECE040000AC266 /* RootViewController.m in Sources */,
 				AE3CBD5718EF796900BFA8F5 /* Scoresheet.m in Sources */,
@@ -648,6 +649,7 @@
 				AE3CBD5C18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm in Sources */,
 				AEC105A318ECE040000AC266 /* RootViewController.m in Sources */,
 				AE3CBD7018F4749800BFA8F5 /* Player.m in Sources */,
+				AE79ECDC18F61A1400604269 /* PersonsAverageViewController.m in Sources */,
 				AE3CBD7F18F4A16D00BFA8F5 /* PlayerCell.m in Sources */,
 				AEC105A618ECE061000AC266 /* AppDelegate.m in Sources */,
 			);

@@ -27,6 +27,7 @@
     [super viewDidLoad];
 
     self.title = self.scoresheet.name;
+    self.tableView.rowHeight = 88.0f;
 
     UINib *playerCellNib = [UINib nibWithNibName:@"PlayerCell" bundle:nil];
     [self.tableView registerNib:playerCellNib forCellReuseIdentifier:@"PlayerCell"];
