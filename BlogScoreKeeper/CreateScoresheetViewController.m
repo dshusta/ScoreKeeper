@@ -1,38 +1,26 @@
-//
-//  CreateScoreSheetViewController.m
-//  BlogScoreKeeper
-//
-//  Created by pivotal on 4/3/14.
-//  Copyright (c) 2014 PivotalBeach. All rights reserved.
-//
-
 #import "CreateScoresheetViewController.h"
+#import "ScoresheetCollection.h"
 
 @interface CreateScoresheetViewController ()
-
+@property (weak, nonatomic) ScoresheetCollection *scoresheetCollection;
 @end
 
 @implementation CreateScoresheetViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)initWithScoresheetCollection:(ScoresheetCollection *)scoresheetCollection {
+    self = [super initWithNibName:@"CreateScoreSheetViewController" bundle:nil];
     if (self) {
-        // Custom initialization
+        self.scoresheetCollection = scoresheetCollection;
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
+- (IBAction)touchUpInsideSaveButton:(id)sender {
+    NSMutableDictionary *scoresheet = [[NSMutableDictionary alloc]init];
+    scoresheet[@"name"] = self.nameTextField.text;
+    [self.scoresheetCollection addObject:scoresheet];
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

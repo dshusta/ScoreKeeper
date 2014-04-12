@@ -1,7 +1,10 @@
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController
+@class ScoresheetCollection;
 
-@property (weak, nonatomic) IBOutlet UIButton *createNewScoresheetButton;
+@interface RootViewController : UITableViewController
+
+@property (strong, nonatomic) UIButton *createNewScoresheetButton;
+@property (strong, nonatomic) ScoresheetCollection *scoresheetCollection;
 
 @end
