@@ -21,6 +21,9 @@
 		AE3CBD7F18F4A16D00BFA8F5 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD7D18F4A16D00BFA8F5 /* PlayerCell.m */; };
 		AE3CBD8118F4A18800BFA8F5 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */; };
 		AE3CBD8218F4A18800BFA8F5 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */; };
+		AE40F6951A4117C5004044BA /* HandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE40F6941A4117C5004044BA /* HandTableViewController.m */; };
+		AE40F6961A4117C5004044BA /* HandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE40F6941A4117C5004044BA /* HandTableViewController.m */; };
+		AE40F6A81A41188C004044BA /* HandTableViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE40F6A71A41188C004044BA /* HandTableViewControllerSpec.mm */; };
 		AE4C7EE918EC980F004B11DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EE818EC980F004B11DE /* Foundation.framework */; };
 		AE4C7EEB18EC980F004B11DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */; };
 		AE4C7EED18EC980F004B11DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEC18EC980F004B11DE /* UIKit.framework */; };
@@ -220,6 +223,9 @@
 		AE3CBD7C18F4A16D00BFA8F5 /* PlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
 		AE3CBD7D18F4A16D00BFA8F5 /* PlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCell.m; sourceTree = "<group>"; };
 		AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
+		AE40F6931A4117C5004044BA /* HandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandTableViewController.h; sourceTree = "<group>"; };
+		AE40F6941A4117C5004044BA /* HandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandTableViewController.m; sourceTree = "<group>"; };
+		AE40F6A71A41188C004044BA /* HandTableViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HandTableViewControllerSpec.mm; sourceTree = "<group>"; };
 		AE4C7EE518EC980F004B11DE /* BlogScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4C7EE818EC980F004B11DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -322,6 +328,8 @@
 				AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */,
 				AEC105B618EE0E2D000AC266 /* CreateScoresheetViewController.xib */,
 				AE79ECD618F6184600604269 /* glyphicons_041_charts.png */,
+				AE40F6931A4117C5004044BA /* HandTableViewController.h */,
+				AE40F6941A4117C5004044BA /* HandTableViewController.m */,
 				AE4C7EFA18EC980F004B11DE /* Images.xcassets */,
 				AE79ECD918F61A1400604269 /* PersonsAverageViewController.h */,
 				AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */,
@@ -378,6 +386,7 @@
 				AEC8550618ECB03800F7FB11 /* Supporting Files */,
 				AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */,
 				AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */,
+				AE40F6A71A41188C004044BA /* HandTableViewControllerSpec.mm */,
 			);
 			path = UISpecs;
 			sourceTree = "<group>";
@@ -656,6 +665,7 @@
 				AE3CBD7E18F4A16D00BFA8F5 /* PlayerCell.m in Sources */,
 				AE4C7EF918EC980F004B11DE /* AppDelegate.m in Sources */,
 				AE3CBD6718F3615400BFA8F5 /* ScoresheetViewController.m in Sources */,
+				AE40F6951A4117C5004044BA /* HandTableViewController.m in Sources */,
 				AE4C7EF518EC980F004B11DE /* main.m in Sources */,
 				AE79ECDB18F61A1400604269 /* PersonsAverageViewController.m in Sources */,
 				AEC105B718EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */,
@@ -675,7 +685,9 @@
 				AEC105BE18EF233B000AC266 /* ScoresheetCollection.m in Sources */,
 				AE3CBD6318F3241F00BFA8F5 /* UserDefaultsCleaner.m in Sources */,
 				AE3CBD6818F3615400BFA8F5 /* ScoresheetViewController.m in Sources */,
+				AE40F6961A4117C5004044BA /* HandTableViewController.m in Sources */,
 				AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */,
+				AE40F6A81A41188C004044BA /* HandTableViewControllerSpec.mm in Sources */,
 				AE79ECDE18F61F4F00604269 /* PersonsAverageViewControllerSpec.mm in Sources */,
 				AE3CBD5818EF796900BFA8F5 /* Scoresheet.m in Sources */,
 				AE3CBD6C18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm in Sources */,

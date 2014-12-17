@@ -13,10 +13,9 @@ describe(@"ScoresheetCollection", ^{
     beforeEach(^{
         subject = [[ScoresheetCollection alloc] init];
     });
-
+    
     describe(@"persisting scoresheets", ^{
         beforeEach(^{
-
             NSMutableArray *players = [[NSMutableArray alloc] init];
             [players addObject:[[Player alloc] initWithName:@"Scooby Dooby DOO"]];
             [players addObject:[[Player alloc] initWithName:@"Daphne"]];
