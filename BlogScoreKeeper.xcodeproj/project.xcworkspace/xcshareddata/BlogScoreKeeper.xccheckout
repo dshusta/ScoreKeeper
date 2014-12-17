@@ -10,43 +10,55 @@
 	<string>BlogScoreKeeper</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5466CBCE-3DCF-4D11-8097-F9E083D45C3F</key>
-		<string>https://github.com/utricularian/ScoreKeeper.git</string>
-		<key>E9662E0D-9B7B-4CAF-A467-98A431EE5DCE</key>
+		<key>8E3EABAC3DEB540C429B3EF995370DAC6D10823F</key>
+		<string>https://github.com/pivotal/PivotalCoreKit.git</string>
+		<key>9C17E6AC4A93E78FE05F88AE0011DD4EAD50139D</key>
 		<string>https://github.com/pivotal/cedar.git</string>
+		<key>E3434AEDA07E938645F8AB996BE3270BAEB074F8</key>
+		<string>https://github.com/utricularian/ScoreKeeper.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BlogScoreKeeper.xcodeproj/project.xcworkspace</string>
+	<string>BlogScoreKeeper.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5466CBCE-3DCF-4D11-8097-F9E083D45C3F</key>
+		<key>8E3EABAC3DEB540C429B3EF995370DAC6D10823F</key>
+		<string>../..Externals/PivotalCoreKit</string>
+		<key>9C17E6AC4A93E78FE05F88AE0011DD4EAD50139D</key>
+		<string>../..Externals/cedar</string>
+		<key>E3434AEDA07E938645F8AB996BE3270BAEB074F8</key>
 		<string>../..</string>
-		<key>E9662E0D-9B7B-4CAF-A467-98A431EE5DCE</key>
-		<string>../../Externals/cedar</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/utricularian/ScoreKeeper.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>5466CBCE-3DCF-4D11-8097-F9E083D45C3F</string>
+	<string>E3434AEDA07E938645F8AB996BE3270BAEB074F8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5466CBCE-3DCF-4D11-8097-F9E083D45C3F</string>
+			<string>9C17E6AC4A93E78FE05F88AE0011DD4EAD50139D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>BlogScoreKeeper</string>
+			<string>cedar</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E9662E0D-9B7B-4CAF-A467-98A431EE5DCE</string>
+			<string>8E3EABAC3DEB540C429B3EF995370DAC6D10823F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>cedar</string>
+			<string>PivotalCoreKit</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E3434AEDA07E938645F8AB996BE3270BAEB074F8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ScoreKeeper</string>
 		</dict>
 	</array>
 </dict>
