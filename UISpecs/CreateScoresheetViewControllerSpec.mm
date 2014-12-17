@@ -14,9 +14,16 @@ describe(@"CreateScoresheetViewController", ^{
     __block ScoresheetCollection *collection;
 
     beforeEach(^{
+        spy_on([NSDate class]);
+        [NSDate class] stub_method(@selector(date)).and_return([NSDate dateWithTimeIntervalSince1970:1418633994]);
+        
         collection = [[ScoresheetCollection alloc] init];
         controller = [[CreateScoresheetViewController alloc] initWithScoresheetCollection:collection];
         controller.view should_not be_nil;
+    });
+    
+    it(@"should prepopulate the name with the current date", ^{
+        controller.nameTextField.text should equal(@"December 15, 2014");
     });
     
     describe(@"tapping Save after entering a name", ^{
@@ -47,8 +54,6 @@ describe(@"CreateScoresheetViewController", ^{
             [scoresheet.players[3] name] should equal(@"Velma");
             [scoresheet.players[4] name] should equal(@"Fred");
         });
-
-
 
         it(@"should pop itself off the navigation stack", ^{
             nav.topViewController should be_same_instance_as(rootViewController);

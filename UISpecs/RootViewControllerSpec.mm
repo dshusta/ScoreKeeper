@@ -19,6 +19,8 @@ describe(@"RootViewController", ^{
         rootViewController = [[RootViewController alloc] init];
         rootViewController.view should_not be_nil;
 
+        
+        
         navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
 
         [rootViewController viewWillAppear:NO];
@@ -48,8 +50,6 @@ describe(@"RootViewController", ^{
         describe(@"tapping the save button", ^{
             beforeEach(^{
                 CreateScoresheetViewController *createScoresheetViewController = (id)navController.topViewController;
-
-                createScoresheetViewController.nameTextField.text = @"My Special Scoresheet";
                 [createScoresheetViewController.saveButton tap];
 
                 [rootViewController viewWillAppear:NO];
@@ -78,7 +78,6 @@ describe(@"RootViewController", ^{
                 it(@"should configure the scoresheet view controller correctly", ^{
                     ScoresheetViewController *scoresheetViewController = (id)navController.topViewController;
                     scoresheetViewController.view should_not be_nil;
-                    scoresheetViewController.title should equal(@"My Special Scoresheet");
                 });
 
                 it(@"should persist total score data", ^{

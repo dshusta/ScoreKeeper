@@ -10,7 +10,7 @@
 @implementation CreateScoresheetViewController
 
 - (id)initWithScoresheetCollection:(ScoresheetCollection *)scoresheetCollection {
-    self = [super init];
+    self = [super initWithNibName:@"CreateScoresheetViewController" bundle:nil];
     if (self) {
         self.scoresheetCollection = scoresheetCollection;
     }
@@ -20,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"New Scoresheet";
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterLongStyle;
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    
+    self.nameTextField.text = [dateFormatter stringFromDate:today];
 }
 
 - (IBAction)touchUpSaveButton:(id)sender {
