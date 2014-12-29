@@ -2,7 +2,7 @@
 #import "CreateGameViewController.h"
 #import "GameCollection.h"
 
-@interface RootViewController () <GameCollectionDelegate>
+@interface RootViewController ()
 
 @property (strong, nonatomic) GameCollection *gameCollection;
 
@@ -15,7 +15,6 @@
     self = [super init];
     if (self) {
         self.gameCollection = [[GameCollection alloc] init];
-        self.gameCollection.delegate = self;
     }
     return self;
 }
@@ -31,9 +30,6 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                            target:self
                                                                                            action:@selector(touchUpCreateNewGame:)];
-
-    self.tableView.delegate = self.gameCollection;
-    self.tableView.dataSource = self.gameCollection;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -44,6 +40,43 @@
 - (void)touchUpCreateNewGame:(id)sender {
     CreateGameViewController *createGameViewController = [[CreateGameViewController alloc] initWithGameCollection:self.gameCollection];
     [self.navigationController pushViewController:createGameViewController animated:YES];
+}
+
+
+#pragma TableView callbacks
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.gameCollection.games count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cellIdentifier = NSStringFromClass([self class]);
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+    NSString *gameName = [[self.gameCollection.games objectAtIndex:indexPath.row] name];
+    [cell.textLabel setText:gameName];
+
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Game *game = self.gameCollection.games[indexPath.row];
+    [self didTapOnGame:game];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.gameCollection removeGame:self.gameCollection.games[indexPath.row]];
+    [tableView reloadData];
 }
 
 @end

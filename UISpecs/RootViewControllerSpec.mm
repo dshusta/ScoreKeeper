@@ -17,8 +17,6 @@ describe(@"RootViewController", ^{
         rootViewController = [[RootViewController alloc] init];
         rootViewController.view should_not be_nil;
 
-        
-        
         navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
 
         [rootViewController viewWillAppear:NO];
@@ -50,6 +48,7 @@ describe(@"RootViewController", ^{
 
             it(@"should display the new item", ^{
                 [rootViewController.tableView numberOfRowsInSection:0] should equal(1);
+                [[[NSUserDefaults standardUserDefaults] objectForKey:@"games"] count] should equal(1);
             });
 
             describe(@"tapping on a game", ^{
@@ -74,6 +73,7 @@ describe(@"RootViewController", ^{
 
                 it(@"should delete the game", ^{
                     [rootViewController.tableView numberOfRowsInSection:0] should equal(0);
+                    [[[NSUserDefaults standardUserDefaults] objectForKey:@"games"] count] should equal(0);
                 });
             });
         });

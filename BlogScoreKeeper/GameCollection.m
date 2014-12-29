@@ -1,11 +1,3 @@
-//
-//  GameCollection.m
-//  BlogScoreKeeper
-//
-//  Created by pivotal on 4/4/14.
-//  Copyright (c) 2014 PivotalBeach. All rights reserved.
-//
-
 #import "GameCollection.h"
 #import "Game.h"
 
@@ -29,51 +21,16 @@
 
 - (void)addGame:(Game *)game {
     [self.data addObject:game];
-    [self saveToUserDefaults];
+    [self synchronize];
+}
+
+- (void)removeGame:(Game *)game {
+    [self.data removeObject:game];
+    [self synchronize];
 }
 
 - (NSArray *)games {
     return self.data;
-}
-
-- (NSInteger)count {
-    return [self.data count];
-}
-
-#pragma TableView callbacks
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.data count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier = NSStringFromClass([self class]);
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    NSString *gameName = [[self.data objectAtIndex:indexPath.row] name];
-    [cell.textLabel setText:gameName];
-
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Game *game = self.data[indexPath.row];
-    [self.delegate didTapOnGame:game];
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.data removeObjectAtIndex:indexPath.row];
-    [tableView reloadData];
-    [self saveToUserDefaults];
 }
 
 #pragma mark - Model persistence
@@ -88,7 +45,7 @@
     }
 }
 
-- (void)saveToUserDefaults {
+- (void)synchronize {
     NSMutableArray *gameNames = [NSMutableArray array];
 
     for (Game *game in self.data) {
