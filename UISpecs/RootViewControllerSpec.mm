@@ -4,7 +4,6 @@
 #import "Game.h"
 #import "Player.h"
 #import "UIKit+PivotalSpecHelper.h"
-#import "PersonsAverageViewController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -25,16 +24,6 @@ describe(@"RootViewController", ^{
 
         [rootViewController viewWillAppear:NO];
         [rootViewController viewDidAppear:NO];
-    });
-
-    describe(@"tapping on graph button", ^{
-        beforeEach(^{
-            [rootViewController.navigationItem.leftBarButtonItem tap];
-        });
-
-        it(@"should display players and their average score", ^{
-            navController.topViewController should be_instance_of([PersonsAverageViewController class]);
-        });
     });
 
     describe(@"after Create New Game is tapped", ^{

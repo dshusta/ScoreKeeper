@@ -34,11 +34,6 @@
 		AE79ECD318F602FD00604269 /* libUIKit+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79ECC418F602E300604269 /* libUIKit+PivotalCore-StaticLib.a */; };
 		AE79ECD418F602FD00604269 /* libUIKit+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79ECC618F602E300604269 /* libUIKit+PivotalSpecHelper-StaticLib.a */; };
 		AE79ECD518F602FD00604269 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79ECC818F602E300604269 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */; };
-		AE79ECD718F6184600604269 /* glyphicons_041_charts.png in Resources */ = {isa = PBXBuildFile; fileRef = AE79ECD618F6184600604269 /* glyphicons_041_charts.png */; };
-		AE79ECD818F6184600604269 /* glyphicons_041_charts.png in Resources */ = {isa = PBXBuildFile; fileRef = AE79ECD618F6184600604269 /* glyphicons_041_charts.png */; };
-		AE79ECDB18F61A1400604269 /* PersonsAverageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */; };
-		AE79ECDC18F61A1400604269 /* PersonsAverageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */; };
-		AE79ECDE18F61F4F00604269 /* PersonsAverageViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE79ECDD18F61F4F00604269 /* PersonsAverageViewControllerSpec.mm */; };
 		AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */; };
 		AEC105A218ECE040000AC266 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105A018ECE040000AC266 /* RootViewController.m */; };
 		AEC105A318ECE040000AC266 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105A018ECE040000AC266 /* RootViewController.m */; };
@@ -241,10 +236,6 @@
 		AE4C7EFA18EC980F004B11DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AE4C7F0118EC980F004B11DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AE79ECB818F602E300604269 /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = Externals/PivotalCoreKit/UIKit/UIKit.xcodeproj; sourceTree = "<group>"; };
-		AE79ECD618F6184600604269 /* glyphicons_041_charts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_041_charts.png; sourceTree = "<group>"; };
-		AE79ECD918F61A1400604269 /* PersonsAverageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsAverageViewController.h; sourceTree = "<group>"; };
-		AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsAverageViewController.m; sourceTree = "<group>"; };
-		AE79ECDD18F61F4F00604269 /* PersonsAverageViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PersonsAverageViewControllerSpec.mm; sourceTree = "<group>"; };
 		AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateSpec.mm; sourceTree = "<group>"; };
 		AEC1059F18ECE040000AC266 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AEC105A018ECE040000AC266 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -331,14 +322,11 @@
 				AEC105B418EE0E2D000AC266 /* CreateGameViewController.h */,
 				AEC105B518EE0E2D000AC266 /* CreateGameViewController.m */,
 				AEC105B618EE0E2D000AC266 /* CreateGameViewController.xib */,
-				AE79ECD618F6184600604269 /* glyphicons_041_charts.png */,
 				AEEC899B1A51E7F700BB1A2F /* Hand.h */,
 				AEEC899C1A51E7F700BB1A2F /* Hand.m */,
 				AE40F6931A4117C5004044BA /* HandTableViewController.h */,
 				AE40F6941A4117C5004044BA /* HandTableViewController.m */,
 				AE4C7EFA18EC980F004B11DE /* Images.xcassets */,
-				AE79ECD918F61A1400604269 /* PersonsAverageViewController.h */,
-				AE79ECDA18F61A1400604269 /* PersonsAverageViewController.m */,
 				AE3CBD6D18F4749800BFA8F5 /* Player.h */,
 				AE3CBD6E18F4749800BFA8F5 /* Player.m */,
 				AE3CBD7C18F4A16D00BFA8F5 /* PlayerCell.h */,
@@ -385,7 +373,6 @@
 			children = (
 				AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */,
 				AE3CBD5918EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm */,
-				AE79ECDD18F61F4F00604269 /* PersonsAverageViewControllerSpec.mm */,
 				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
 				AE3CBD5B18F3182900BFA8F5 /* GameCollectionSpec.mm */,
 				AE3CBD6B18F37DF800BFA8F5 /* GameViewControllerSpec.mm */,
@@ -645,7 +632,6 @@
 				AE4C7EF318EC980F004B11DE /* InfoPlist.strings in Resources */,
 				AE4C7EFB18EC980F004B11DE /* Images.xcassets in Resources */,
 				AEC105B918EE0E2D000AC266 /* CreateGameViewController.xib in Resources */,
-				AE79ECD718F6184600604269 /* glyphicons_041_charts.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,7 +641,6 @@
 			files = (
 				AEC8550A18ECB03800F7FB11 /* InfoPlist.strings in Resources */,
 				AE3CBD8218F4A18800BFA8F5 /* PlayerCell.xib in Resources */,
-				AE79ECD818F6184600604269 /* glyphicons_041_charts.png in Resources */,
 				AEC105BA18EE0E2D000AC266 /* CreateGameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,7 +659,6 @@
 				AE3CBD6718F3615400BFA8F5 /* GameViewController.m in Sources */,
 				AE40F6951A4117C5004044BA /* HandTableViewController.m in Sources */,
 				AE4C7EF518EC980F004B11DE /* main.m in Sources */,
-				AE79ECDB18F61A1400604269 /* PersonsAverageViewController.m in Sources */,
 				AEC105B718EE0E2D000AC266 /* CreateGameViewController.m in Sources */,
 				AEC105A218ECE040000AC266 /* RootViewController.m in Sources */,
 				AE3CBD5718EF796900BFA8F5 /* Game.m in Sources */,
@@ -696,14 +680,12 @@
 				AE40F6961A4117C5004044BA /* HandTableViewController.m in Sources */,
 				AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */,
 				AE40F6A81A41188C004044BA /* HandTableViewControllerSpec.mm in Sources */,
-				AE79ECDE18F61F4F00604269 /* PersonsAverageViewControllerSpec.mm in Sources */,
 				AE3CBD5818EF796900BFA8F5 /* Game.m in Sources */,
 				AE3CBD6C18F37DF800BFA8F5 /* GameViewControllerSpec.mm in Sources */,
 				AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */,
 				AE3CBD5C18F3182900BFA8F5 /* GameCollectionSpec.mm in Sources */,
 				AEC105A318ECE040000AC266 /* RootViewController.m in Sources */,
 				AE3CBD7018F4749800BFA8F5 /* Player.m in Sources */,
-				AE79ECDC18F61A1400604269 /* PersonsAverageViewController.m in Sources */,
 				AE3CBD7F18F4A16D00BFA8F5 /* PlayerCell.m in Sources */,
 				AEC105A618ECE061000AC266 /* AppDelegate.m in Sources */,
 			);

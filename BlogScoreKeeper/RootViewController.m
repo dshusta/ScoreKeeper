@@ -2,7 +2,6 @@
 #import "CreateGameViewController.h"
 #import "GameCollection.h"
 #import "GameViewController.h"
-#import "PersonsAverageViewController.h"
 
 @interface RootViewController () <GameCollectionDelegate>
 
@@ -36,11 +35,6 @@
                                                                                            target:self
                                                                                            action:@selector(touchUpCreateNewGame:)];
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"glyphicons_041_charts"]
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(touchUpPersonsAverage:)];
-
     self.tableView.delegate = self.gameCollection;
     self.tableView.dataSource = self.gameCollection;
 }
@@ -48,11 +42,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-}
-
-- (void)touchUpPersonsAverage:(id)sender {
-    PersonsAverageViewController* personsAverageViewController = [[PersonsAverageViewController alloc] initWithGameCollection:nil];
-    [self.navigationController pushViewController:personsAverageViewController animated:YES];
 }
 
 - (void)touchUpCreateNewGame:(id)sender {
