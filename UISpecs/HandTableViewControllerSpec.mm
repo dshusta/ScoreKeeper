@@ -16,6 +16,7 @@ describe(@"HandTableViewController", ^{
         navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
         
         controller.view should_not be_nil;
+        [controller.view layoutIfNeeded];
     });
     
     describe(@"tapping New Hand button", ^{
@@ -25,6 +26,8 @@ describe(@"HandTableViewController", ^{
         
         it(@"should add a new hand", ^{
             [controller.tableView numberOfRowsInSection:0] should equal(1);
+            UITableViewCell *cell = [controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            cell.textLabel.text should equal(@"Hand 1");
         });
     });
 });

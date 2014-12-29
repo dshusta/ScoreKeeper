@@ -56,6 +56,8 @@
 		AEC8550A18ECB03800F7FB11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEC8550818ECB03800F7FB11 /* InfoPlist.strings */; };
 		AEC8550C18ECB03800F7FB11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC8550B18ECB03800F7FB11 /* main.m */; };
 		AEC8553E18ECC78C00F7FB11 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC8552C18ECB20F00F7FB11 /* libCedar-StaticLib.a */; };
+		AEEC899D1A51E7F700BB1A2F /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEC899C1A51E7F700BB1A2F /* Hand.m */; };
+		AEEC899E1A51E7F700BB1A2F /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEC899C1A51E7F700BB1A2F /* Hand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +260,8 @@
 		AEC8550B18ECB03800F7FB11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEC8550D18ECB03800F7FB11 /* UISpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISpecs-Prefix.pch"; sourceTree = "<group>"; };
 		AEC8551718ECB20E00F7FB11 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Externals/cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
+		AEEC899B1A51E7F700BB1A2F /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
+		AEEC899C1A51E7F700BB1A2F /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +332,8 @@
 				AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */,
 				AEC105B618EE0E2D000AC266 /* CreateScoresheetViewController.xib */,
 				AE79ECD618F6184600604269 /* glyphicons_041_charts.png */,
+				AEEC899B1A51E7F700BB1A2F /* Hand.h */,
+				AEEC899C1A51E7F700BB1A2F /* Hand.m */,
 				AE40F6931A4117C5004044BA /* HandTableViewController.h */,
 				AE40F6941A4117C5004044BA /* HandTableViewController.m */,
 				AE4C7EFA18EC980F004B11DE /* Images.xcassets */,
@@ -661,6 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEC899D1A51E7F700BB1A2F /* Hand.m in Sources */,
 				AE3CBD6F18F4749800BFA8F5 /* Player.m in Sources */,
 				AE3CBD7E18F4A16D00BFA8F5 /* PlayerCell.m in Sources */,
 				AE4C7EF918EC980F004B11DE /* AppDelegate.m in Sources */,
@@ -679,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEC899E1A51E7F700BB1A2F /* Hand.m in Sources */,
 				AEC105B818EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */,
 				AEC8550C18ECB03800F7FB11 /* main.m in Sources */,
 				AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */,

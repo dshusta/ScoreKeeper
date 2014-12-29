@@ -64,7 +64,7 @@ describe(@"RootViewController", ^{
                 [rootViewController.tableView numberOfRowsInSection:0] should equal(1);
             });
 
-            describe(@"tapping on a scoresheet", ^{
+            describe(@"tapping on a hand", ^{
                 beforeEach(^{
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
                     UITableViewCell *cell = [rootViewController.tableView cellForRowAtIndexPath:indexPath];
