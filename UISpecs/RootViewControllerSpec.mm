@@ -1,7 +1,7 @@
 #import "RootViewController.h"
-#import "CreateScoresheetViewController.h"
-#import "ScoresheetViewController.h"
-#import "Scoresheet.h"
+#import "CreateGameViewController.h"
+#import "GameViewController.h"
+#import "Game.h"
 #import "Player.h"
 #import "UIKit+PivotalSpecHelper.h"
 #import "PersonsAverageViewController.h"
@@ -37,20 +37,20 @@ describe(@"RootViewController", ^{
         });
     });
 
-    describe(@"after Create New Scoresheet is tapped", ^{
+    describe(@"after Create New Game is tapped", ^{
         beforeEach(^{
             [rootViewController.navigationItem.rightBarButtonItem tap];
             [navController.topViewController view] should_not be_nil;
         });
 
-        it(@"should display the create new scoresheet controller", ^{
-            navController.topViewController should be_instance_of([CreateScoresheetViewController class]);
+        it(@"should display the create new game controller", ^{
+            navController.topViewController should be_instance_of([CreateGameViewController class]);
         });
 
         describe(@"tapping the save button", ^{
             beforeEach(^{
-                CreateScoresheetViewController *createScoresheetViewController = (id)navController.topViewController;
-                [createScoresheetViewController.saveButton tap];
+                CreateGameViewController *createGameViewController = (id)navController.topViewController;
+                [createGameViewController.saveButton tap];
 
                 [rootViewController viewWillAppear:NO];
                 [rootViewController viewDidAppear:NO];
@@ -71,29 +71,29 @@ describe(@"RootViewController", ^{
                     [cell tap];
                 });
 
-                it(@"should display a scoresheet view controller", ^{
-                    navController.topViewController should be_instance_of([ScoresheetViewController class]);
+                it(@"should display a game view controller", ^{
+                    navController.topViewController should be_instance_of([GameViewController class]);
                 });
 
-                it(@"should configure the scoresheet view controller correctly", ^{
-                    ScoresheetViewController *scoresheetViewController = (id)navController.topViewController;
-                    scoresheetViewController.view should_not be_nil;
+                it(@"should configure the game view controller correctly", ^{
+                    GameViewController *gameViewController = (id)navController.topViewController;
+                    gameViewController.view should_not be_nil;
                 });
 
                 it(@"should persist total score data", ^{
-                    ScoresheetViewController *scoresheetViewController = (id)navController.topViewController;
-                    scoresheetViewController.view should_not be_nil;
-                    [scoresheetViewController.tableView layoutIfNeeded];
+                    GameViewController *gameViewController = (id)navController.topViewController;
+                    gameViewController.view should_not be_nil;
+                    [gameViewController.tableView layoutIfNeeded];
 
                     NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
-                    PlayerCell *cell = (PlayerCell *)[scoresheetViewController.tableView cellForRowAtIndexPath:index];
+                    PlayerCell *cell = (PlayerCell *)[gameViewController.tableView cellForRowAtIndexPath:index];
                     cell.scoreTextField.text = @"2";
 
                     [cell.plusButton tap];
 
-                    ScoresheetCollection *otherCollection = [[ScoresheetCollection alloc]init];
-                    Scoresheet *scoresheet = otherCollection.scoresheets[0];
-                    Player *player = scoresheet.players[0];
+                    GameCollection *otherCollection = [[GameCollection alloc]init];
+                    Game *game = otherCollection.games[0];
+                    Player *player = game.players[0];
                     player.score should equal(2);
                 });
             });
@@ -107,7 +107,7 @@ describe(@"RootViewController", ^{
                                                      forRowAtIndexPath:indexPath];
                 });
 
-                it(@"should delete the scoresheet", ^{
+                it(@"should delete the game", ^{
                     [rootViewController.tableView numberOfRowsInSection:0] should equal(0);
                 });
             });

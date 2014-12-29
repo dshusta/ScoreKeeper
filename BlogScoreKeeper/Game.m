@@ -1,8 +1,8 @@
-#import "Scoresheet.h"
+#import "Game.h"
 #import "Player.h"
 
 
-@interface Scoresheet ()
+@interface Game ()
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSArray *players;
@@ -11,9 +11,9 @@
 
 
 
-@implementation Scoresheet
+@implementation Game
 
-+ (Scoresheet *)deserialize:(NSDictionary *)dictionary {
++ (Game *)deserialize:(NSDictionary *)dictionary {
 
     NSArray *playerArray = dictionary[@"players"];
     NSMutableArray *players = [[NSMutableArray alloc] init];
@@ -22,11 +22,10 @@
         [players addObject:p];
     }
 
-    Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:dictionary[@"name"] players:players] ;
-    return scoresheet;
+    return [[Game alloc] initWithName:dictionary[@"name"] players:players];
 }
 
-- (Scoresheet *)initWithName:(NSString *)name players:(NSMutableArray *)players {
+- (Game *)initWithName:(NSString *)name players:(NSMutableArray *)players {
     self = [self init];
     if (self) {
         self.name = name;

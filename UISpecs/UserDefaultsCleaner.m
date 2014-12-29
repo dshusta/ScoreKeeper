@@ -4,7 +4,7 @@
 
 + (void)beforeEach {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults removeObjectForKey:@"scoresheets"];
+    [defaults removeObjectForKey:@"games"];
     [defaults synchronize];
 }
 

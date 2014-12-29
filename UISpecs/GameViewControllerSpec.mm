@@ -1,18 +1,17 @@
-#import "ScoresheetViewController.h"
-#import "Scoresheet.h"
+#import "GameViewController.h"
+#import "Game.h"
 #import "Player.h"
-#import "PlayerCell.h"
-#import "ScoresheetCollection.h"
+#import "GameCollection.h"
 #import "UIKit+PivotalSpecHelper.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
-SPEC_BEGIN(ScoresheetViewControllerSpec)
+SPEC_BEGIN(GameViewControllerSpec)
 
-describe(@"ScoresheetViewController", ^{
-    __block ScoresheetViewController *subject;
-    __block ScoresheetCollection *scoresheetCollection;
+describe(@"GameViewController", ^{
+    __block GameViewController *subject;
+    __block GameCollection *gameCollection;
 
     beforeEach(^{
         NSMutableArray *players = [[NSMutableArray alloc]init];
@@ -28,16 +27,16 @@ describe(@"ScoresheetViewController", ^{
         [players[3] setScore:12];
         [players[4] setScore:-5];
 
-        scoresheetCollection = nice_fake_for([ScoresheetCollection class]);
+        gameCollection = nice_fake_for([GameCollection class]);
 
-        Scoresheet *scoresheet = [[Scoresheet alloc] initWithName:@"Special Scoresheet" players:players];
-        subject = [[ScoresheetViewController alloc] initWithScoreSheetCollection:scoresheetCollection
-                                                                      scoresheet:scoresheet];
+        Game *game = [[Game alloc] initWithName:@"Special Game" players:players];
+        subject = [[GameViewController alloc] initWithGameCollection:gameCollection
+                                                                game:game];
         subject.view should_not be_nil;
     });
 
-    it(@"should display the scoresheet name", ^{
-        subject.title should equal(@"Special Scoresheet");
+    it(@"should display the game name", ^{
+        subject.title should equal(@"Special Game");
     });
 
     it(@"should display a row for each player", ^{
@@ -103,8 +102,8 @@ describe(@"ScoresheetViewController", ^{
             cell.totalScoreLabel.text should equal(@"7");
         });
 
-        it(@"should save the scoresheet", ^{
-            scoresheetCollection should have_received(@selector(saveToUserDefaults));
+        it(@"should save the game", ^{
+            gameCollection should have_received(@selector(saveToUserDefaults));
         });
     });
 
@@ -123,8 +122,8 @@ describe(@"ScoresheetViewController", ^{
             cell.totalScoreLabel.text should equal(@"1");
         });
 
-        it(@"should save the scoresheet", ^{
-            scoresheetCollection should have_received(@selector(saveToUserDefaults));
+        it(@"should save the game", ^{
+            gameCollection should have_received(@selector(saveToUserDefaults));
         });
     });
 });

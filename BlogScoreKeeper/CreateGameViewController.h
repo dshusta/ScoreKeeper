@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "ScoresheetCollection.h"
+#import "GameCollection.h"
 
-@interface CreateScoresheetViewController : UIViewController
+@interface CreateGameViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *player1TextField;
@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
-- (id)initWithScoresheetCollection:(ScoresheetCollection*) scoresheetCollection;
+- (id)initWithGameCollection:(GameCollection *)gameCollection;
 
 @end

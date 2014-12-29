@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateScoresheetViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateGameViewController">
             <connections>
                 <outlet property="nameTextField" destination="DTl-JH-2mU" id="ydb-nT-0yu"/>
                 <outlet property="player1TextField" destination="gb2-0B-noK" id="WdV-xD-fTY"/>

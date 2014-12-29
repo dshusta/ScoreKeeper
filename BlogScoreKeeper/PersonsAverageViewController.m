@@ -1,25 +1,25 @@
 #import "PersonsAverageViewController.h"
-#import "ScoresheetCollection.h"
+#import "GameCollection.h"
 
 @interface PersonsAverageViewController ()
 
-@property(nonatomic) ScoresheetCollection* scoresheetCollection;
+@property(nonatomic) GameCollection *gameCollection;
 
 @end
 
 
 @implementation PersonsAverageViewController
 
-- (instancetype)initWithScoresheetCollection:(ScoresheetCollection *)scoresheetCollection {
+- (instancetype)initWithGameCollection:(GameCollection *)gameCollection {
     self = [super init];
     if (self) {
-        self.scoresheetCollection = scoresheetCollection;
+        self.gameCollection = gameCollection;
     }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    //loop through scoresheets and average scores for players
+    //loop through games and average scores for players
 }
 
 @end

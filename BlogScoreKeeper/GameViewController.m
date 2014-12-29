@@ -1,23 +1,23 @@
-#import "ScoresheetViewController.h"
-#import "Scoresheet.h"
+#import "GameViewController.h"
+#import "Game.h"
 #import "Player.h"
-#import "ScoresheetCollection.h"
+#import "GameCollection.h"
 
-@interface ScoresheetViewController ()
+@interface GameViewController ()
 
-@property (nonatomic) Scoresheet *scoresheet;
-@property (nonatomic) ScoresheetCollection *scoresheetCollection;
+@property (nonatomic) Game *game;
+@property (nonatomic) GameCollection *gameCollection;
 
 @end
 
 
-@implementation ScoresheetViewController
+@implementation GameViewController
 
-- (instancetype)initWithScoreSheetCollection:(ScoresheetCollection *)scoresheetCollection scoresheet:(Scoresheet *)scoresheet {
+- (instancetype)initWithGameCollection:(GameCollection *)gameCollection game:(Game *)game {
     self = [super init];
     if (self) {
-        self.scoresheet = scoresheet;
-        self.scoresheetCollection = scoresheetCollection;
+        self.game = game;
+        self.gameCollection = gameCollection;
     }
     return self;
 }
@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
 
-    self.title = self.scoresheet.name;
+    self.title = self.game.name;
     self.tableView.rowHeight = 88.0f;
 
     UINib *playerCellNib = [UINib nibWithNibName:@"PlayerCell" bundle:nil];
@@ -34,13 +34,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.scoresheet.players count];
+    return [self.game.players count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"];
 
-    Player *player = self.scoresheet.players[indexPath.row];
+    Player *player = self.game.players[indexPath.row];
     cell.playerNameLabel.text = player.name;
     cell.totalScoreLabel.text = [NSString stringWithFormat:@"%ld", (long)player.score];
 
@@ -53,18 +53,18 @@
 - (void)playerCellDidTapPlusButton:(PlayerCell *)playerCell {
     NSInteger diff = [playerCell.scoreTextField.text integerValue];
 
-    Player *player = self.scoresheet.players[playerCell.index];
+    Player *player = self.game.players[playerCell.index];
     player.score += diff;
-    [self.scoresheetCollection saveToUserDefaults];
+    [self.gameCollection saveToUserDefaults];
     [self.tableView reloadData];
 }
 
 - (void)playerCellDidTapMinusButton:(PlayerCell *)playerCell {
     NSInteger diff = [playerCell.scoreTextField.text integerValue];
 
-    Player *player = self.scoresheet.players[playerCell.index];
+    Player *player = self.game.players[playerCell.index];
     player.score -= diff;
-    [self.scoresheetCollection saveToUserDefaults];
+    [self.gameCollection saveToUserDefaults];
     [self.tableView reloadData];
 }
 

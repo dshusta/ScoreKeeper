@@ -2,14 +2,14 @@
 
 @class Player;
 
-@interface Scoresheet : NSObject
+@interface Game : NSObject
 
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSArray *players;
 
-+ (Scoresheet *)deserialize:(NSDictionary *)dictionary;
++ (Game *)deserialize:(NSDictionary *)dictionary;
 
-- (Scoresheet *)initWithName:(NSString *)name players:(NSArray *)players;
+- (Game *)initWithName:(NSString *)name players:(NSArray *)players;
 
 - (NSDictionary *) serialize;
 

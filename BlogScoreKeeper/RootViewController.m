@@ -1,12 +1,12 @@
 #import "RootViewController.h"
-#import "CreateScoresheetViewController.h"
-#import "ScoresheetCollection.h"
-#import "ScoresheetViewController.h"
+#import "CreateGameViewController.h"
+#import "GameCollection.h"
+#import "GameViewController.h"
 #import "PersonsAverageViewController.h"
 
-@interface RootViewController () <ScoresheetCollectionDelegate>
+@interface RootViewController () <GameCollectionDelegate>
 
-@property (strong, nonatomic) ScoresheetCollection *scoresheetCollection;
+@property (strong, nonatomic) GameCollection *gameCollection;
 
 @end
 
@@ -16,33 +16,33 @@
 - (RootViewController *)init {
     self = [super init];
     if (self) {
-        self.scoresheetCollection = [[ScoresheetCollection alloc] init];
-        self.scoresheetCollection.delegate = self;
+        self.gameCollection = [[GameCollection alloc] init];
+        self.gameCollection.delegate = self;
     }
     return self;
 }
 
-- (void)didTapOnScoresheet:(Scoresheet *)scoresheet {
-    ScoresheetViewController *scoresheetViewController = [[ScoresheetViewController alloc] initWithScoreSheetCollection:self.scoresheetCollection scoresheet:scoresheet];
-    [self.navigationController pushViewController:scoresheetViewController animated:YES];
+- (void)didTapOnGame:(Game *)game {
+    GameViewController *gameViewController = [[GameViewController alloc] initWithGameCollection:self.gameCollection game:game];
+    [self.navigationController pushViewController:gameViewController animated:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"All Scoresheets";
+    self.title = @"All Games";
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                            target:self
-                                                                                           action:@selector(touchUpCreateNewScoresheet:)];
+                                                                                           action:@selector(touchUpCreateNewGame:)];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"glyphicons_041_charts"]
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(touchUpPersonsAverage:)];
 
-    self.tableView.delegate = self.scoresheetCollection;
-    self.tableView.dataSource = self.scoresheetCollection;
+    self.tableView.delegate = self.gameCollection;
+    self.tableView.dataSource = self.gameCollection;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,13 +51,13 @@
 }
 
 - (void)touchUpPersonsAverage:(id)sender {
-    PersonsAverageViewController* personsAverageViewController = [[PersonsAverageViewController alloc] initWithScoresheetCollection:nil];
+    PersonsAverageViewController* personsAverageViewController = [[PersonsAverageViewController alloc] initWithGameCollection:nil];
     [self.navigationController pushViewController:personsAverageViewController animated:YES];
 }
 
-- (void)touchUpCreateNewScoresheet:(id)sender {
-    CreateScoresheetViewController* createScoresheetViewController = [[CreateScoresheetViewController alloc] initWithScoresheetCollection:self.scoresheetCollection];
-    [self.navigationController pushViewController:createScoresheetViewController animated:YES];
+- (void)touchUpCreateNewGame:(id)sender {
+    CreateGameViewController *createGameViewController = [[CreateGameViewController alloc] initWithGameCollection:self.gameCollection];
+    [self.navigationController pushViewController:createGameViewController animated:YES];
 }
 
 @end

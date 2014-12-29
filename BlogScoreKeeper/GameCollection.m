@@ -1,19 +1,19 @@
 //
-//  ScoresheetCollection.m
+//  GameCollection.m
 //  BlogScoreKeeper
 //
 //  Created by pivotal on 4/4/14.
 //  Copyright (c) 2014 PivotalBeach. All rights reserved.
 //
 
-#import "ScoresheetCollection.h"
-#import "Scoresheet.h"
+#import "GameCollection.h"
+#import "Game.h"
 
-@interface ScoresheetCollection ()
+@interface GameCollection ()
 @property (strong, nonatomic) NSMutableArray *data;
 @end
 
-@implementation ScoresheetCollection
+@implementation GameCollection
 
 - (id)init {
     self = [super init];
@@ -25,12 +25,12 @@
     return self;
 }
 
-- (void)addScoresheet:(Scoresheet *)scoresheet {
-    [self.data addObject:scoresheet];
+- (void)addGame:(Game *)game {
+    [self.data addObject:game];
     [self saveToUserDefaults];
 }
 
-- (NSArray *)scoresheets {
+- (NSArray *)games {
     return self.data;
 }
 
@@ -51,15 +51,15 @@
 
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    NSString *scoresheetName = [[self.data objectAtIndex:indexPath.row] name];
-    [cell.textLabel setText:scoresheetName];
+    NSString *gameName = [[self.data objectAtIndex:indexPath.row] name];
+    [cell.textLabel setText:gameName];
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Scoresheet *scoresheet = self.data[indexPath.row];
-    [self.delegate didTapOnScoresheet:scoresheet];
+    Game *game = self.data[indexPath.row];
+    [self.delegate didTapOnGame:game];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,24 +74,24 @@
 
 - (void)readFromUserDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray *scoresheets = [defaults objectForKey:@"scoresheets"];
+    NSArray *games = [defaults objectForKey:@"games"];
 
-    for (NSDictionary *serializedScoresheet in scoresheets) {
-        Scoresheet *scoresheet = [Scoresheet deserialize:serializedScoresheet];
-        [self.data addObject:scoresheet];
+    for (NSDictionary *serializedGame in games) {
+        Game *game = [Game deserialize:serializedGame];
+        [self.data addObject:game];
     }
 }
 
 - (void)saveToUserDefaults {
-    NSMutableArray *scoresheetNames = [NSMutableArray array];
+    NSMutableArray *gameNames = [NSMutableArray array];
 
-    for (Scoresheet *scoresheet in self.data) {
-        NSDictionary *serializedScoresheet = [scoresheet serialize];
-        [scoresheetNames addObject:serializedScoresheet];
+    for (Game *game in self.data) {
+        NSDictionary *serializedGame = [game serialize];
+        [gameNames addObject:serializedGame];
     }
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:scoresheetNames forKey:@"scoresheets"];
+    [defaults setObject:gameNames forKey:@"games"];
     [defaults synchronize];
 }
 

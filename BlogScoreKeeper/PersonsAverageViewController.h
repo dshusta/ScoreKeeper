@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 
-@class ScoresheetCollection;
+@class GameCollection;
 
 @interface PersonsAverageViewController : UITableViewController
 
--(instancetype)initWithScoresheetCollection: (ScoresheetCollection* )scoresheetCollection;
+-(instancetype)initWithGameCollection: (GameCollection * )gameCollection;
 
 @end

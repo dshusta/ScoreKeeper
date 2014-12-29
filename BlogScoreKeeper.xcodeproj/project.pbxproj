@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE3CBD5718EF796900BFA8F5 /* Scoresheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */; };
-		AE3CBD5818EF796900BFA8F5 /* Scoresheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */; };
-		AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */; };
-		AE3CBD5C18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */; };
+		AE3CBD5718EF796900BFA8F5 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5618EF796900BFA8F5 /* Game.m */; };
+		AE3CBD5818EF796900BFA8F5 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5618EF796900BFA8F5 /* Game.m */; };
+		AE3CBD5A18EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5918EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm */; };
+		AE3CBD5C18F3182900BFA8F5 /* GameCollectionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD5B18F3182900BFA8F5 /* GameCollectionSpec.mm */; };
 		AE3CBD6318F3241F00BFA8F5 /* UserDefaultsCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */; };
-		AE3CBD6718F3615400BFA8F5 /* ScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */; };
-		AE3CBD6818F3615400BFA8F5 /* ScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */; };
-		AE3CBD6C18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */; };
+		AE3CBD6718F3615400BFA8F5 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6518F3615400BFA8F5 /* GameViewController.m */; };
+		AE3CBD6818F3615400BFA8F5 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6518F3615400BFA8F5 /* GameViewController.m */; };
+		AE3CBD6C18F37DF800BFA8F5 /* GameViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6B18F37DF800BFA8F5 /* GameViewControllerSpec.mm */; };
 		AE3CBD6F18F4749800BFA8F5 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6E18F4749800BFA8F5 /* Player.m */; };
 		AE3CBD7018F4749800BFA8F5 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD6E18F4749800BFA8F5 /* Player.m */; };
 		AE3CBD7E18F4A16D00BFA8F5 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3CBD7D18F4A16D00BFA8F5 /* PlayerCell.m */; };
@@ -44,12 +44,12 @@
 		AEC105A318ECE040000AC266 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105A018ECE040000AC266 /* RootViewController.m */; };
 		AEC105A618ECE061000AC266 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C7EF818EC980F004B11DE /* AppDelegate.m */; };
 		AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */; };
-		AEC105B718EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */; };
-		AEC105B818EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */; };
-		AEC105B918EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105B618EE0E2D000AC266 /* CreateScoresheetViewController.xib */; };
-		AEC105BA18EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105B618EE0E2D000AC266 /* CreateScoresheetViewController.xib */; };
-		AEC105BD18EF233B000AC266 /* ScoresheetCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105BC18EF233B000AC266 /* ScoresheetCollection.m */; };
-		AEC105BE18EF233B000AC266 /* ScoresheetCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105BC18EF233B000AC266 /* ScoresheetCollection.m */; };
+		AEC105B718EE0E2D000AC266 /* CreateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B518EE0E2D000AC266 /* CreateGameViewController.m */; };
+		AEC105B818EE0E2D000AC266 /* CreateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105B518EE0E2D000AC266 /* CreateGameViewController.m */; };
+		AEC105B918EE0E2D000AC266 /* CreateGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105B618EE0E2D000AC266 /* CreateGameViewController.xib */; };
+		AEC105BA18EE0E2D000AC266 /* CreateGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC105B618EE0E2D000AC266 /* CreateGameViewController.xib */; };
+		AEC105BD18EF233B000AC266 /* GameCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105BC18EF233B000AC266 /* GameCollection.m */; };
+		AEC105BE18EF233B000AC266 /* GameCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC105BC18EF233B000AC266 /* GameCollection.m */; };
 		AEC8550218ECB03800F7FB11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEC18EC980F004B11DE /* UIKit.framework */; };
 		AEC8550318ECB03800F7FB11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EE818EC980F004B11DE /* Foundation.framework */; };
 		AEC8550418ECB03800F7FB11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */; };
@@ -211,15 +211,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AE3CBD5518EF796900BFA8F5 /* Scoresheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scoresheet.h; sourceTree = "<group>"; };
-		AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scoresheet.m; sourceTree = "<group>"; };
-		AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateScoresheetViewControllerSpec.mm; sourceTree = "<group>"; };
-		AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScoresheetCollectionSpec.mm; sourceTree = "<group>"; };
+		AE3CBD5518EF796900BFA8F5 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		AE3CBD5618EF796900BFA8F5 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		AE3CBD5918EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateGameViewControllerSpec.mm; sourceTree = "<group>"; };
+		AE3CBD5B18F3182900BFA8F5 /* GameCollectionSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameCollectionSpec.mm; sourceTree = "<group>"; };
 		AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsCleaner.h; sourceTree = "<group>"; };
 		AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsCleaner.m; sourceTree = "<group>"; };
-		AE3CBD6418F3615400BFA8F5 /* ScoresheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresheetViewController.h; sourceTree = "<group>"; };
-		AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresheetViewController.m; sourceTree = "<group>"; };
-		AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScoresheetViewControllerSpec.mm; sourceTree = "<group>"; };
+		AE3CBD6418F3615400BFA8F5 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		AE3CBD6518F3615400BFA8F5 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		AE3CBD6B18F37DF800BFA8F5 /* GameViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameViewControllerSpec.mm; sourceTree = "<group>"; };
 		AE3CBD6D18F4749800BFA8F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		AE3CBD6E18F4749800BFA8F5 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		AE3CBD7C18F4A16D00BFA8F5 /* PlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
@@ -249,11 +249,11 @@
 		AEC1059F18ECE040000AC266 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AEC105A018ECE040000AC266 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewControllerSpec.mm; sourceTree = "<group>"; };
-		AEC105B418EE0E2D000AC266 /* CreateScoresheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateScoresheetViewController.h; sourceTree = "<group>"; };
-		AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateScoresheetViewController.m; sourceTree = "<group>"; };
-		AEC105B618EE0E2D000AC266 /* CreateScoresheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateScoresheetViewController.xib; sourceTree = "<group>"; };
-		AEC105BB18EF233B000AC266 /* ScoresheetCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresheetCollection.h; sourceTree = "<group>"; };
-		AEC105BC18EF233B000AC266 /* ScoresheetCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresheetCollection.m; sourceTree = "<group>"; };
+		AEC105B418EE0E2D000AC266 /* CreateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGameViewController.h; sourceTree = "<group>"; };
+		AEC105B518EE0E2D000AC266 /* CreateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateGameViewController.m; sourceTree = "<group>"; };
+		AEC105B618EE0E2D000AC266 /* CreateGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateGameViewController.xib; sourceTree = "<group>"; };
+		AEC105BB18EF233B000AC266 /* GameCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCollection.h; sourceTree = "<group>"; };
+		AEC105BC18EF233B000AC266 /* GameCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCollection.m; sourceTree = "<group>"; };
 		AEC8550118ECB03800F7FB11 /* UISpecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC8550718ECB03800F7FB11 /* UISpecs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UISpecs-Info.plist"; sourceTree = "<group>"; };
 		AEC8550918ECB03800F7FB11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -328,9 +328,9 @@
 			children = (
 				AE4C7EF718EC980F004B11DE /* AppDelegate.h */,
 				AE4C7EF818EC980F004B11DE /* AppDelegate.m */,
-				AEC105B418EE0E2D000AC266 /* CreateScoresheetViewController.h */,
-				AEC105B518EE0E2D000AC266 /* CreateScoresheetViewController.m */,
-				AEC105B618EE0E2D000AC266 /* CreateScoresheetViewController.xib */,
+				AEC105B418EE0E2D000AC266 /* CreateGameViewController.h */,
+				AEC105B518EE0E2D000AC266 /* CreateGameViewController.m */,
+				AEC105B618EE0E2D000AC266 /* CreateGameViewController.xib */,
 				AE79ECD618F6184600604269 /* glyphicons_041_charts.png */,
 				AEEC899B1A51E7F700BB1A2F /* Hand.h */,
 				AEEC899C1A51E7F700BB1A2F /* Hand.m */,
@@ -346,12 +346,12 @@
 				AE3CBD8018F4A18800BFA8F5 /* PlayerCell.xib */,
 				AEC1059F18ECE040000AC266 /* RootViewController.h */,
 				AEC105A018ECE040000AC266 /* RootViewController.m */,
-				AE3CBD5518EF796900BFA8F5 /* Scoresheet.h */,
-				AE3CBD5618EF796900BFA8F5 /* Scoresheet.m */,
-				AEC105BB18EF233B000AC266 /* ScoresheetCollection.h */,
-				AEC105BC18EF233B000AC266 /* ScoresheetCollection.m */,
-				AE3CBD6418F3615400BFA8F5 /* ScoresheetViewController.h */,
-				AE3CBD6518F3615400BFA8F5 /* ScoresheetViewController.m */,
+				AE3CBD5518EF796900BFA8F5 /* Game.h */,
+				AE3CBD5618EF796900BFA8F5 /* Game.m */,
+				AEC105BB18EF233B000AC266 /* GameCollection.h */,
+				AEC105BC18EF233B000AC266 /* GameCollection.m */,
+				AE3CBD6418F3615400BFA8F5 /* GameViewController.h */,
+				AE3CBD6518F3615400BFA8F5 /* GameViewController.m */,
 				AE4C7EEF18EC980F004B11DE /* Supporting Files */,
 			);
 			path = BlogScoreKeeper;
@@ -384,11 +384,11 @@
 			isa = PBXGroup;
 			children = (
 				AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */,
-				AE3CBD5918EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm */,
+				AE3CBD5918EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm */,
 				AE79ECDD18F61F4F00604269 /* PersonsAverageViewControllerSpec.mm */,
 				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
-				AE3CBD5B18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm */,
-				AE3CBD6B18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm */,
+				AE3CBD5B18F3182900BFA8F5 /* GameCollectionSpec.mm */,
+				AE3CBD6B18F37DF800BFA8F5 /* GameViewControllerSpec.mm */,
 				AEC8550618ECB03800F7FB11 /* Supporting Files */,
 				AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */,
 				AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */,
@@ -644,7 +644,7 @@
 				AE3CBD8118F4A18800BFA8F5 /* PlayerCell.xib in Resources */,
 				AE4C7EF318EC980F004B11DE /* InfoPlist.strings in Resources */,
 				AE4C7EFB18EC980F004B11DE /* Images.xcassets in Resources */,
-				AEC105B918EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */,
+				AEC105B918EE0E2D000AC266 /* CreateGameViewController.xib in Resources */,
 				AE79ECD718F6184600604269 /* glyphicons_041_charts.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,7 +656,7 @@
 				AEC8550A18ECB03800F7FB11 /* InfoPlist.strings in Resources */,
 				AE3CBD8218F4A18800BFA8F5 /* PlayerCell.xib in Resources */,
 				AE79ECD818F6184600604269 /* glyphicons_041_charts.png in Resources */,
-				AEC105BA18EE0E2D000AC266 /* CreateScoresheetViewController.xib in Resources */,
+				AEC105BA18EE0E2D000AC266 /* CreateGameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,14 +671,14 @@
 				AE3CBD6F18F4749800BFA8F5 /* Player.m in Sources */,
 				AE3CBD7E18F4A16D00BFA8F5 /* PlayerCell.m in Sources */,
 				AE4C7EF918EC980F004B11DE /* AppDelegate.m in Sources */,
-				AE3CBD6718F3615400BFA8F5 /* ScoresheetViewController.m in Sources */,
+				AE3CBD6718F3615400BFA8F5 /* GameViewController.m in Sources */,
 				AE40F6951A4117C5004044BA /* HandTableViewController.m in Sources */,
 				AE4C7EF518EC980F004B11DE /* main.m in Sources */,
 				AE79ECDB18F61A1400604269 /* PersonsAverageViewController.m in Sources */,
-				AEC105B718EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */,
+				AEC105B718EE0E2D000AC266 /* CreateGameViewController.m in Sources */,
 				AEC105A218ECE040000AC266 /* RootViewController.m in Sources */,
-				AE3CBD5718EF796900BFA8F5 /* Scoresheet.m in Sources */,
-				AEC105BD18EF233B000AC266 /* ScoresheetCollection.m in Sources */,
+				AE3CBD5718EF796900BFA8F5 /* Game.m in Sources */,
+				AEC105BD18EF233B000AC266 /* GameCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,20 +687,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEEC899E1A51E7F700BB1A2F /* Hand.m in Sources */,
-				AEC105B818EE0E2D000AC266 /* CreateScoresheetViewController.m in Sources */,
+				AEC105B818EE0E2D000AC266 /* CreateGameViewController.m in Sources */,
 				AEC8550C18ECB03800F7FB11 /* main.m in Sources */,
-				AE3CBD5A18EF79F400BFA8F5 /* CreateScoresheetViewControllerSpec.mm in Sources */,
-				AEC105BE18EF233B000AC266 /* ScoresheetCollection.m in Sources */,
+				AE3CBD5A18EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm in Sources */,
+				AEC105BE18EF233B000AC266 /* GameCollection.m in Sources */,
 				AE3CBD6318F3241F00BFA8F5 /* UserDefaultsCleaner.m in Sources */,
-				AE3CBD6818F3615400BFA8F5 /* ScoresheetViewController.m in Sources */,
+				AE3CBD6818F3615400BFA8F5 /* GameViewController.m in Sources */,
 				AE40F6961A4117C5004044BA /* HandTableViewController.m in Sources */,
 				AEC105B318EE0BC9000AC266 /* RootViewControllerSpec.mm in Sources */,
 				AE40F6A81A41188C004044BA /* HandTableViewControllerSpec.mm in Sources */,
 				AE79ECDE18F61F4F00604269 /* PersonsAverageViewControllerSpec.mm in Sources */,
-				AE3CBD5818EF796900BFA8F5 /* Scoresheet.m in Sources */,
-				AE3CBD6C18F37DF800BFA8F5 /* ScoresheetViewControllerSpec.mm in Sources */,
+				AE3CBD5818EF796900BFA8F5 /* Game.m in Sources */,
+				AE3CBD6C18F37DF800BFA8F5 /* GameViewControllerSpec.mm in Sources */,
 				AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */,
-				AE3CBD5C18F3182900BFA8F5 /* ScoresheetCollectionSpec.mm in Sources */,
+				AE3CBD5C18F3182900BFA8F5 /* GameCollectionSpec.mm in Sources */,
 				AEC105A318ECE040000AC266 /* RootViewController.m in Sources */,
 				AE3CBD7018F4749800BFA8F5 /* Player.m in Sources */,
 				AE79ECDC18F61A1400604269 /* PersonsAverageViewController.m in Sources */,
