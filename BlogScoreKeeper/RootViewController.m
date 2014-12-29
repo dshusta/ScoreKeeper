@@ -1,7 +1,6 @@
 #import "RootViewController.h"
 #import "CreateGameViewController.h"
 #import "GameCollection.h"
-#import "GameViewController.h"
 
 @interface RootViewController () <GameCollectionDelegate>
 
@@ -22,8 +21,6 @@
 }
 
 - (void)didTapOnGame:(Game *)game {
-    GameViewController *gameViewController = [[GameViewController alloc] initWithGameCollection:self.gameCollection game:game];
-    [self.navigationController pushViewController:gameViewController animated:YES];
 }
 
 - (void)viewDidLoad {

@@ -1,6 +1,5 @@
 #import "RootViewController.h"
 #import "CreateGameViewController.h"
-#import "GameViewController.h"
 #import "Game.h"
 #import "Player.h"
 #import "UIKit+PivotalSpecHelper.h"
@@ -53,37 +52,14 @@ describe(@"RootViewController", ^{
                 [rootViewController.tableView numberOfRowsInSection:0] should equal(1);
             });
 
-            describe(@"tapping on a hand", ^{
+            describe(@"tapping on a game", ^{
                 beforeEach(^{
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
                     UITableViewCell *cell = [rootViewController.tableView cellForRowAtIndexPath:indexPath];
                     [cell tap];
                 });
 
-                it(@"should display a game view controller", ^{
-                    navController.topViewController should be_instance_of([GameViewController class]);
-                });
-
-                it(@"should configure the game view controller correctly", ^{
-                    GameViewController *gameViewController = (id)navController.topViewController;
-                    gameViewController.view should_not be_nil;
-                });
-
-                it(@"should persist total score data", ^{
-                    GameViewController *gameViewController = (id)navController.topViewController;
-                    gameViewController.view should_not be_nil;
-                    [gameViewController.tableView layoutIfNeeded];
-
-                    NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
-                    PlayerCell *cell = (PlayerCell *)[gameViewController.tableView cellForRowAtIndexPath:index];
-                    cell.scoreTextField.text = @"2";
-
-                    [cell.plusButton tap];
-
-                    GameCollection *otherCollection = [[GameCollection alloc]init];
-                    Game *game = otherCollection.games[0];
-                    Player *player = game.players[0];
-                    player.score should equal(2);
+                xit(@"should display a game view controller", ^{
                 });
             });
 

@@ -25,6 +25,8 @@
     return self;
 }
 
+#pragma mark - Model
+
 - (void)addGame:(Game *)game {
     [self.data addObject:game];
     [self saveToUserDefaults];
@@ -37,6 +39,8 @@
 - (NSInteger)count {
     return [self.data count];
 }
+
+#pragma TableView callbacks
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.data count];
@@ -71,6 +75,8 @@
     [tableView reloadData];
     [self saveToUserDefaults];
 }
+
+#pragma mark - Model persistence
 
 - (void)readFromUserDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
