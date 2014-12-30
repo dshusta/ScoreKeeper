@@ -3,6 +3,7 @@
 #import "Game.h"
 #import "Hand.h"
 #import "EditHandViewController.h"
+#import "UITableViewCell+Spec.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -13,6 +14,7 @@ describe(@"HandTableViewController", ^{
     __block HandTableViewController *controller;
     __block UINavigationController *navigationController;
     __block Game *game;
+    __block Hand *hand1;
 
     UITableViewCell *(^cellAt)(NSInteger) = ^(NSInteger row) {
         return [controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
@@ -20,7 +22,7 @@ describe(@"HandTableViewController", ^{
 
     beforeEach(^{
         game = [[Game alloc] initWithName:@"Gamerz" players:@[]];
-        Hand *hand1 = [[Hand alloc] init];
+        hand1 = [[Hand alloc] init];
         Hand *hand2 = [[Hand alloc] init];
         Hand *hand3 = [[Hand alloc] init];
         game.hands = [[NSMutableArray alloc] initWithArray: @[hand1, hand2, hand3]];
@@ -63,6 +65,17 @@ describe(@"HandTableViewController", ^{
         it(@"should navigate to create hand", ^{
             navigationController.topViewController should be_instance_of([EditHandViewController class]);
             [(EditHandViewController*)navigationController.topViewController game] should be_same_instance_as(game);
+        });
+    });
+    
+    describe(@"tapping an existing Hand", ^{
+        beforeEach(^{
+            [cellAt(0) tap];
+        });
+        it(@"should navigate to the 'edit' hand", ^{
+            navigationController.topViewController should be_instance_of([EditHandViewController class]);
+            [(EditHandViewController*)navigationController.topViewController game] should be_same_instance_as(game);
+            [(EditHandViewController*)navigationController.topViewController currentHand] should be_same_instance_as(hand1);
         });
     });
 });

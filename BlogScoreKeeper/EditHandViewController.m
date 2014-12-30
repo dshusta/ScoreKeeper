@@ -5,7 +5,8 @@
 
 @interface EditHandViewController ()
 @property (nonatomic, strong) Game *game;
-@property(nonatomic, strong) GameCollection *gameCollection;
+@property (nonatomic, strong) GameCollection *gameCollection;
+@property (nonatomic, strong) Hand *currentHand;
 
 @end
 
@@ -16,13 +17,18 @@
     return nil;
 }
 
-- (id)initWithGameCollection:(GameCollection *)gameCollection game:(Game *)game {
+- (id)initWithGameCollection:(GameCollection *)gameCollection game:(Game *)game hand:(Hand *) hand {
     self = [super initWithNibName:@"EditHandViewController" bundle:nil];
     if (self) {
         self.gameCollection = gameCollection;
         self.game = game;
+        self.currentHand = hand;
     }
     return self;
+}
+
+- (id)initWithGameCollection:(GameCollection *)gameCollection game:(Game *)game {
+    return [self initWithGameCollection:gameCollection game:game hand:nil];
 }
 
 - (void)viewDidLoad {
@@ -38,10 +44,12 @@
 }
 
 - (void)saveHandOnTap:(id) sender {
-    [self.game.hands addObject:[[Hand alloc] init]];
+    if (self.currentHand == nil) {
+        [self.game.hands addObject:[[Hand alloc] init]];
+    }
     [self.gameCollection synchronize];
     
-    [self.navigationController popViewControllerAnimated:true];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

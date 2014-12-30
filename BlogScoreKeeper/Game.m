@@ -12,7 +12,6 @@
 @end
 
 
-
 @implementation Game
 
 + (Game *)deserialize:(NSDictionary *)dictionary {

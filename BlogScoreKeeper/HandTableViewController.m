@@ -62,7 +62,11 @@
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    EditHandViewController *editHandViewController = [[EditHandViewController alloc] initWithGameCollection:self.gameCollection
+                                                                                                       game:self.game
+                                                                                                       hand:self.game.hands[indexPath.row]];
+    [self.navigationController pushViewController:editHandViewController animated:YES];
+
 }
 
 @end
