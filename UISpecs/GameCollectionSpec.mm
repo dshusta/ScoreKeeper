@@ -1,6 +1,7 @@
 #import "GameCollection.h"
 #import "Game.h"
 #import "Player.h"
+#import "Hand.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -23,8 +24,8 @@ describe(@"GameCollection", ^{
             [players addObject:[[Player alloc] initWithName:@"Fred"]];
             [players addObject:[[Player alloc] initWithName:@"Shaggy"]];
 
-
             Game *game = [[Game alloc] initWithName:@"My Special Game" players:players];
+            [game.hands addObject:[[Hand alloc] init]];
             [gameCollection addGame:game];
         });
 
@@ -51,6 +52,14 @@ describe(@"GameCollection", ^{
             [game.players[2] name] should equal(@"Velma");
             [game.players[3] name] should equal(@"Fred");
             [game.players[4] name] should equal(@"Shaggy");
+        });
+        
+        it(@"should persist hands", ^{
+            GameCollection *newCollection = [[GameCollection alloc] init];
+            Game *game = [newCollection.games lastObject];
+            
+            [game.hands count] should equal(1);
+            game.hands[0] should be_instance_of([Hand class]);
         });
     });
 });

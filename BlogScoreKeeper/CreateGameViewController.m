@@ -9,6 +9,11 @@
 
 @implementation CreateGameViewController
 
+- (instancetype)init {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 - (id)initWithGameCollection:(GameCollection *)gameCollection {
     self = [super initWithNibName:@"CreateGameViewController" bundle:nil];
     if (self) {

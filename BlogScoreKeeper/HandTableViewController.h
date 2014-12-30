@@ -1,6 +1,10 @@
 #import <UIKit/UIKit.h>
 #import "Game.h"
 
+@class GameCollection;
+
 @interface HandTableViewController : UITableViewController
--(id)initWithGame:(Game *)game;
+@property (strong, nonatomic, readonly) Game* game;
+
+- (id)initWithGameCollection:(GameCollection *)gameCollection game:(Game *)game;
 @end

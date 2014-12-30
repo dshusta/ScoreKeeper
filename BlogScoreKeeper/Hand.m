@@ -2,4 +2,8 @@
 
 @implementation Hand
 
+- (NSDictionary *)serialize {
+    return @{};
+}
+
 @end

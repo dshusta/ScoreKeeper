@@ -57,7 +57,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    HandTableViewController *handTableViewController = [[HandTableViewController alloc] init];
+    Game *game = self.gameCollection.games[indexPath.row];
+    HandTableViewController *handTableViewController = [[HandTableViewController alloc] initWithGameCollection:self.gameCollection
+                                                                                                          game:game];
     [self.navigationController pushViewController:handTableViewController animated:YES];
 }
 

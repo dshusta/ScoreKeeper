@@ -59,6 +59,7 @@ describe(@"RootViewController", ^{
 
                 it(@"should display a HandTableViewController", ^{
                     navController.topViewController should be_instance_of([HandTableViewController class]);
+                    [(HandTableViewController*)navController.topViewController game] should be_instance_of([Game class]);
                 });
             });
 

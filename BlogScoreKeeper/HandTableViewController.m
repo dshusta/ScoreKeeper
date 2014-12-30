@@ -1,20 +1,34 @@
 #import "HandTableViewController.h"
 #import "EditHandViewController.h"
+#import "GameCollection.h"
 
 @interface HandTableViewController ()
 
-@property NSInteger handCount;
+@property (nonatomic, strong) GameCollection *gameCollection;
+@property (nonatomic, strong) Game* game;
 
 @end
 
 @implementation HandTableViewController
 
-- (id)initWithGame:(Game *)game {
+- (instancetype)init {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
+- (id)initWithGameCollection:(GameCollection *)gameCollection game:(Game *)game {
     self = [super init];
     if (self) {
-        self.handCount = [game.hands count];
+        self.gameCollection = gameCollection;
+        self.game = game;
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -23,25 +37,18 @@
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
-    
 }
 
-
 - (void)addHandOnTap:(id)sender {
-    EditHandViewController *editHandViewController = [[EditHandViewController alloc] initWithNibName:@"EditHandViewController" bundle:nil];
+    EditHandViewController *editHandViewController = [[EditHandViewController alloc] initWithGameCollection:self.gameCollection
+                                                                                                       game:self.game];
     [self.navigationController pushViewController:editHandViewController animated:YES];
-    
-    ++self.handCount;
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.handCount - 1) inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - <UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.handCount;
+    return [self.game.hands count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -48,6 +48,7 @@
 		AED0751C1A522B14005C06C8 /* EditHandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED075191A522B14005C06C8 /* EditHandViewController.m */; };
 		AED0751D1A522B14005C06C8 /* EditHandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED0751A1A522B14005C06C8 /* EditHandViewController.xib */; };
 		AED0751E1A522B14005C06C8 /* EditHandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED0751A1A522B14005C06C8 /* EditHandViewController.xib */; };
+		AED075301A52311C005C06C8 /* EditHandViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED0752F1A52311C005C06C8 /* EditHandViewControllerSpec.mm */; };
 		AEEC899D1A51E7F700BB1A2F /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEC899C1A51E7F700BB1A2F /* Hand.m */; };
 		AEEC899E1A51E7F700BB1A2F /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEC899C1A51E7F700BB1A2F /* Hand.m */; };
 /* End PBXBuildFile section */
@@ -245,6 +246,7 @@
 		AED075181A522B14005C06C8 /* EditHandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditHandViewController.h; sourceTree = "<group>"; };
 		AED075191A522B14005C06C8 /* EditHandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditHandViewController.m; sourceTree = "<group>"; };
 		AED0751A1A522B14005C06C8 /* EditHandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditHandViewController.xib; sourceTree = "<group>"; };
+		AED0752F1A52311C005C06C8 /* EditHandViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditHandViewControllerSpec.mm; sourceTree = "<group>"; };
 		AEEC899B1A51E7F700BB1A2F /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
 		AEEC899C1A51E7F700BB1A2F /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -365,12 +367,13 @@
 			children = (
 				AEC1059B18ECDA92000AC266 /* AppDelegateSpec.mm */,
 				AE3CBD5918EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm */,
-				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
+				AED0752F1A52311C005C06C8 /* EditHandViewControllerSpec.mm */,
 				AE3CBD5B18F3182900BFA8F5 /* GameCollectionSpec.mm */,
+				AE40F6A71A41188C004044BA /* HandTableViewControllerSpec.mm */,
+				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
 				AEC8550618ECB03800F7FB11 /* Supporting Files */,
 				AE3CBD6118F3241F00BFA8F5 /* UserDefaultsCleaner.h */,
 				AE3CBD6218F3241F00BFA8F5 /* UserDefaultsCleaner.m */,
-				AE40F6A71A41188C004044BA /* HandTableViewControllerSpec.mm */,
 			);
 			path = UISpecs;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				AEC1059C18ECDA92000AC266 /* AppDelegateSpec.mm in Sources */,
 				AE3CBD5C18F3182900BFA8F5 /* GameCollectionSpec.mm in Sources */,
 				AEC105A318ECE040000AC266 /* RootViewController.m in Sources */,
+				AED075301A52311C005C06C8 /* EditHandViewControllerSpec.mm in Sources */,
 				AE3CBD7018F4749800BFA8F5 /* Player.m in Sources */,
 				AEC105A618ECE061000AC266 /* AppDelegate.m in Sources */,
 			);

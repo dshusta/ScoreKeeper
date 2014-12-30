@@ -5,8 +5,8 @@
 @interface Game : NSObject
 
 @property (nonatomic, copy, readonly) NSString *name;
-@property (nonatomic, copy, readonly) NSArray *players;
-@property (nonatomic, copy) NSArray *hands;
+@property (nonatomic, strong, readonly) NSArray *players;
+@property (nonatomic, strong) NSMutableArray *hands;
 
 + (Game *)deserialize:(NSDictionary *)dictionary;
 

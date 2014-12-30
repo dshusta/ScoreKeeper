@@ -12,19 +12,20 @@ SPEC_BEGIN(HandTableViewControllerSpec)
 describe(@"HandTableViewController", ^{
     __block HandTableViewController *controller;
     __block UINavigationController *navigationController;
+    __block Game *game;
 
     UITableViewCell *(^cellAt)(NSInteger) = ^(NSInteger row) {
         return [controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
     };
 
     beforeEach(^{
-        Game *game = [[Game alloc] initWithName:@"Gamerz" players:@[]];
+        game = [[Game alloc] initWithName:@"Gamerz" players:@[]];
         Hand *hand1 = [[Hand alloc] init];
         Hand *hand2 = [[Hand alloc] init];
         Hand *hand3 = [[Hand alloc] init];
-        game.hands = @[hand1, hand2, hand3];
+        game.hands = [[NSMutableArray alloc] initWithArray: @[hand1, hand2, hand3]];
         
-        controller = [[HandTableViewController alloc] initWithGame:game];
+        controller = [[HandTableViewController alloc] initWithGameCollection:NULL game:game];
         
         navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
         
@@ -38,6 +39,20 @@ describe(@"HandTableViewController", ^{
         cellAt(0).textLabel.text should equal(@"Hand 1");
         cellAt(1).textLabel.text should equal(@"Hand 2");
         cellAt(2).textLabel.text should equal(@"Hand 3");
+        
+    });
+    
+    it(@"should update view when new hands are added", ^{
+        [game.hands addObject:[[Hand alloc] init]];
+        
+        [controller viewWillAppear:true];
+        
+        [controller.tableView numberOfRowsInSection:0] should equal(4);
+        
+        cellAt(0).textLabel.text should equal(@"Hand 1");
+        cellAt(1).textLabel.text should equal(@"Hand 2");
+        cellAt(2).textLabel.text should equal(@"Hand 3");
+        cellAt(3).textLabel.text should equal(@"Hand 4");
     });
     
     describe(@"tapping New Hand button", ^{
@@ -47,6 +62,7 @@ describe(@"HandTableViewController", ^{
         
         it(@"should navigate to create hand", ^{
             navigationController.topViewController should be_instance_of([EditHandViewController class]);
+            [(EditHandViewController*)navigationController.topViewController game] should be_same_instance_as(game);
         });
     });
 });
