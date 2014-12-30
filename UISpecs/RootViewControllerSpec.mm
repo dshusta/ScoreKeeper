@@ -3,6 +3,7 @@
 #import "Game.h"
 #import "Player.h"
 #import "UIKit+PivotalSpecHelper.h"
+#import "HandTableViewController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -20,7 +21,6 @@ describe(@"RootViewController", ^{
         navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
 
         [rootViewController viewWillAppear:NO];
-        [rootViewController viewDidAppear:NO];
     });
 
     describe(@"after Create New Game is tapped", ^{
@@ -39,7 +39,6 @@ describe(@"RootViewController", ^{
                 [createGameViewController.saveButton tap];
 
                 [rootViewController viewWillAppear:NO];
-                [rootViewController viewDidAppear:NO];
             });
 
             it(@"should go back to the root view controller", ^{
@@ -58,7 +57,8 @@ describe(@"RootViewController", ^{
                     [cell tap];
                 });
 
-                xit(@"should display a game view controller", ^{
+                it(@"should display a HandTableViewController", ^{
+                    navController.topViewController should be_instance_of([HandTableViewController class]);
                 });
             });
 

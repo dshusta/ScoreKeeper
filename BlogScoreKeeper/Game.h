@@ -6,6 +6,7 @@
 
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSArray *players;
+@property (nonatomic, copy) NSArray *hands;
 
 + (Game *)deserialize:(NSDictionary *)dictionary;
 

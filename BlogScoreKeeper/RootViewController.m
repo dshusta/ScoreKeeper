@@ -1,6 +1,7 @@
 #import "RootViewController.h"
 #import "CreateGameViewController.h"
 #import "GameCollection.h"
+#import "HandTableViewController.h"
 
 @interface RootViewController ()
 
@@ -19,9 +20,6 @@
     return self;
 }
 
-- (void)didTapOnGame:(Game *)game {
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -32,16 +30,10 @@
                                                                                            action:@selector(touchUpCreateNewGame:)];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
-}
-
 - (void)touchUpCreateNewGame:(id)sender {
     CreateGameViewController *createGameViewController = [[CreateGameViewController alloc] initWithGameCollection:self.gameCollection];
     [self.navigationController pushViewController:createGameViewController animated:YES];
 }
-
 
 #pragma TableView callbacks
 
@@ -65,8 +57,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Game *game = self.gameCollection.games[indexPath.row];
-    [self didTapOnGame:game];
+    HandTableViewController *handTableViewController = [[HandTableViewController alloc] init];
+    [self.navigationController pushViewController:handTableViewController animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

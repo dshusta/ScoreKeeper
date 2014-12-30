@@ -1,18 +1,18 @@
 #import "HandTableViewController.h"
+#import "EditHandViewController.h"
 
 @interface HandTableViewController ()
 
-//@property (nonatomic) NSMutableArray *hands;
 @property NSInteger handCount;
 
 @end
 
 @implementation HandTableViewController
 
-- (id)init {
+- (id)initWithGame:(Game *)game {
     self = [super init];
     if (self) {
-//        self.hands = [[NSMutableArray alloc] init];
+        self.handCount = [game.hands count];
     }
     return self;
 }
@@ -23,10 +23,14 @@
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+    
 }
 
 
 - (void)addHandOnTap:(id)sender {
+    EditHandViewController *editHandViewController = [[EditHandViewController alloc] initWithNibName:@"EditHandViewController" bundle:nil];
+    [self.navigationController pushViewController:editHandViewController animated:YES];
+    
     ++self.handCount;
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.handCount - 1) inSection:0];
