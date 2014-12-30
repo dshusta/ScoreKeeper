@@ -54,7 +54,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                             forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"Hand %li", indexPath.row + 1];
+    cell.textLabel.text = [NSString stringWithFormat:@"Hand %li", (long)(indexPath.row + 1)];
     
     return cell;
 }
@@ -66,7 +66,13 @@
                                                                                                        game:self.game
                                                                                                        hand:self.game.hands[indexPath.row]];
     [self.navigationController pushViewController:editHandViewController animated:YES];
+}
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.game.hands removeObjectAtIndex:indexPath.row];
+    [self.gameCollection synchronize];
+    
+    [tableView reloadData];
 }
 
 @end

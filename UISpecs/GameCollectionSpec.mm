@@ -61,6 +61,16 @@ describe(@"GameCollection", ^{
             [game.hands count] should equal(1);
             game.hands[0] should be_instance_of([Hand class]);
         });
+        
+        it(@"should persist deletion of hand", ^{
+            Game *game = [[gameCollection games] firstObject];
+            [game.hands removeObjectAtIndex:0];
+            [gameCollection synchronize];
+            
+            GameCollection *newCollection = [[GameCollection alloc] init];
+            Game *gameFromCollection = [newCollection.games lastObject];
+            [gameFromCollection.hands count] should equal(0);
+        });
     });
 });
 
