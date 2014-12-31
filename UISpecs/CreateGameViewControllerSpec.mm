@@ -15,7 +15,7 @@ describe(@"CreateGameViewController", ^{
 
     beforeEach(^{
         spy_on([NSDate class]);
-        [NSDate class] stub_method(@selector(date)).and_return([NSDate dateWithTimeIntervalSince1970:1418633994]);
+        [NSDate class] stub_method(@selector(date)).and_return([NSDate dateWithTimeIntervalSince1970:1420056147]);// 2014-12-31 12:02:27 -0800
         
         collection = [[GameCollection alloc] init];
         controller = [[CreateGameViewController alloc] initWithGameCollection:collection];
@@ -23,7 +23,7 @@ describe(@"CreateGameViewController", ^{
     });
     
     it(@"should prepopulate the name with the current date", ^{
-        controller.nameTextField.text should equal(@"December 15, 2014");
+        controller.nameTextField.text should equal(@"31 December 2014 - 12:02");
     });
     
     describe(@"tapping Save after entering a name", ^{

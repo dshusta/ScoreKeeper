@@ -27,8 +27,7 @@
     self.title = @"New Game";
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateStyle = NSDateFormatterLongStyle;
-    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    [dateFormatter setDateFormat:@"dd MMMM yyyy '-' HH:mm"];
     
     self.nameTextField.text = [dateFormatter stringFromDate:today];
     
