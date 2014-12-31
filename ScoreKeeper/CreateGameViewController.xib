@@ -8,13 +8,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateGameViewController">
             <connections>
                 <outlet property="nameTextField" destination="DTl-JH-2mU" id="ydb-nT-0yu"/>
-                <outlet property="player1TextField" destination="gb2-0B-noK" id="WdV-xD-fTY"/>
-                <outlet property="player2TextField" destination="v2q-4y-1cC" id="TrW-eh-5hA"/>
-                <outlet property="player3TextField" destination="Kee-Wm-r6f" id="J62-Er-qXA"/>
-                <outlet property="player4TextField" destination="bE5-kf-xSR" id="Pqr-nl-5f0"/>
-                <outlet property="player5TextField" destination="ATc-eG-PSd" id="WCF-YH-PpL"/>
                 <outlet property="saveButton" destination="pta-a9-7a1" id="u5i-2B-31R"/>
                 <outlet property="view" destination="1" id="3"/>
+                <outletCollection property="playerNameFields" destination="gb2-0B-noK" id="jOI-eG-qiE"/>
+                <outletCollection property="playerNameFields" destination="v2q-4y-1cC" id="MgV-QM-OUF"/>
+                <outletCollection property="playerNameFields" destination="Kee-Wm-r6f" id="6A1-Hi-sEJ"/>
+                <outletCollection property="playerNameFields" destination="bE5-kf-xSR" id="WJs-BF-h1Q"/>
+                <outletCollection property="playerNameFields" destination="ATc-eG-PSd" id="z09-8b-z7A"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

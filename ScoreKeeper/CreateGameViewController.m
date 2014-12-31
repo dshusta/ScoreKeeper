@@ -41,16 +41,14 @@
 
 - (IBAction)touchUpSaveButton:(id)sender {
     NSString *name = self.nameTextField.text;
-
-    Player *player1 = [[Player alloc] initWithName:self.player1TextField.text];
-    Player *player2 = [[Player alloc] initWithName:self.player2TextField.text];
-    Player *player3 = [[Player alloc] initWithName:self.player3TextField.text];
-    Player *player4 = [[Player alloc] initWithName:self.player4TextField.text];
-    Player *player5 = [[Player alloc] initWithName:self.player5TextField.text];
-
-    NSArray *players = @[player1, player2, player3, player4, player5];
-    Game *game = [[Game alloc] initWithName:name
-                                    players:players];
+    
+    __block NSMutableArray *players = [[NSMutableArray alloc] init];
+    [self.playerNameFields enumerateObjectsUsingBlock:^(UITextField *playerNameField, NSUInteger index, BOOL *stop) {
+        Player *player = [[Player alloc] initWithName:[playerNameField text]];
+        [players addObject:player];
+    }];
+    
+    Game *game = [[Game alloc] initWithName:name players:players];
 
     [self.gameCollection addGame:game];
     [self.navigationController popViewControllerAnimated:YES];

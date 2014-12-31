@@ -36,11 +36,11 @@ describe(@"CreateGameViewController", ^{
             [nav pushViewController:controller animated:NO];
 
             controller.nameTextField.text = @"My Special Name";
-            controller.player1TextField.text = @"Scooby Doo";
-            controller.player2TextField.text = @"Shaggy";
-            controller.player3TextField.text = @"Daphne";
-            controller.player4TextField.text = @"Velma";
-            controller.player5TextField.text = @"Fred";
+            [controller.playerNameFields[0] setText:@"Scooby Doo"];
+            [controller.playerNameFields[1] setText:@"Shaggy"];
+            [controller.playerNameFields[2] setText:@"Daphne"];
+            [controller.playerNameFields[3] setText:@"Velma"];
+            [controller.playerNameFields[4] setText:@"Fred"];
 
             [controller.saveButton tap];
         });
