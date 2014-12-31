@@ -1,6 +1,6 @@
 thrust_version: 0.3
-project_name: BlogScoreKeeper
-app_name: BlogScoreKeeper
+project_name: ScoreKeeper
+app_name: ScoreKeeper
 ios_distribution_certificate: 'Name of Distribution Signing Certificate'
 ios_sim_binary: 'ios-sim' # or wax-sim. iOS only.
 

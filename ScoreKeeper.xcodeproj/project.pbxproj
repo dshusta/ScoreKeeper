@@ -215,14 +215,14 @@
 		AE40F6931A4117C5004044BA /* HandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandTableViewController.h; sourceTree = "<group>"; };
 		AE40F6941A4117C5004044BA /* HandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandTableViewController.m; sourceTree = "<group>"; };
 		AE40F6A71A41188C004044BA /* HandTableViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HandTableViewControllerSpec.mm; sourceTree = "<group>"; };
-		AE4C7EE518EC980F004B11DE /* BlogScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4C7EE518EC980F004B11DE /* ScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4C7EE818EC980F004B11DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE4C7EEA18EC980F004B11DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AE4C7EEC18EC980F004B11DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		AE4C7EF018EC980F004B11DE /* BlogScoreKeeper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlogScoreKeeper-Info.plist"; sourceTree = "<group>"; };
+		AE4C7EF018EC980F004B11DE /* ScoreKeeper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScoreKeeper-Info.plist"; sourceTree = "<group>"; };
 		AE4C7EF218EC980F004B11DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE4C7EF418EC980F004B11DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AE4C7EF618EC980F004B11DE /* BlogScoreKeeper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlogScoreKeeper-Prefix.pch"; sourceTree = "<group>"; };
+		AE4C7EF618EC980F004B11DE /* ScoreKeeper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScoreKeeper-Prefix.pch"; sourceTree = "<group>"; };
 		AE4C7EF718EC980F004B11DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE4C7EF818EC980F004B11DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AE4C7EFA18EC980F004B11DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -282,9 +282,9 @@
 		AE4C7EDC18EC980F004B11DE = {
 			isa = PBXGroup;
 			children = (
-				AEC8551618ECB15100F7FB11 /* Externals */,
-				AE4C7EEE18EC980F004B11DE /* BlogScoreKeeper */,
+				AE4C7EEE18EC980F004B11DE /* ScoreKeeper */,
 				AEC8550518ECB03800F7FB11 /* UISpecs */,
+				AEC8551618ECB15100F7FB11 /* Externals */,
 				AE4C7EE718EC980F004B11DE /* Frameworks */,
 				AE4C7EE618EC980F004B11DE /* Products */,
 			);
@@ -293,7 +293,7 @@
 		AE4C7EE618EC980F004B11DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE4C7EE518EC980F004B11DE /* BlogScoreKeeper.app */,
+				AE4C7EE518EC980F004B11DE /* ScoreKeeper.app */,
 				AEC8550118ECB03800F7FB11 /* UISpecs.app */,
 			);
 			name = Products;
@@ -310,7 +310,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AE4C7EEE18EC980F004B11DE /* BlogScoreKeeper */ = {
+		AE4C7EEE18EC980F004B11DE /* ScoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
 				AE4C7EF718EC980F004B11DE /* AppDelegate.h */,
@@ -336,16 +336,16 @@
 				AEC105A018ECE040000AC266 /* RootViewController.m */,
 				AE4C7EEF18EC980F004B11DE /* Supporting Files */,
 			);
-			path = BlogScoreKeeper;
+			path = ScoreKeeper;
 			sourceTree = "<group>";
 		};
 		AE4C7EEF18EC980F004B11DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE4C7EF018EC980F004B11DE /* BlogScoreKeeper-Info.plist */,
+				AE4C7EF018EC980F004B11DE /* ScoreKeeper-Info.plist */,
 				AE4C7EF118EC980F004B11DE /* InfoPlist.strings */,
 				AE4C7EF418EC980F004B11DE /* main.m */,
-				AE4C7EF618EC980F004B11DE /* BlogScoreKeeper-Prefix.pch */,
+				AE4C7EF618EC980F004B11DE /* ScoreKeeper-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -420,9 +420,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AE4C7EE418EC980F004B11DE /* BlogScoreKeeper */ = {
+		AE4C7EE418EC980F004B11DE /* ScoreKeeper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE4C7F1118EC980F004B11DE /* Build configuration list for PBXNativeTarget "BlogScoreKeeper" */;
+			buildConfigurationList = AE4C7F1118EC980F004B11DE /* Build configuration list for PBXNativeTarget "ScoreKeeper" */;
 			buildPhases = (
 				AE4C7EE118EC980F004B11DE /* Sources */,
 				AE4C7EE218EC980F004B11DE /* Frameworks */,
@@ -432,9 +432,9 @@
 			);
 			dependencies = (
 			);
-			name = BlogScoreKeeper;
+			name = ScoreKeeper;
 			productName = BlogScoreKeeper;
-			productReference = AE4C7EE518EC980F004B11DE /* BlogScoreKeeper.app */;
+			productReference = AE4C7EE518EC980F004B11DE /* ScoreKeeper.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AEC8550018ECB03800F7FB11 /* UISpecs */ = {
@@ -472,7 +472,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AE4C7EE018EC980F004B11DE /* Build configuration list for PBXProject "BlogScoreKeeper" */;
+			buildConfigurationList = AE4C7EE018EC980F004B11DE /* Build configuration list for PBXProject "ScoreKeeper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -494,7 +494,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				AE4C7EE418EC980F004B11DE /* BlogScoreKeeper */,
+				AE4C7EE418EC980F004B11DE /* ScoreKeeper */,
 				AEC8550018ECB03800F7FB11 /* UISpecs */,
 			);
 		};
@@ -813,9 +813,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BlogScoreKeeper/BlogScoreKeeper-Prefix.pch";
-				INFOPLIST_FILE = "BlogScoreKeeper/BlogScoreKeeper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ScoreKeeper/ScoreKeeper-Prefix.pch";
+				INFOPLIST_FILE = "ScoreKeeper/ScoreKeeper-Info.plist";
+				PRODUCT_NAME = ScoreKeeper;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -829,9 +829,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BlogScoreKeeper/BlogScoreKeeper-Prefix.pch";
-				INFOPLIST_FILE = "BlogScoreKeeper/BlogScoreKeeper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ScoreKeeper/ScoreKeeper-Prefix.pch";
+				INFOPLIST_FILE = "ScoreKeeper/ScoreKeeper-Info.plist";
+				PRODUCT_NAME = ScoreKeeper;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -883,7 +883,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AE4C7EE018EC980F004B11DE /* Build configuration list for PBXProject "BlogScoreKeeper" */ = {
+		AE4C7EE018EC980F004B11DE /* Build configuration list for PBXProject "ScoreKeeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE4C7F0F18EC980F004B11DE /* Debug */,
@@ -892,7 +892,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE4C7F1118EC980F004B11DE /* Build configuration list for PBXNativeTarget "BlogScoreKeeper" */ = {
+		AE4C7F1118EC980F004B11DE /* Build configuration list for PBXNativeTarget "ScoreKeeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE4C7F1218EC980F004B11DE /* Debug */,

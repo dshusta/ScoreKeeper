@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:BlogScoreKeeper.xcodeproj">
+      location = "self:ScoreKeeper.xcodeproj">
    </FileRef>
 </Workspace>
