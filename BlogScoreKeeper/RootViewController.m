@@ -30,6 +30,12 @@
                                                                                            action:@selector(touchUpCreateNewGame:)];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void)touchUpCreateNewGame:(id)sender {
     CreateGameViewController *createGameViewController = [[CreateGameViewController alloc] initWithGameCollection:self.gameCollection];
     [self.navigationController pushViewController:createGameViewController animated:YES];

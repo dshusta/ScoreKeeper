@@ -34,7 +34,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (self.currentHand == nil) {
+    if (self.currentHand) {
+        for (UIButton *pickerButton in [self pickerButtons]) {
+            pickerButton.enabled = NO;
+        }
+        
+        NSArray *names = [self.game.players valueForKey:@"name"];
+        NSUInteger pickerIndex = [names indexOfObject:self.currentHand.pickerName];
+        
+        UIButton *selectedPickerButton = [self pickerButtons][pickerIndex];
+        selectedPickerButton.selected = YES;
+    }
+    else {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveHandOnTap:)];
         self.navigationItem.rightBarButtonItem.enabled = NO;
     }
@@ -55,9 +66,7 @@
 }
 
 - (IBAction)didTapPickerButton:(id)sender {
-    NSArray *pickerButtons = [self pickerButtons];
-    
-    for (UIButton *pickerButton in pickerButtons) {
+    for (UIButton *pickerButton in [self pickerButtons]) {
         pickerButton.enabled = NO;
         
         if (pickerButton == sender) {
@@ -69,15 +78,14 @@
 }
 
 - (NSString*)nameOfPicker {
-    NSArray *pickerButtons = [self pickerButtons];
-    for (int i = 0; i < [pickerButtons count]; i++) {
-        UIButton *pickerButton = pickerButtons[i];
+    __block NSString *pickerName;
+    [[self pickerButtons] enumerateObjectsUsingBlock:^(UIButton *pickerButton, NSUInteger i, BOOL *stop) {
         if (pickerButton.selected) {
-            return [self.game.players[i] name];
+            pickerName = [self.game.players[i] name];
+            *stop = YES;
         }
-    }
-    
-    return nil;
+    }];
+    return pickerName;
 }
 
 - (void)saveHandOnTap:(id) sender {

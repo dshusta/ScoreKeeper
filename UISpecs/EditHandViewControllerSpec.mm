@@ -130,7 +130,7 @@ describe(@"EditHandViewController", ^{
         __block Hand *hand;
         
         beforeEach(^{
-            hand = [[Hand alloc] initWithPickerName:@"player two"];
+            hand = [[Hand alloc] initWithPickerName:@"player four"];
             [game.hands addObject:hand];
             
             editHandViewController = [[EditHandViewController alloc] initWithGameCollection:gameCollection game:game hand:hand];
@@ -149,8 +149,20 @@ describe(@"EditHandViewController", ^{
             editHandViewController.player5Label.text should equal(@"player five");
         });
         
-        it(@"should show selected Picker", ^{
-            
+        it(@"should disable all Q's", ^{
+            editHandViewController.player1PickerButton.enabled should be_falsy;
+            editHandViewController.player2PickerButton.enabled should be_falsy;
+            editHandViewController.player3PickerButton.enabled should be_falsy;
+            editHandViewController.player4PickerButton.enabled should be_falsy;
+            editHandViewController.player5PickerButton.enabled should be_falsy;
+        });
+        
+        it(@"should select the Picker", ^{
+            editHandViewController.player1PickerButton.selected should be_falsy;
+            editHandViewController.player2PickerButton.selected should be_falsy;
+            editHandViewController.player3PickerButton.selected should be_falsy;
+            editHandViewController.player4PickerButton.selected should be_truthy;
+            editHandViewController.player5PickerButton.selected should be_falsy;
         });
         
         it(@"should not have a save button", ^{
