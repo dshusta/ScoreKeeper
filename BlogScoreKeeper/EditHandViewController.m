@@ -34,7 +34,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveHandOnTap:)];
+    if (self.currentHand == nil) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveHandOnTap:)];
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
     
     self.player1Label.text = [self.game.players[0] name];
     self.player2Label.text = [self.game.players[1] name];
@@ -43,10 +46,45 @@
     self.player5Label.text = [self.game.players[4] name];
 }
 
-- (void)saveHandOnTap:(id) sender {
-    if (self.currentHand == nil) {
-        [self.game.hands addObject:[[Hand alloc] init]];
+- (NSArray *)pickerButtons {
+    return @[self.player1PickerButton,
+             self.player2PickerButton,
+             self.player3PickerButton,
+             self.player4PickerButton,
+             self.player5PickerButton];
+}
+
+- (IBAction)didTapPickerButton:(id)sender {
+    NSArray *pickerButtons = [self pickerButtons];
+    
+    for (UIButton *pickerButton in pickerButtons) {
+        pickerButton.enabled = NO;
+        
+        if (pickerButton == sender) {
+            pickerButton.selected = YES;
+        }
     }
+    
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+}
+
+- (NSString*)nameOfPicker {
+    NSArray *pickerButtons = [self pickerButtons];
+    for (int i = 0; i < [pickerButtons count]; i++) {
+        UIButton *pickerButton = pickerButtons[i];
+        if (pickerButton.selected) {
+            return [self.game.players[i] name];
+        }
+    }
+    
+    return nil;
+}
+
+- (void)saveHandOnTap:(id) sender {
+    self.currentHand = [[Hand alloc] initWithPickerName:[self nameOfPicker]];
+    
+    [self.game.hands addObject:self.currentHand];
+    
     [self.gameCollection synchronize];
     
     [self.navigationController popViewControllerAnimated:YES];

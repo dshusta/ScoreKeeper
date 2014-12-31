@@ -25,7 +25,8 @@ describe(@"GameCollection", ^{
             [players addObject:[[Player alloc] initWithName:@"Shaggy"]];
 
             Game *game = [[Game alloc] initWithName:@"My Special Game" players:players];
-            [game.hands addObject:[[Hand alloc] init]];
+            Hand *hand = [[Hand alloc] initWithPickerName:@"Velma"];
+            [game.hands addObject:hand];
             [gameCollection addGame:game];
         });
 
@@ -59,7 +60,7 @@ describe(@"GameCollection", ^{
             Game *game = [newCollection.games lastObject];
             
             [game.hands count] should equal(1);
-            game.hands[0] should be_instance_of([Hand class]);
+            [game.hands[0] pickerName] should equal(@"Velma");
         });
         
         it(@"should persist deletion of hand", ^{

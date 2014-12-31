@@ -3,10 +3,10 @@
 @implementation Player
 
 + (instancetype)deserialize:(NSDictionary *)dictionary {
-    Player *p = [[Player alloc]init];
-    p.name = dictionary[@"name"];
-    p.score = [dictionary[@"score"] integerValue];
-    return p;
+    Player *player = [[Player alloc]init];
+    player.name = dictionary[@"name"];
+    player.score = [dictionary[@"score"] integerValue];
+    return player;
 }
 
 - (instancetype)initWithName:(NSString *)name {

@@ -27,9 +27,9 @@ describe(@"HandTableViewController", ^{
     beforeEach(^{
         gameCollection = [[GameCollection alloc] init];
         game = [[Game alloc] initWithName:@"Gamerz" players:@[]];
-        hand1 = [[Hand alloc] init];
-        hand2 = [[Hand alloc] init];
-        hand3 = [[Hand alloc] init];
+        hand1 = [[Hand alloc] initWithPickerName:@"Player 1"];
+        hand2 = [[Hand alloc] initWithPickerName:@"Player 2"];
+        hand3 = [[Hand alloc] initWithPickerName:@"Player 3"];
         game.hands = [[NSMutableArray alloc] initWithArray: @[hand1, hand2, hand3]];
         [gameCollection addGame:game];
         
@@ -52,7 +52,7 @@ describe(@"HandTableViewController", ^{
     });
     
     it(@"should update view when new hands are added", ^{
-        [game.hands addObject:[[Hand alloc] init]];
+        [game.hands addObject:[[Hand alloc] initWithPickerName:@"Player 4"]];
         
         [controller viewWillAppear:true];
         
