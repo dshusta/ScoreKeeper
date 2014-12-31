@@ -49,12 +49,9 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveHandOnTap:)];
         self.navigationItem.rightBarButtonItem.enabled = NO;
     }
-    
-    self.player1Label.text = [self.game.players[0] name];
-    self.player2Label.text = [self.game.players[1] name];
-    self.player3Label.text = [self.game.players[2] name];
-    self.player4Label.text = [self.game.players[3] name];
-    self.player5Label.text = [self.game.players[4] name];
+    [self.game.players enumerateObjectsUsingBlock:^(Player *player, NSUInteger i, BOOL *stop) {
+        [self.playerLabels[i] setText:player.name];
+    }];
 }
 
 - (NSArray *)pickerButtons {

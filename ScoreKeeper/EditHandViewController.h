@@ -5,12 +5,7 @@
 @class GameCollection;
 
 @interface EditHandViewController : UIViewController
-
-@property (nonatomic, strong) IBOutlet UILabel* player1Label;
-@property (nonatomic, strong) IBOutlet UILabel* player2Label;
-@property (nonatomic, strong) IBOutlet UILabel* player3Label;
-@property (nonatomic, strong) IBOutlet UILabel* player4Label;
-@property (nonatomic, strong) IBOutlet UILabel* player5Label;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *playerLabels;
 
 @property (nonatomic, strong) IBOutlet UIButton* player1PickerButton;
 @property (nonatomic, strong) IBOutlet UIButton* player2PickerButton;

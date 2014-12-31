@@ -51,11 +51,11 @@ describe(@"EditHandViewController", ^{
         });
         
         it(@"should draw a row for each player in the hand's game", ^{
-            editHandViewController.player1Label.text should equal(@"player one");
-            editHandViewController.player2Label.text should equal(@"player two");
-            editHandViewController.player3Label.text should equal(@"player three");
-            editHandViewController.player4Label.text should equal(@"player four");
-            editHandViewController.player5Label.text should equal(@"player five");
+            [editHandViewController.playerLabels[0] text] should equal(@"player one");
+            [editHandViewController.playerLabels[1] text] should equal(@"player two");
+            [editHandViewController.playerLabels[2] text] should equal(@"player three");
+            [editHandViewController.playerLabels[3] text] should equal(@"player four");
+            [editHandViewController.playerLabels[4] text] should equal(@"player five");
         });
         
         it(@"should let the user choose picker for each player", ^{
@@ -142,11 +142,11 @@ describe(@"EditHandViewController", ^{
         });
         
         it(@"should draw a row for each player in the hand's game", ^{
-            editHandViewController.player1Label.text should equal(@"player one");
-            editHandViewController.player2Label.text should equal(@"player two");
-            editHandViewController.player3Label.text should equal(@"player three");
-            editHandViewController.player4Label.text should equal(@"player four");
-            editHandViewController.player5Label.text should equal(@"player five");
+            [editHandViewController.playerLabels[0] text] should equal(@"player one");
+            [editHandViewController.playerLabels[1] text] should equal(@"player two");
+            [editHandViewController.playerLabels[2] text] should equal(@"player three");
+            [editHandViewController.playerLabels[3] text] should equal(@"player four");
+            [editHandViewController.playerLabels[4] text] should equal(@"player five");
         });
         
         it(@"should disable all Q's", ^{

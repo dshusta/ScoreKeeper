@@ -31,6 +31,12 @@
     dateFormatter.timeStyle = NSDateFormatterNoStyle;
     
     self.nameTextField.text = [dateFormatter stringFromDate:today];
+    
+//    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.player5TextField.frame),
+//                                                                           CGRectGetMaxY(self.player5TextField.frame) + 10,
+//                                                                           CGRectGetWidth(self.player5TextField.frame),
+//                                                                           CGRectGetHeight(self.player5TextField.frame))];
+//    [self.view addSubview:textField];
 }
 
 - (IBAction)touchUpSaveButton:(id)sender {
