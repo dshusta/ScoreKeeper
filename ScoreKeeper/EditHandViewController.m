@@ -54,16 +54,8 @@
     }];
 }
 
-- (NSArray *)pickerButtons {
-    return @[self.player1PickerButton,
-             self.player2PickerButton,
-             self.player3PickerButton,
-             self.player4PickerButton,
-             self.player5PickerButton];
-}
-
 - (IBAction)didTapPickerButton:(id)sender {
-    for (UIButton *pickerButton in [self pickerButtons]) {
+    for (UIButton *pickerButton in self.pickerButtons) {
         pickerButton.enabled = NO;
         
         if (pickerButton == sender) {
@@ -76,7 +68,7 @@
 
 - (NSString*)nameOfPicker {
     __block NSString *pickerName;
-    [[self pickerButtons] enumerateObjectsUsingBlock:^(UIButton *pickerButton, NSUInteger i, BOOL *stop) {
+    [self.pickerButtons enumerateObjectsUsingBlock:^(UIButton *pickerButton, NSUInteger i, BOOL *stop) {
         if (pickerButton.selected) {
             pickerName = [self.game.players[i] name];
             *stop = YES;

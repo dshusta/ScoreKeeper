@@ -59,11 +59,11 @@ describe(@"EditHandViewController", ^{
         });
         
         it(@"should let the user choose picker for each player", ^{
-            editHandViewController.player1PickerButton.enabled should be_truthy;
-            editHandViewController.player2PickerButton.enabled should be_truthy;
-            editHandViewController.player3PickerButton.enabled should be_truthy;
-            editHandViewController.player4PickerButton.enabled should be_truthy;
-            editHandViewController.player5PickerButton.enabled should be_truthy;
+            ((UIButton*)editHandViewController.pickerButtons[0]).enabled should be_truthy;
+            ((UIButton*)editHandViewController.pickerButtons[1]).enabled should be_truthy;
+            ((UIButton*)editHandViewController.pickerButtons[2]).enabled should be_truthy;
+            ((UIButton*)editHandViewController.pickerButtons[3]).enabled should be_truthy;
+            ((UIButton*)editHandViewController.pickerButtons[4]).enabled should be_truthy;
         });
         
         it(@"should have a disabled Save button", ^{
@@ -72,23 +72,23 @@ describe(@"EditHandViewController", ^{
         
         describe(@"after tapping for a Picker", ^{
             beforeEach(^{
-                [editHandViewController.player2PickerButton tap];
+                [editHandViewController.pickerButtons[1] tap];
             });
             
             it(@"should disable all Q's", ^{
-                editHandViewController.player1PickerButton.enabled should be_falsy;
-                editHandViewController.player2PickerButton.enabled should be_falsy;
-                editHandViewController.player3PickerButton.enabled should be_falsy;
-                editHandViewController.player4PickerButton.enabled should be_falsy;
-                editHandViewController.player5PickerButton.enabled should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[0]).enabled should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[1]).enabled should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[2]).enabled should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[3]).enabled should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[4]).enabled should be_falsy;
             });
             
             it(@"should select the tapped button", ^{
-                editHandViewController.player1PickerButton.selected should be_falsy;
-                editHandViewController.player2PickerButton.selected should be_truthy;
-                editHandViewController.player3PickerButton.selected should be_falsy;
-                editHandViewController.player4PickerButton.selected should be_falsy;
-                editHandViewController.player5PickerButton.selected should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[0]).selected should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[1]).selected should be_truthy;
+                ((UIButton*)editHandViewController.pickerButtons[2]).selected should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[3]).selected should be_falsy;
+                ((UIButton*)editHandViewController.pickerButtons[4]).selected should be_falsy;
             });
             
             it(@"should enabled the Save button", ^{
@@ -150,19 +150,19 @@ describe(@"EditHandViewController", ^{
         });
         
         it(@"should disable all Q's", ^{
-            editHandViewController.player1PickerButton.enabled should be_falsy;
-            editHandViewController.player2PickerButton.enabled should be_falsy;
-            editHandViewController.player3PickerButton.enabled should be_falsy;
-            editHandViewController.player4PickerButton.enabled should be_falsy;
-            editHandViewController.player5PickerButton.enabled should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[0]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[1]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[2]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[3]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[4]).enabled should be_falsy;
         });
         
         it(@"should select the Picker", ^{
-            editHandViewController.player1PickerButton.selected should be_falsy;
-            editHandViewController.player2PickerButton.selected should be_falsy;
-            editHandViewController.player3PickerButton.selected should be_falsy;
-            editHandViewController.player4PickerButton.selected should be_truthy;
-            editHandViewController.player5PickerButton.selected should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[0]).selected should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[1]).selected should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[2]).selected should be_falsy;
+            ((UIButton*)editHandViewController.pickerButtons[3]).selected should be_truthy;
+            ((UIButton*)editHandViewController.pickerButtons[4]).selected should be_falsy;
         });
         
         it(@"should not have a save button", ^{

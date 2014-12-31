@@ -7,17 +7,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditHandViewController">
             <connections>
-                <outlet property="player1PickerButton" destination="ZHB-WL-Pvp" id="din-wd-cHq"/>
-                <outlet property="player2PickerButton" destination="w8d-7J-4CU" id="U44-Ws-WnQ"/>
-                <outlet property="player3PickerButton" destination="ZXX-cA-hjB" id="cdC-jW-41h"/>
-                <outlet property="player4PickerButton" destination="MS6-6H-uCj" id="l2q-OF-ZYA"/>
-                <outlet property="player5PickerButton" destination="s7k-oY-oCg" id="To8-aL-Ktv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="playerLabels" destination="Blk-M3-QYw" id="qfO-xj-YHO"/>
                 <outletCollection property="playerLabels" destination="Pen-XY-ACV" id="Uau-Ce-C4S"/>
                 <outletCollection property="playerLabels" destination="tgb-gb-of0" id="98h-LM-Fce"/>
                 <outletCollection property="playerLabels" destination="urD-zf-xcC" id="LDi-Az-Ctc"/>
                 <outletCollection property="playerLabels" destination="UtI-Qk-cpF" id="O8E-zj-cIp"/>
+                <outletCollection property="pickerButtons" destination="ZHB-WL-Pvp" id="1Po-S8-i6w"/>
+                <outletCollection property="pickerButtons" destination="w8d-7J-4CU" id="5IZ-i8-mUe"/>
+                <outletCollection property="pickerButtons" destination="ZXX-cA-hjB" id="XUE-pI-LVl"/>
+                <outletCollection property="pickerButtons" destination="MS6-6H-uCj" id="hrv-PQ-tgF"/>
+                <outletCollection property="pickerButtons" destination="s7k-oY-oCg" id="D8C-Rz-EXU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
