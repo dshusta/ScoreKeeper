@@ -29,34 +29,50 @@ describe(@"CreateGameViewController", ^{
     describe(@"tapping Save after entering a name", ^{
         __block UIViewController *rootViewController;
         __block UINavigationController *nav;
-
+        
         beforeEach(^{
             rootViewController = [[UIViewController alloc] init];
             nav = [[UINavigationController alloc] initWithRootViewController:rootViewController];
             [nav pushViewController:controller animated:NO];
-
-            controller.nameTextField.text = @"My Special Name";
-            [controller.playerNameFields[0] setText:@"Scooby Doo"];
-            [controller.playerNameFields[1] setText:@"Shaggy"];
-            [controller.playerNameFields[2] setText:@"Daphne"];
-            [controller.playerNameFields[3] setText:@"Velma"];
-            [controller.playerNameFields[4] setText:@"Fred"];
-
-            [controller.saveButton tap];
         });
         
-        it(@"should save a game with the given name", ^{
+        it(@"should default to 'Player N' names if the user is lazy and wants to test quickly", ^{
+            [controller.saveButton tap];
             Game *game = [collection.games lastObject];
-            game.name should equal(@"My Special Name");
-            [game.players[0] name] should equal(@"Scooby Doo");
-            [game.players[1] name] should equal(@"Shaggy");
-            [game.players[2] name] should equal(@"Daphne");
-            [game.players[3] name] should equal(@"Velma");
-            [game.players[4] name] should equal(@"Fred");
+            
+            [game.players[0] name] should equal(@"Player 1");
+            [game.players[1] name] should equal(@"Player 2");
+            [game.players[2] name] should equal(@"Player 3");
+            [game.players[3] name] should equal(@"Player 4");
+            [game.players[4] name] should equal(@"Player 5");
         });
-
+        
         it(@"should pop itself off the navigation stack", ^{
+            [controller.saveButton tap];
             nav.topViewController should be_same_instance_as(rootViewController);
+        });
+        
+        describe(@"when overriding default names", ^{
+            beforeEach(^{
+                controller.nameTextField.text = @"My Special Name";
+                [controller.playerNameFields[0] setText:@"Scooby Doo"];
+                [controller.playerNameFields[1] setText:@"Shaggy"];
+                [controller.playerNameFields[2] setText:@"Daphne"];
+                [controller.playerNameFields[3] setText:@"Velma"];
+                [controller.playerNameFields[4] setText:@"Fred"];
+                
+                [controller.saveButton tap];
+            });
+            
+            it(@"should save a game with the given name", ^{
+                Game *game = [collection.games lastObject];
+                game.name should equal(@"My Special Name");
+                [game.players[0] name] should equal(@"Scooby Doo");
+                [game.players[1] name] should equal(@"Shaggy");
+                [game.players[2] name] should equal(@"Daphne");
+                [game.players[3] name] should equal(@"Velma");
+                [game.players[4] name] should equal(@"Fred");
+            });
         });
     });
 });

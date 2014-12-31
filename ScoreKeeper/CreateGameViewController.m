@@ -44,8 +44,11 @@
     
     __block NSMutableArray *players = [[NSMutableArray alloc] init];
     [self.playerNameFields enumerateObjectsUsingBlock:^(UITextField *playerNameField, NSUInteger index, BOOL *stop) {
-        Player *player = [[Player alloc] initWithName:[playerNameField text]];
-        [players addObject:player];
+        NSString *playerName = [playerNameField text];
+        if ([playerName isEqualToString:@""]) {
+            playerName = [NSString stringWithFormat:@"Player %li", (long)(index + 1)];
+        }
+        [players addObject:[[Player alloc] initWithName:playerName]];
     }];
     
     Game *game = [[Game alloc] initWithName:name players:players];
