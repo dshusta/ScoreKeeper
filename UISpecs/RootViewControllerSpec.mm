@@ -5,6 +5,7 @@
 #import "UIKit+PivotalSpecHelper.h"
 #import "HandTableViewController.h"
 #import "EditGameViewController.h"
+#import "PlayerFactory.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -14,14 +15,47 @@ SPEC_BEGIN(RootViewControllerSpec)
 describe(@"RootViewController", ^{
     __block UINavigationController *navController;
     __block RootViewController *rootViewController;
+    
+    __block Game *game1;
+    __block Game *game2;
+    
+    __block NSDate *now;
+    
+    Game *(^createGameWithNameAtTime)(NSString *, double time) = ^(NSString *name, double time) {
+        [NSDate class] stub_method(@selector(date)).and_return([NSDate dateWithTimeIntervalSince1970:time]);
+        Game *game = [[Game alloc] initWithName:name players:[PlayerFactory createPlayersForGame]];
+        
+        GameCollection *gameCollection = [[GameCollection alloc] init];
+        [gameCollection addGame: game];
+        [gameCollection synchronize];
+        [[NSDate class] reset];
+        
+        return game;
+    };
 
     beforeEach(^{
+        now = [NSDate date];
+        spy_on([NSDate class]);
+        
+        game1 = createGameWithNameAtTime(@"First created", [now timeIntervalSince1970] - 40000.0);
+        game2 = createGameWithNameAtTime(@"Second created", [now timeIntervalSince1970] - 20000.0);
+        
         rootViewController = [[RootViewController alloc] init];
         rootViewController.view should_not be_nil;
 
         navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
 
         [rootViewController viewWillAppear:NO];
+    });
+    
+    it(@"should sort games by recency", ^{
+        [rootViewController.tableView numberOfRowsInSection:0] should equal(2);
+        
+        UITableViewCell *cell = [rootViewController.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        cell.textLabel.text should equal(game2.name);
+        
+        cell = [rootViewController.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+        cell.textLabel.text should equal(game1.name);
     });
 
     describe(@"after Create New Game is tapped", ^{
