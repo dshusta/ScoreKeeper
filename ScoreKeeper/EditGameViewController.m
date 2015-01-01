@@ -30,7 +30,7 @@
         [self.playerNameLabels[i] setText:[player name]];
     }];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didTapHands:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Hands" style:UIBarButtonItemStylePlain target:self action:@selector(didTapHands:)];
 }
 
 - (void)didTapHands:(id) selector {
