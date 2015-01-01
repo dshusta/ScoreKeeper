@@ -4,6 +4,7 @@
 #import "Player.h"
 #import "UIKit+PivotalSpecHelper.h"
 #import "HandTableViewController.h"
+#import "EditGameViewController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -57,8 +58,9 @@ describe(@"RootViewController", ^{
                     [cell tap];
                 });
 
-                it(@"should display a HandTableViewController", ^{
-                    navController.topViewController should be_instance_of([HandTableViewController class]);
+                it(@"should display a EditGameViewController", ^{
+                    navController.topViewController should be_instance_of([EditGameViewController class]);
+                    [(HandTableViewController*)navController.topViewController gameCollection] should be_instance_of([GameCollection class]);
                     [(HandTableViewController*)navController.topViewController game] should be_instance_of([Game class]);
                 });
             });

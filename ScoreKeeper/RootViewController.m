@@ -2,6 +2,7 @@
 #import "CreateGameViewController.h"
 #import "GameCollection.h"
 #import "HandTableViewController.h"
+#import "EditGameViewController.h"
 
 @interface RootViewController ()
 
@@ -64,9 +65,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Game *game = self.gameCollection.games[indexPath.row];
-    HandTableViewController *handTableViewController = [[HandTableViewController alloc] initWithGameCollection:self.gameCollection
-                                                                                                          game:game];
-    [self.navigationController pushViewController:handTableViewController animated:YES];
+    EditGameViewController *editGameViewController = [[EditGameViewController alloc] initWithGameCollection:self.gameCollection game:game];
+    [self.navigationController pushViewController:editGameViewController animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
