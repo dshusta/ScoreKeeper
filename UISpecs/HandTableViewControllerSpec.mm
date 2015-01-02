@@ -42,13 +42,12 @@ describe(@"HandTableViewController", ^{
         [controller viewWillAppear:NO];
     });
     
-    it(@"should render all hands as rows in the table", ^{
+    it(@"should render all hands, by recency, as rows in the table", ^{
         [controller.tableView numberOfRowsInSection:0] should equal(3);
         
-        cellAt(0).textLabel.text should equal(@"Hand 1");
+        cellAt(0).textLabel.text should equal(@"Hand 3");
         cellAt(1).textLabel.text should equal(@"Hand 2");
-        cellAt(2).textLabel.text should equal(@"Hand 3");
-        
+        cellAt(2).textLabel.text should equal(@"Hand 1");
     });
     
     it(@"should update view when new hands are added", ^{
@@ -58,10 +57,10 @@ describe(@"HandTableViewController", ^{
         
         [controller.tableView numberOfRowsInSection:0] should equal(4);
         
-        cellAt(0).textLabel.text should equal(@"Hand 1");
-        cellAt(1).textLabel.text should equal(@"Hand 2");
-        cellAt(2).textLabel.text should equal(@"Hand 3");
-        cellAt(3).textLabel.text should equal(@"Hand 4");
+        cellAt(0).textLabel.text should equal(@"Hand 4");
+        cellAt(1).textLabel.text should equal(@"Hand 3");
+        cellAt(2).textLabel.text should equal(@"Hand 2");
+        cellAt(3).textLabel.text should equal(@"Hand 1");
     });
     
     describe(@"tapping New Hand button", ^{
@@ -82,7 +81,7 @@ describe(@"HandTableViewController", ^{
         it(@"should navigate to the 'edit' hand", ^{
             navigationController.topViewController should be_instance_of([EditHandViewController class]);
             [(EditHandViewController*)navigationController.topViewController game] should be_same_instance_as(game);
-            [(EditHandViewController*)navigationController.topViewController currentHand] should be_same_instance_as(hand1);
+            [(EditHandViewController*)navigationController.topViewController currentHand] should be_same_instance_as(hand3);
         });
     });
     
@@ -97,9 +96,9 @@ describe(@"HandTableViewController", ^{
         
         it(@"should delete the hand", ^{
             [controller.tableView numberOfRowsInSection:0] should equal(2);
-            game.hands should_not contain(hand1);
+            game.hands should contain(hand1);
             game.hands should contain(hand2);
-            game.hands should contain(hand3);
+            game.hands should_not contain(hand3);
             
             GameCollection *collection = [[GameCollection alloc] init];
             Game *gameFromCollection = [collection.games firstObject];

@@ -7,6 +7,7 @@
 @property (nonatomic, strong) GameCollection *gameCollection;
 @property (nonatomic, strong) Game* game;
 
+- (unsigned long)indexPathRowToArrayIndex:(long)row;
 @end
 
 @implementation HandTableViewController
@@ -45,6 +46,11 @@
     [self.navigationController pushViewController:editHandViewController animated:YES];
 }
 
+- (unsigned long)indexPathRowToArrayIndex:(long)row {
+    unsigned long totalHands = [self.game.hands count];
+    return totalHands - row - 1;
+}
+
 #pragma mark - <UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -54,7 +60,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                             forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"Hand %li", (long)(indexPath.row + 1)];
+    
+    unsigned long nthLabel = [self indexPathRowToArrayIndex:indexPath.row] + 1;
+    cell.textLabel.text = [NSString stringWithFormat:@"Hand %li", (long)nthLabel];
     
     return cell;
 }
@@ -62,14 +70,16 @@
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    long handsIndex = [self indexPathRowToArrayIndex:indexPath.row];
     EditHandViewController *editHandViewController = [[EditHandViewController alloc] initWithGameCollection:self.gameCollection
                                                                                                        game:self.game
-                                                                                                       hand:self.game.hands[indexPath.row]];
+                                                                                                       hand:self.game.hands[handsIndex]];
     [self.navigationController pushViewController:editHandViewController animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.game.hands removeObjectAtIndex:indexPath.row];
+    long handsIndex = [self indexPathRowToArrayIndex:indexPath.row];
+    [self.game.hands removeObjectAtIndex:handsIndex];
     [self.gameCollection synchronize];
     
     [tableView reloadData];
