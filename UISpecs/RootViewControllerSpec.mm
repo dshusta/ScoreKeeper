@@ -2,6 +2,7 @@
 #import "CreateGameViewController.h"
 #import "Game.h"
 #import "Player.h"
+#import "PlayerFactory.h"
 #import "UIKit+PivotalSpecHelper.h"
 #import "HandTableViewController.h"
 #import "EditGameViewController.h"
@@ -14,8 +15,17 @@ SPEC_BEGIN(RootViewControllerSpec)
 describe(@"RootViewController", ^{
     __block UINavigationController *navController;
     __block RootViewController *rootViewController;
+    
+    __block Game *game1;
+    __block Game *game2;
 
     beforeEach(^{
+        GameCollection *gameCollection = [[GameCollection alloc] init];
+        game1 = [[Game alloc] initWithName:@"Game 1" players:[PlayerFactory createPlayersForGame]];
+        [gameCollection addGame:game1];
+        game2 = [[Game alloc] initWithName:@"Game 2" players:[PlayerFactory createPlayersForGame]];
+        [gameCollection addGame:game2];
+        
         rootViewController = [[RootViewController alloc] init];
         rootViewController.view should_not be_nil;
 
@@ -24,6 +34,14 @@ describe(@"RootViewController", ^{
         [rootViewController viewWillAppear:NO];
     });
 
+    it(@"should sort by recency", ^{
+        UITableViewCell *topCell = [rootViewController.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        UITableViewCell *bottomCell = [rootViewController.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+        
+        topCell.textLabel.text should equal(@"Game 2");
+        bottomCell.textLabel.text should equal(@"Game 1");
+    });
+    
     describe(@"after Create New Game is tapped", ^{
         beforeEach(^{
             [rootViewController.navigationItem.rightBarButtonItem tap];
@@ -47,8 +65,8 @@ describe(@"RootViewController", ^{
             });
 
             it(@"should display the new item", ^{
-                [rootViewController.tableView numberOfRowsInSection:0] should equal(1);
-                [[[NSUserDefaults standardUserDefaults] objectForKey:@"games"] count] should equal(1);
+                [rootViewController.tableView numberOfRowsInSection:0] should equal(3);
+                [[[NSUserDefaults standardUserDefaults] objectForKey:@"games"] count] should equal(3);
             });
 
             describe(@"tapping on a game", ^{
@@ -75,8 +93,8 @@ describe(@"RootViewController", ^{
                 });
 
                 it(@"should delete the game", ^{
-                    [rootViewController.tableView numberOfRowsInSection:0] should equal(0);
-                    [[[NSUserDefaults standardUserDefaults] objectForKey:@"games"] count] should equal(0);
+                    [rootViewController.tableView numberOfRowsInSection:0] should equal(2);
+                    [[[NSUserDefaults standardUserDefaults] objectForKey:@"games"] count] should equal(2);
                 });
             });
         });

@@ -7,7 +7,7 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSArray *players;
-
+@property int createdAt;
 
 @end
 
@@ -16,13 +16,23 @@
 
 
 - (Game *)initWithName:(NSString *)name players:(NSMutableArray *)players {
+    int now = [[NSDate date] timeIntervalSince1970];
+    return [self initWithName:name players:players createdAt:now];
+}
+
+- (Game *)initWithName:(NSString *)name players:(NSMutableArray *)players createdAt:(int)createdAt {
     self = [self init];
     if (self) {
         self.name = name;
         self.players = players;
         self.hands = [[NSMutableArray alloc] init];
+        self.createdAt = createdAt;
     }
     return self;
+}
+
+- (NSComparisonResult)compare:(Game *)otherObject {
+    return self.createdAt <= otherObject.createdAt ? (NSComparisonResult)NSOrderedDescending : (NSComparisonResult)NSOrderedAscending;
 }
 
 + (Game *)deserialize:(NSDictionary *)dictionary {
@@ -38,7 +48,8 @@
         [hands addObject:[Hand deserialize:hand]];
     }
 
-    Game *game = [[Game alloc] initWithName:dictionary[@"name"] players:players];
+    NSNumber *createdAtNumber = dictionary[@"createdAt"];
+    Game *game = [[Game alloc] initWithName:dictionary[@"name"] players:players createdAt:[createdAtNumber intValue]];
     [game.hands addObjectsFromArray:hands];
     return game;
 }
@@ -59,6 +70,7 @@
               @"name": self.name,
               @"players": playerArray,
               @"hands": handArray,
+              @"createdAt": [NSNumber numberWithInt:self.createdAt]
               };
 }
 

@@ -56,6 +56,7 @@
 		AED075301A52311C005C06C8 /* EditHandViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED0752F1A52311C005C06C8 /* EditHandViewControllerSpec.mm */; };
 		AEEC899D1A51E7F700BB1A2F /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEC899C1A51E7F700BB1A2F /* Hand.m */; };
 		AEEC899E1A51E7F700BB1A2F /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEC899C1A51E7F700BB1A2F /* Hand.m */; };
+		EA7155C01A56FE4F001E7AE2 /* PlayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7155BF1A56FE4F001E7AE2 /* PlayerFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +259,8 @@
 		AED0752F1A52311C005C06C8 /* EditHandViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditHandViewControllerSpec.mm; sourceTree = "<group>"; };
 		AEEC899B1A51E7F700BB1A2F /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
 		AEEC899C1A51E7F700BB1A2F /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
+		EA7155BE1A56FE4F001E7AE2 /* PlayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerFactory.h; sourceTree = "<group>"; };
+		EA7155BF1A56FE4F001E7AE2 /* PlayerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +384,8 @@
 				AE3CBD5918EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm */,
 				AE22048E1A54AE960009FA2B /* EditGameViewControllerSpec.mm */,
 				AED0752F1A52311C005C06C8 /* EditHandViewControllerSpec.mm */,
+				EA7155BE1A56FE4F001E7AE2 /* PlayerFactory.h */,
+				EA7155BF1A56FE4F001E7AE2 /* PlayerFactory.m */,
 				AE3CBD5B18F3182900BFA8F5 /* GameCollectionSpec.mm */,
 				AE40F6A71A41188C004044BA /* HandTableViewControllerSpec.mm */,
 				AEC105B218EE0BC9000AC266 /* RootViewControllerSpec.mm */,
@@ -687,6 +692,7 @@
 				AEEC899E1A51E7F700BB1A2F /* Hand.m in Sources */,
 				AEC105B818EE0E2D000AC266 /* CreateGameViewController.m in Sources */,
 				AEC8550C18ECB03800F7FB11 /* main.m in Sources */,
+				EA7155C01A56FE4F001E7AE2 /* PlayerFactory.m in Sources */,
 				AED0751C1A522B14005C06C8 /* EditHandViewController.m in Sources */,
 				AE3CBD5A18EF79F400BFA8F5 /* CreateGameViewControllerSpec.mm in Sources */,
 				AEC105BE18EF233B000AC266 /* GameCollection.m in Sources */,

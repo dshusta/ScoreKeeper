@@ -30,7 +30,7 @@
 }
 
 - (NSArray *)games {
-    return self.data;
+    return [self.data sortedArrayUsingSelector:@selector(compare:)];
 }
 
 #pragma mark - Model persistence
