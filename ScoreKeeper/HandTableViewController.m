@@ -61,8 +61,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                             forIndexPath:indexPath];
     
-    unsigned long nthLabel = [self indexPathRowToArrayIndex:indexPath.row] + 1;
-    cell.textLabel.text = [NSString stringWithFormat:@"Hand %li", (long)nthLabel];
+    long handsIndex = [self indexPathRowToArrayIndex:indexPath.row];
+    Hand *hand = self.game.hands[handsIndex];
+    unsigned long nthLabel = handsIndex + 1;
+    cell.textLabel.text = [NSString stringWithFormat:@"Hand %li - %@", (long)nthLabel, hand.pickerName];
     
     return cell;
 }

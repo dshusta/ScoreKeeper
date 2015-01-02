@@ -27,9 +27,9 @@ describe(@"HandTableViewController", ^{
     beforeEach(^{
         gameCollection = [[GameCollection alloc] init];
         game = [[Game alloc] initWithName:@"Gamerz" players:@[]];
-        hand1 = [[Hand alloc] initWithPickerName:@"Player 1"];
-        hand2 = [[Hand alloc] initWithPickerName:@"Player 2"];
-        hand3 = [[Hand alloc] initWithPickerName:@"Player 3"];
+        hand1 = [[Hand alloc] initWithPickerName:@"Abigail"];
+        hand2 = [[Hand alloc] initWithPickerName:@"Bob"];
+        hand3 = [[Hand alloc] initWithPickerName:@"Clarice"];
         game.hands = [[NSMutableArray alloc] initWithArray: @[hand1, hand2, hand3]];
         [gameCollection addGame:game];
         
@@ -45,22 +45,22 @@ describe(@"HandTableViewController", ^{
     it(@"should render all hands, by recency, as rows in the table", ^{
         [controller.tableView numberOfRowsInSection:0] should equal(3);
         
-        cellAt(0).textLabel.text should equal(@"Hand 3");
-        cellAt(1).textLabel.text should equal(@"Hand 2");
-        cellAt(2).textLabel.text should equal(@"Hand 1");
+        cellAt(0).textLabel.text should equal(@"Hand 3 - Clarice");
+        cellAt(1).textLabel.text should equal(@"Hand 2 - Bob");
+        cellAt(2).textLabel.text should equal(@"Hand 1 - Abigail");
     });
     
     it(@"should update view when new hands are added", ^{
-        [game.hands addObject:[[Hand alloc] initWithPickerName:@"Player 4"]];
+        [game.hands addObject:[[Hand alloc] initWithPickerName:@"David"]];
         
         [controller viewWillAppear:true];
         
         [controller.tableView numberOfRowsInSection:0] should equal(4);
         
-        cellAt(0).textLabel.text should equal(@"Hand 4");
-        cellAt(1).textLabel.text should equal(@"Hand 3");
-        cellAt(2).textLabel.text should equal(@"Hand 2");
-        cellAt(3).textLabel.text should equal(@"Hand 1");
+        cellAt(0).textLabel.text should equal(@"Hand 4 - David");
+        cellAt(1).textLabel.text should equal(@"Hand 3 - Clarice");
+        cellAt(2).textLabel.text should equal(@"Hand 2 - Bob");
+        cellAt(3).textLabel.text should equal(@"Hand 1 - Abigail");
     });
     
     describe(@"tapping New Hand button", ^{
