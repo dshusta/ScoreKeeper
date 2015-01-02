@@ -45,9 +45,9 @@ describe(@"HandTableViewController", ^{
     it(@"should render all hands, by recency, as rows in the table", ^{
         [controller.tableView numberOfRowsInSection:0] should equal(3);
         
-        cellAt(0).textLabel.text should equal(@"Hand 3 - Clarice");
-        cellAt(1).textLabel.text should equal(@"Hand 2 - Bob");
-        cellAt(2).textLabel.text should equal(@"Hand 1 - Abigail");
+        cellAt(0).textLabel.text should equal(@"Hand 3 - Clarice / David");
+        cellAt(1).textLabel.text should equal(@"Hand 2 - Bob / Clarice");
+        cellAt(2).textLabel.text should equal(@"Hand 1 - Abigail / Bob");
     });
     
     it(@"should update view when new hands are added", ^{
@@ -57,10 +57,10 @@ describe(@"HandTableViewController", ^{
         
         [controller.tableView numberOfRowsInSection:0] should equal(4);
         
-        cellAt(0).textLabel.text should equal(@"Hand 4 - David");
-        cellAt(1).textLabel.text should equal(@"Hand 3 - Clarice");
-        cellAt(2).textLabel.text should equal(@"Hand 2 - Bob");
-        cellAt(3).textLabel.text should equal(@"Hand 1 - Abigail");
+        cellAt(0).textLabel.text should equal(@"Hand 4 - David / Elise");
+        cellAt(1).textLabel.text should equal(@"Hand 3 - Clarice / David");
+        cellAt(2).textLabel.text should equal(@"Hand 2 - Bob / Clarice");
+        cellAt(3).textLabel.text should equal(@"Hand 1 - Abigail / Bob");
     });
     
     describe(@"tapping New Hand button", ^{

@@ -64,7 +64,7 @@
     long handsIndex = [self indexPathRowToArrayIndex:indexPath.row];
     Hand *hand = self.game.hands[handsIndex];
     unsigned long nthLabel = handsIndex + 1;
-    cell.textLabel.text = [NSString stringWithFormat:@"Hand %li - %@", (long)nthLabel, hand.pickerName];
+    cell.textLabel.text = [NSString stringWithFormat:@"Hand %li - %@ / %@", (long)nthLabel, hand.pickerName, hand.partnerName];
     
     return cell;
 }
