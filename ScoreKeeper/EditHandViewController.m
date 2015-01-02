@@ -41,9 +41,13 @@
         
         NSArray *names = [self.game.players valueForKey:@"name"];
         NSUInteger pickerIndex = [names indexOfObject:self.currentHand.pickerName];
+        NSUInteger partnerIndex = [names indexOfObject:self.currentHand.partnerName];
         
         UIButton *selectedPickerButton = [self pickerButtons][pickerIndex];
         selectedPickerButton.selected = YES;
+        
+        UIButton *selectedPartnerButton = [self partnerButtons][partnerIndex];
+        selectedPartnerButton.selected = YES;
     }
     else {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveHandOnTap:)];
@@ -55,11 +59,28 @@
 }
 
 - (IBAction)didTapPickerButton:(id)sender {
-    for (UIButton *pickerButton in self.pickerButtons) {
+    for (UIButton *partnerButton in self.partnerButtons) {
+        partnerButton.enabled = YES;
+    }
+    
+    [self.pickerButtons enumerateObjectsUsingBlock:^(UIButton *pickerButton, NSUInteger i, BOOL *stop) {
         pickerButton.enabled = NO;
         
         if (pickerButton == sender) {
             pickerButton.selected = YES;
+            [self.partnerButtons[i] setEnabled:NO];
+        }
+    }];
+    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+
+- (IBAction)didTapPartnerButton:(id)sender {
+    for (UIButton *partnerButton in self.partnerButtons) {
+        partnerButton.enabled = NO;
+        
+        if (partnerButton == sender) {
+            partnerButton.selected = YES;
         }
     }
     
@@ -77,8 +98,19 @@
     return pickerName;
 }
 
+- (NSString *)nameOfPartner {
+    __block NSString *partnerName;
+    [self.partnerButtons enumerateObjectsUsingBlock:^(UIButton *partnerButton, NSUInteger i, BOOL *stop) {
+        if (partnerButton.selected) {
+            partnerName = [self.game.players[i] name];
+            *stop = YES;
+        }
+    }];
+    return partnerName;
+}
+
 - (void)saveHandOnTap:(id) sender {
-    self.currentHand = [[Hand alloc] initWithPickerName:[self nameOfPicker]];
+    self.currentHand = [[Hand alloc] initWithPickerName:[self nameOfPicker] partnerName:[self nameOfPartner]];
     
     [self.game.hands addObject:self.currentHand];
     

@@ -25,7 +25,7 @@ describe(@"GameCollection", ^{
             [players addObject:[[Player alloc] initWithName:@"Shaggy"]];
 
             Game *game = [[Game alloc] initWithName:@"My Special Game" players:players];
-            Hand *hand = [[Hand alloc] initWithPickerName:@"Velma"];
+            Hand *hand = [[Hand alloc] initWithPickerName:@"Velma" partnerName:@"Fred"];
             [game.hands addObject:hand];
             [gameCollection addGame:game];
         });

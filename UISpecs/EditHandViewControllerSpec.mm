@@ -66,6 +66,14 @@ describe(@"EditHandViewController", ^{
             ((UIButton*)editHandViewController.pickerButtons[4]).enabled should be_truthy;
         });
         
+        it(@"should now let the user choose the partner for each player", ^{
+            ((UIButton*)editHandViewController.partnerButtons[0]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[1]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[2]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[3]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[4]).enabled should be_falsy;
+        });
+        
         it(@"should have a disabled Save button", ^{
             editHandViewController.navigationItem.rightBarButtonItem.enabled should be_falsy;
         });
@@ -83,6 +91,14 @@ describe(@"EditHandViewController", ^{
                 ((UIButton*)editHandViewController.pickerButtons[4]).enabled should be_falsy;
             });
             
+            it(@"should enable all J's except for Picker's", ^{
+                ((UIButton*)editHandViewController.partnerButtons[0]).enabled should be_truthy;
+                ((UIButton*)editHandViewController.partnerButtons[1]).enabled should be_falsy;
+                ((UIButton*)editHandViewController.partnerButtons[2]).enabled should be_truthy;
+                ((UIButton*)editHandViewController.partnerButtons[3]).enabled should be_truthy;
+                ((UIButton*)editHandViewController.partnerButtons[4]).enabled should be_truthy;
+            });
+            
             it(@"should select the tapped button", ^{
                 ((UIButton*)editHandViewController.pickerButtons[0]).selected should be_falsy;
                 ((UIButton*)editHandViewController.pickerButtons[1]).selected should be_truthy;
@@ -91,35 +107,65 @@ describe(@"EditHandViewController", ^{
                 ((UIButton*)editHandViewController.pickerButtons[4]).selected should be_falsy;
             });
             
-            it(@"should enabled the Save button", ^{
-                editHandViewController.navigationItem.rightBarButtonItem.enabled should be_truthy;
+            it(@"should have a disabled Save button", ^{
+                editHandViewController.navigationItem.rightBarButtonItem.enabled should be_falsy;
             });
             
-            describe(@"tapping Save", ^{
+            describe(@"after tapping for a Partner", ^{
                 beforeEach(^{
-                    [editHandViewController.navigationItem.rightBarButtonItem tap];
+                    [editHandViewController.partnerButtons[4] tap];
                 });
                 
-                it(@"should return to the HandTableViewController", ^{
-                    navController.topViewController should be_same_instance_as(previousViewController);
+                it(@"should disable all J's", ^{
+                    ((UIButton*)editHandViewController.partnerButtons[0]).enabled should be_falsy;
+                    ((UIButton*)editHandViewController.partnerButtons[1]).enabled should be_falsy;
+                    ((UIButton*)editHandViewController.partnerButtons[2]).enabled should be_falsy;
+                    ((UIButton*)editHandViewController.partnerButtons[3]).enabled should be_falsy;
+                    ((UIButton*)editHandViewController.partnerButtons[4]).enabled should be_falsy;
                 });
                 
-                it(@"should save a new hand to the game", ^{
-                    [game.hands count] should equal(1);
-                    gameCollection should have_received(@selector(synchronize));
+                it(@"should select the tapped button", ^{
+                    ((UIButton*)editHandViewController.partnerButtons[0]).selected should be_falsy;
+                    ((UIButton*)editHandViewController.partnerButtons[1]).selected should be_falsy;
+                    ((UIButton*)editHandViewController.partnerButtons[2]).selected should be_falsy;
+                    ((UIButton*)editHandViewController.partnerButtons[3]).selected should be_falsy;
+                    ((UIButton*)editHandViewController.partnerButtons[4]).selected should be_truthy;
                 });
                 
-                describe(@"the saved hand", ^{
-                    __block Hand *handFromDb;
-                    
+                it(@"should enabled the Save button", ^{
+                    editHandViewController.navigationItem.rightBarButtonItem.enabled should be_truthy;
+                });
+                
+                describe(@"tapping Save", ^{
                     beforeEach(^{
-                        GameCollection *newGameCollection = [[GameCollection alloc] init];
-                        Game *gameFromDb = [newGameCollection.games firstObject];
-                        handFromDb = [gameFromDb.hands firstObject];
+                        [editHandViewController.navigationItem.rightBarButtonItem tap];
                     });
                     
-                    it(@"should have the Picker preserved", ^{
-                        handFromDb.pickerName should equal(player2.name);
+                    it(@"should return to the HandTableViewController", ^{
+                        navController.topViewController should be_same_instance_as(previousViewController);
+                    });
+                    
+                    it(@"should save a new hand to the game", ^{
+                        [game.hands count] should equal(1);
+                        gameCollection should have_received(@selector(synchronize));
+                    });
+                    
+                    describe(@"the saved hand", ^{
+                        __block Hand *handFromDb;
+                        
+                        beforeEach(^{
+                            GameCollection *newGameCollection = [[GameCollection alloc] init];
+                            Game *gameFromDb = [newGameCollection.games firstObject];
+                            handFromDb = [gameFromDb.hands firstObject];
+                        });
+                        
+                        it(@"should have the Picker preserved", ^{
+                            handFromDb.pickerName should equal(player2.name);
+                        });
+                        
+                        it(@"should have the Parnter preserved", ^{
+                            handFromDb.partnerName should equal(player5.name);
+                        });
                     });
                 });
             });
@@ -130,7 +176,7 @@ describe(@"EditHandViewController", ^{
         __block Hand *hand;
         
         beforeEach(^{
-            hand = [[Hand alloc] initWithPickerName:@"player four"];
+            hand = [[Hand alloc] initWithPickerName:@"player four" partnerName:@"player one"];
             [game.hands addObject:hand];
             
             editHandViewController = [[EditHandViewController alloc] initWithGameCollection:gameCollection game:game hand:hand];
@@ -157,12 +203,28 @@ describe(@"EditHandViewController", ^{
             ((UIButton*)editHandViewController.pickerButtons[4]).enabled should be_falsy;
         });
         
+        it(@"should disable all J's", ^{
+            ((UIButton*)editHandViewController.partnerButtons[0]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[1]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[2]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[3]).enabled should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[4]).enabled should be_falsy;
+        });
+        
         it(@"should select the Picker", ^{
             ((UIButton*)editHandViewController.pickerButtons[0]).selected should be_falsy;
             ((UIButton*)editHandViewController.pickerButtons[1]).selected should be_falsy;
             ((UIButton*)editHandViewController.pickerButtons[2]).selected should be_falsy;
             ((UIButton*)editHandViewController.pickerButtons[3]).selected should be_truthy;
             ((UIButton*)editHandViewController.pickerButtons[4]).selected should be_falsy;
+        });
+        
+        it(@"should select the Partner", ^{
+            ((UIButton*)editHandViewController.partnerButtons[0]).selected should be_truthy;
+            ((UIButton*)editHandViewController.partnerButtons[1]).selected should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[2]).selected should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[3]).selected should be_falsy;
+            ((UIButton*)editHandViewController.partnerButtons[4]).selected should be_falsy;
         });
         
         it(@"should not have a save button", ^{

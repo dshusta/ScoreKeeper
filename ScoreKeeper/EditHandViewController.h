@@ -7,6 +7,7 @@
 @interface EditHandViewController : UIViewController
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *playerLabels;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *pickerButtons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *partnerButtons;
 
 @property (nonatomic, strong, readonly) Game *game;
 @property (nonatomic, strong, readonly) Hand *currentHand;
