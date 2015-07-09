@@ -5,9 +5,14 @@
 
 @interface CreateGameViewController ()
 @property (strong, nonatomic) GameCollection *gameCollection;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation CreateGameViewController
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (instancetype)init {
     [self doesNotRecognizeSelector:_cmd];
@@ -18,6 +23,9 @@
     self = [super initWithNibName:@"CreateGameViewController" bundle:nil];
     if (self) {
         self.gameCollection = gameCollection;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+
     }
     return self;
 }
@@ -30,12 +38,19 @@
     [dateFormatter setDateFormat:@"dd MMMM yyyy '-' HH:mm"];
     
     self.nameTextField.text = [dateFormatter stringFromDate:today];
-    
-//    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.player5TextField.frame),
-//                                                                           CGRectGetMaxY(self.player5TextField.frame) + 10,
-//                                                                           CGRectGetWidth(self.player5TextField.frame),
-//                                                                           CGRectGetHeight(self.player5TextField.frame))];
-//    [self.view addSubview:textField];
+
+    self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
+    CGFloat topInset = CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    UIEdgeInsets insets = UIEdgeInsetsMake(topInset, 0, 0, 0);
+    self.scrollView.contentInset = insets;
+    self.scrollView.scrollIndicatorInsets = insets;
+
+    CGFloat width = CGRectGetWidth(self.scrollView.frame);
+    CGFloat height = CGRectGetMaxY(self.saveButton.frame) + 10;
+    self.scrollView.contentSize = CGSizeMake(width, height);
 }
 
 - (IBAction)touchUpSaveButton:(id)sender {
@@ -54,6 +69,24 @@
 
     [self.gameCollection addGame:game];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)keyboardDidShow:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    NSValue *frameValue = userInfo[UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardFrame = [frameValue CGRectValue];
+
+    CGFloat topInset = self.scrollView.contentInset.top;
+    UIEdgeInsets insets = UIEdgeInsetsMake(topInset, 0, keyboardFrame.size.height, 0);
+    self.scrollView.contentInset = insets;
+    self.scrollView.scrollIndicatorInsets = insets;
+}
+
+-(void)keyboardDidHide:(NSNotification *)notification {
+    CGFloat topInset = CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    UIEdgeInsets insets = UIEdgeInsetsMake(topInset, 0, 0, 0);
+    self.scrollView.contentInset = insets;
+    self.scrollView.scrollIndicatorInsets = insets;
 }
 
 @end
